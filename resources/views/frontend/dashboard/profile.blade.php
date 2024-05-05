@@ -15,7 +15,7 @@
             {{-- <a href="" class="btn btn-success mb-2">to teacher</a> --}}
             <div class="wsus__dashboard_profile">
               <div class="wsus__dash_pro_area">
-                <h4>basic information</h4>
+                <h4>ข้อมูลพื้นฐาน</h4>
                 
                   <form action="{{route('user.profile.update')}}" method="POST" enctype="multipart/form-data">
                     @csrf
@@ -30,7 +30,7 @@
                         <div class="col-md-12 mt-5">
                           <div class="wsus__dash_pro_single">
                             <i class="fas fa-user-tie"></i>
-                            <input type="text" placeholder="Name" name="name" value="{{Auth::user()->name}}">
+                            <input type="text" placeholder="ชื่อผู้ใช้" name="name" value="{{Auth::user()->name}}">
                           </div>
                         </div>
                        
@@ -44,14 +44,14 @@
                         <div class="col-md-12 mt-5">
                             <div class="wsus__dash_pro_single">
                               <i class="fas fa-solid fa-user"></i>
-                              <input type="text" placeholder="Firstname" name="firstname" value="{{Auth::user()->firstname}}">
+                              <input type="text" placeholder="ชื่อ" name="firstname" value="{{Auth::user()->firstname}}">
                             </div>
                         </div>
 
                         <div class="col-md-12 mt-5">
                             <div class="wsus__dash_pro_single">
                                 <i class="fas fa-solid fa-user"></i>
-                              <input type="text" placeholder="Lastname" name="lastname" value="{{Auth::user()->lastname}}">
+                              <input type="text" placeholder="นามสกุล" name="lastname" value="{{Auth::user()->lastname}}">
                             </div>
                         </div>
                     </div>
@@ -68,19 +68,19 @@
                           <div class="col-xl-4 col-md-6">
                             <div class="wsus__dash_pro_single">
                               <i class="fas fa-unlock-alt"></i>
-                              <input type="password" placeholder="Current Password" name="current_password">
+                              <input type="password" placeholder="รหัสผ่านปัจจุบัน" name="current_password">
                             </div>
                           </div>
                           <div class="col-xl-4 col-md-6">
                             <div class="wsus__dash_pro_single">
                               <i class="fas fa-lock-alt"></i>
-                              <input type="password" placeholder="New Password" name="password">
+                              <input type="password" placeholder="รหัสผ่านใหม่" name="password">
                             </div>
                           </div>
                           <div class="col-xl-4">
                             <div class="wsus__dash_pro_single">
                               <i class="fas fa-lock-alt"></i>
-                              <input type="password" placeholder="Confirm Password" name="password_confirmation">
+                              <input type="password" placeholder="ยืนยันรหัสผ่าน" name="password_confirmation">
                             </div>
                           </div>
                           <div class="col-xl-12">

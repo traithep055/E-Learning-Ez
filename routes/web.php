@@ -6,6 +6,7 @@ use App\Http\Controllers\Backend\TeacherController;
 use App\Http\Controllers\Frontend\UserDashboardContorller;
 use App\Http\Controllers\Frontend\UserProfileController;
 use App\Http\Controllers\Frontend\NewBecomeTeacherController;
+use App\Http\Controllers\Frontend\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,9 +20,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 
 Route::middleware('auth')->group(function () {

@@ -72,7 +72,7 @@
                 </form>
                 <div class="login-signup">
                     <span class="text">Not a member?
-                        <a href="#" class="text signup-link">Signup Now</a>
+                        <a href="{{ route('register') }}" class="text signup-link">Signup Now</a>
                     </span>
                 </div>
             </div>
