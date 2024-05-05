@@ -62,8 +62,8 @@
                                 <label for="inputState">ระดับ</label>
                                 <select id="inputState" class="form-control child-category" name="level">
                                     <option value="">Select</option>
-                                    <option {{$course->level == 'basic' ? 'selected' : ''}} value="basic">Basic</option>
-                                    <option {{$course->level == 'advance' ? 'selected' : ''}} value="advance">Advance</option>
+                                    <option {{$course->level == 'พื้นฐาน' ? 'selected' : ''}} value="พื้นฐาน">พื้นฐาน</option>
+                                    <option {{$course->level == 'สูง' ? 'selected' : ''}} value="สูง">สูง</option>
                                 </select>
                             </div>
                         </div>

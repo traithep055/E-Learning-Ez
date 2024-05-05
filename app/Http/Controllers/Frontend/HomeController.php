@@ -3,12 +3,16 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Course;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index() 
     {
-        return view('frontend.home.home');    
+        // ดึงข้อมูลคอร์สที่มีสถานะเป็น "active"
+        $courses = Course::where('status', true)->get();
+        
+        return view('frontend.home.home', compact('courses'));   
     }
 }

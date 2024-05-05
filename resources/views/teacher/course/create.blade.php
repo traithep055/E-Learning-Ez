@@ -53,8 +53,8 @@
                                 <label for="inputState">ระดับ</label>
                                 <select id="inputState" class="form-control child-category" name="level">
                                     <option value="">Select</option>
-                                    <option value="basic">Basic</option>
-                                    <option value="advance">Advance</option>
+                                    <option value="basic">พื้นฐาน</option>
+                                    <option value="advance">สูง</option>
                                 </select>
                             </div>
                         </div>

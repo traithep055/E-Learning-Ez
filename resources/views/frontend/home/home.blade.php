@@ -4,7 +4,7 @@
 <div class="container" style=" margin-left:5%">
     <div class="row">
         <div class="col mt-3">
-            
+
             <div class="card-search" style="margin-top:25px; margin-left:35%">
                 <form action="" class="search-body" method="GET"
                     id="search-form">
@@ -51,7 +51,27 @@
                         </div>
                         <div class="course d-flex">
                             <div class="row ">
-                                <div class="card-all col-md-4">
+                                @foreach ($courses as $course)
+                                    <div class="card-all col-md-4">
+                                        <!-- คอลัมน์ที่ 1 -->
+                                        <div class="card mt-3 m-4" style="width: 15rem;">
+                                            <img src="{{$course->image}}" class="card-img-top"
+                                                alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">{{$course->name}}</h5>
+                                                <span><a href="#">{{$course->teacher->firstname}}</a></span>
+                                                <span>10 คน</span>
+                                                <span>10 ชม.</span>
+                                                <span>ระดับ {{$course->level}} </span>
+                                                <span>ราคา {{$course->price}} บาท</span>
+                                                <a href="#" class="btn btn-primary">ตะกร้า</a>
+                                                <a href="#" class="btn btn-primary">ชื้อคอร์ส</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                                
+                                {{-- <div class="card-all col-md-4">
                                     <!-- คอลัมน์ที่ 1 -->
                                     <div class="card mt-3 m-4" style="width: 15rem;">
                                         <img src="{{ asset('images/Logo.png') }}" class="card-img-top"
@@ -67,8 +87,8 @@
                                             <a href="#" class="btn btn-primary">ชื้อคอร์ส</a>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="card-all col-md-4">
+                                </div> --}}
+                                {{-- <div class="card-all col-md-4">
                                     <!-- คอลัมน์ที่ 1 -->
                                     <div class="card mt-3 m-4" style="width: 15rem;">
                                         <img src="{{ asset('images/Logo.png') }}" class="card-img-top"
@@ -84,24 +104,7 @@
                                             <a href="#" class="btn btn-primary">ชื้อคอร์ส</a>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="card-all col-md-4">
-                                    <!-- คอลัมน์ที่ 1 -->
-                                    <div class="card mt-3 m-4" style="width: 15rem;">
-                                        <img src="{{ asset('images/Logo.png') }}" class="card-img-top"
-                                            alt="...">
-                                        <div class="card-body">
-                                            <h5 class="card-title">ชื่อคอร์ส</h5>
-                                            <span>link profile คนสอน พร้อมชื่อ</span>
-                                            <span>คนซื้อคอร์ส</span>
-                                            <span>เวลา</span>
-                                            <span>ระดับ</span>
-                                            <span>ราคา</span>
-                                            <a href="#" class="btn btn-primary">ตะกร้า</a>
-                                            <a href="#" class="btn btn-primary">ชื้อคอร์ส</a>
-                                        </div>
-                                    </div>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
