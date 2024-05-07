@@ -55,15 +55,19 @@
                                     <div class="card-all col-md-4">
                                         <!-- คอลัมน์ที่ 1 -->
                                         <div class="card mt-3 m-4" style="width: 15rem;">
-                                            <img src="{{$course->image}}" class="card-img-top"
+                                            <a href="{{ route('user.course-detail', ['id' => $course->id]) }}">
+                                                <img src="{{$course->image}}" class="card-img-top"
                                                 alt="...">
+                                            </a>
                                             <div class="card-body">
-                                                <h5 class="card-title">{{$course->name}}</h5>
+                                                <h5 class="card-title">
+                                                    <a href="{{ route('user.course-detail', ['id' => $course->id]) }}">{{$course->name}}</a>
+                                                </h5>
                                                 <span><a href="#">{{$course->teacher->firstname}}</a></span>
-                                                <span>10 คน</span>
-                                                <span>10 ชม.</span>
-                                                <span>ระดับ {{$course->level}} </span>
-                                                <span>ราคา {{$course->price}} บาท</span>
+                                                <span>เรียน 10 คน</span><br>
+                                                <span>เวลา 10 ชม.</span>
+                                                <span>ระดับ {{$course->level}} </span><br>
+                                                <span>ราคา {{$course->price}} บาท</span><br>
                                                 <a href="#" class="btn btn-primary">ตะกร้า</a>
                                                 <a href="#" class="btn btn-primary">ชื้อคอร์ส</a>
                                             </div>

@@ -48,4 +48,7 @@ Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'user', 'as' => 
     // ส่งคำขอจาก user เป็น teacher
     Route::get('become-teacher', [NewBecomeTeacherController::class, 'index'])->name('become_teacher');
     Route::post('become-teacher', [NewBecomeTeacherController::class, 'store'])->name('become_teacher.store');
+
+    // ดูรายละเอียดคอร์ส
+    Route::get('course-detail/{id}', [HomeController::class, 'showcourseDetail'])->name('course-detail');
 });

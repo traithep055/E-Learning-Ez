@@ -15,4 +15,11 @@ class HomeController extends Controller
         
         return view('frontend.home.home', compact('courses'));   
     }
+
+    public function showcourseDetail(string $id) 
+    {
+        $course = Course::findOrFail($id);
+
+        return view('frontend.home.course_detail', compact('course'));
+    }
 }

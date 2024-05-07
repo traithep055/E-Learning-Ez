@@ -1,10 +1,21 @@
 <header>
-    <img src="{{ asset('images/Logo.png') }}" class="rounded-image">
-    <ul>
+    <a href="{{ route('home') }}" class="rounded-image" style="margin-left: 200px">
+        <img src="{{ asset('images/Logo.png') }}" width="100px" >
+    </a>
+      
+    <ul style="margin-left: 60px">
         <a {{-- href="{{ route('') }}"--}} class="{{ {{--  (request()->routeIs('')) ? --}} 'active' {{-- :'' --}} }}">คอร์สเรียนยอดนิยม</a>
         <a {{-- href="{{ route('') }}"--}} class="{{ {{--  (request()->routeIs('')) ? --}} 'active' {{-- :'' --}} }}">คอร์สเรียนใหม่</a>
         <a {{-- href="{{ route('') }}"--}} class="{{ {{--  (request()->routeIs('')) ? --}} 'active' {{-- :'' --}} }}">หมวดหมู่คอร์สเรียน</a>
-        <a href="{{ route('user.dashboard') }}">บัญชีของฉัน</a>
+        @auth
+            @if(auth()->user()->role == 'user')
+                <a href="{{ route('user.dashboard') }}">บัญชีของฉัน</a>
+            @endif
+            @if(auth()->user()->role == 'teacher')
+                <a href="{{ route('teacher.dashboard') }}">บัญชีของฉัน</a>
+            @endif
+        @endauth
+        
     </ul>
     <div class="cart" style="margin-left: 40%">
         <box-icon style="cursor: pointer" name='cart-alt' type='solid' animation='tada' size='md' color='purple'></box-icon>
