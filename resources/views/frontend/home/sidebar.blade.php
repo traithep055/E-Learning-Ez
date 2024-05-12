@@ -1,17 +1,31 @@
+@php
+    $categories = \App\Models\Category::where('status', true)
+    ->with(['subCategory' => function ($query) {
+        $query->where('status', true);
+    }])
+    ->get();
+@endphp
 <div class="menu" style=" width:25%; margin-left:40px">
-    <div class="text-menu style="width: 100%;>
-        <a class="link text-white justify-content-center align-items-center"
-            href="{{ url('') }}" style="width: 100%;">
-            <span class="link-text">คอร์สเรียนใหม่</span>
-        </a>
-    </div>
-    <div class="text-menu mb-3">
-        <a class="link text-white justify-content-center align-items-center"
-            href="{{ url('') }}" style="width: 100%;">
-            <div style="width: 100%;">
-                <span class="link-text">คอร์สเรียนทั้งหมด</span>
-            </div>
-        </a>
+    <div class="relative_contect d-flex">
+        <div class="wsus_menu_category_bar">
+            <i class="far fa-bars"></i>
+        </div>
+        <ul class="wsus_menu_cat_item show_home toggle_menu">
+
+            @foreach ($categories as $category)
+            <li><a class="{{count($category->subCategory) > 0 ? 'wsus__droap_arrow' : ''}}" href="{{route('courses.index', ['category' => $category->slug])}}"> {{$category->name}} </a>
+                <ul class="wsus_menu_cat_droapdown">
+                    @foreach ($category->subCategory as $subCategory)
+                        <li><a href="">{{$subCategory->name}} </a>
+                        </li>
+                    @endforeach
+                    
+                </ul>
+            </li>
+            @endforeach
+           
+        </ul>
+
     </div>
     {{-- เส้นขีด --}}
     <div class="divider" style="width: 100%;"></div>
@@ -27,31 +41,19 @@
             </button>
         </div>
     </div>
-    <div class="category-text m1-3" style="width: 100%;">
-        <span>หมวดหมู่</span>
-        <div class="dropdown">
-            <button class="btn dropdown-toggle btn-outline-dark" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="color: black; font-size:15px; margin-left:-1%">
-                หมวดหมู่ทั้งหมด
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-        </div>
+    <div class="text-menu style="width: 100%;>
+        <a class="link text-white justify-content-center align-items-center"
+            href="{{ url('') }}" style="width: 100%;">
+            <span class="link-text">คอร์สเรียนใหม่</span>
+        </a>
     </div>
-    <div class="category-text mb-3" style="width: 100%;">
-        <span>หมวดหมู่ย่อย</span>
-        <div class="dropdown">
-            <button class="btn dropdown-toggle btn-outline-dark" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="color: black; font-size:15px; margin-left:-1%">
-                หมวดหมู่ย่อยทั้งหมด
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-        </div>
+    <div class="text-menu mb-3">
+        <a class="link text-white justify-content-center align-items-center"
+            href="{{ url('') }}" style="width: 100%;">
+            <div style="width: 100%;">
+                <span class="link-text">คอร์สเรียนทั้งหมด</span>
+            </div>
+        </a>
     </div>
     {{-- เส้นขีด --}}
     <div class="divider"></div>
@@ -101,4 +103,5 @@
             </label>
         </div>
     </div>
+    
 </div>

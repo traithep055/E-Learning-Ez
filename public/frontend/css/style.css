@@ -301,7 +301,7 @@ p {
 ========================*/
 header {
   width: 100%;
-  background: #08C;
+  background: #ffff;
   padding: 19px 0px;
   height: 90px;
   border-bottom: 1px solid #fff;
@@ -658,7 +658,7 @@ header {
   line-height: 48px;
   display: block;
   font-size: 20px;
-  background: #08C;
+  background: rgba(252, 0, 176, 1);
   position: relative;
   transition: all linear 0.3s;
   -webkit-transition: all linear 0.3s ease;
@@ -2639,7 +2639,7 @@ HOME SERVOCES START
 	FOOTER PART START
 ========================*/
 footer {
-  background: #def0ff;
+  background: #fff;
   padding-top: 70px;
 }
 

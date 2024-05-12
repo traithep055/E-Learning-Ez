@@ -9,7 +9,7 @@ use App\Models\Category;
 use App\Models\SubCategory;
 use App\Models\Course;
 use Illuminate\Http\Request;
-use Str;
+use Illuminate\Support\Str;
 use File;
 
 class CourseController extends Controller

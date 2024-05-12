@@ -20,6 +20,6 @@ class HomeController extends Controller
     {
         $course = Course::findOrFail($id);
 
-        return view('frontend.home.course_detail', compact('course'));
+        return view('frontend.pages.course_detail', compact('course'));
     }
 }

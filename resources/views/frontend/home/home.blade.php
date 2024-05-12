@@ -67,7 +67,7 @@
                                                 <span>เรียน 10 คน</span><br>
                                                 <span>เวลา 10 ชม.</span>
                                                 <span>ระดับ {{$course->level}} </span><br>
-                                                <span>ราคา {{$course->price}} บาท</span><br>
+                                                <span><b>ราคา {{$course->price}} บาท</b></span><br>
                                                 <a href="#" class="btn btn-primary">ตะกร้า</a>
                                                 <a href="#" class="btn btn-primary">ชื้อคอร์ส</a>
                                             </div>

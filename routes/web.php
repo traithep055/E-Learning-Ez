@@ -7,6 +7,7 @@ use App\Http\Controllers\Frontend\UserDashboardContorller;
 use App\Http\Controllers\Frontend\UserProfileController;
 use App\Http\Controllers\Frontend\NewBecomeTeacherController;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\FrontendCourseController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,6 +39,9 @@ Route::get('admin/login', [AdminController::class, 'login'])->name('admin.login'
 // Route::get('/dashboard', function () {
     
 // })->middleware(['auth', 'verified'])->name('dashboard');
+
+/** Course Route */
+Route::get('courses', [FrontendCourseController::class, 'coursesIndex'])->name('courses.index');
 
 Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'user', 'as' => 'user.'], function () {
     Route::get('dashboard', [UserDashboardContorller::class, 'index'])->name('dashboard');

@@ -34,6 +34,7 @@
                         <i class="uil uil-lock icon"></i>
                         <i class="uil uil-eye-slash showHidePw"></i>
                         
+                        
                     </div>
                     @if($errors->has('password'))
                             <span class="error" style="color: red">{{ $errors->first('password') }}</span>

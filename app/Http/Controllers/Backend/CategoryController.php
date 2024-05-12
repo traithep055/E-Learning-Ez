@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
-use Str;
+use Illuminate\Support\Str;
 
 class CategoryController extends Controller
 {
@@ -36,10 +36,19 @@ class CategoryController extends Controller
             'status' => ['required']
         ]);
 
+        // แปลงชื่อหมวดหมู่เป็น UTF-8
+        $utf8Name = mb_convert_encoding($request->name, 'UTF-8');
+
+        // กรองหรือลบตัวอักษรพิเศษหรืออักขระพิเศษที่ไม่ถูกต้อง
+        $filteredName = preg_replace('/[^\p{L}\p{N}\s]/u', '', $utf8Name);
+
+        // สร้าง slug
+        $slug = Str::slug($filteredName);
+
         $category = new Category();
 
         $category->name = $request->name;
-        $category->slug = Str::slug($request->name);
+        $category->slug = $filteredName;
         $category->status = $request->status;
         $category->save();
 
@@ -75,10 +84,19 @@ class CategoryController extends Controller
             'status' => ['required']
         ]);
 
+        // แปลงชื่อหมวดหมู่เป็น UTF-8
+        $utf8Name = mb_convert_encoding($request->name, 'UTF-8');
+
+        // กรองหรือลบตัวอักษรพิเศษหรืออักขระพิเศษที่ไม่ถูกต้อง
+        $filteredName = preg_replace('/[^\p{L}\p{N}\s]/u', '', $utf8Name);
+
+        // สร้าง slug
+        $slug = Str::slug($filteredName);
+
         $category = Category::findOrFail($id);
 
         $category->name = $request->name;
-        $category->slug = Str::slug($request->name);
+        $category->slug = $filteredName;
         $category->status = $request->status;
         $category->save();
 
