@@ -35,9 +35,10 @@
                                     <h4>คอร์สเรียนทั้งหมด</h4>
                                     <h6>ผลลัพธ์ที่ค้นพบ</h6>
                                 </div>
+                                                          
                                 <div class="drop-search col-md-3 my-3 ">
                                     <div class="dropdown" style="margin-left: 45%">
-                                        <button class="btn dropdown-toggle btn-outline-dark" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="color: black; font-size:15px; ">
+                                        <button class="btn dropdown-toggle btn-outline-dark" type="button" id="dropdownMenuButton1" aria-expanded="false">
                                             ทั้งหมด
                                         </button>
                                         <ul class="dropdown-menu" style="margin-left: 15%" aria-labelledby="dropdownMenuButton1">
@@ -47,6 +48,7 @@
                                         </ul>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                         <div class="course d-flex">
@@ -118,3 +120,22 @@
     </div>
 </div>
 @endsection
+
+@push('scripts')
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+        var dropdownMenu = document.querySelector('.dropdown-menu');
+        var dropdownToggle = document.querySelector('.dropdown-toggle');
+
+        dropdownToggle.addEventListener('click', function() {
+            dropdownMenu.classList.toggle('show');
+        });
+
+        document.addEventListener('click', function(e) {
+            if (!dropdownToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
+            dropdownMenu.classList.remove('show');
+            }
+        });
+        });
+    </script>
+@endpush

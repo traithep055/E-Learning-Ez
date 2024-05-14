@@ -16,7 +16,7 @@
             <li><a class="{{count($category->subCategory) > 0 ? 'wsus__droap_arrow' : ''}}" href="{{route('courses.index', ['category' => $category->slug])}}"> {{$category->name}} </a>
                 <ul class="wsus_menu_cat_droapdown">
                     @foreach ($category->subCategory as $subCategory)
-                        <li><a href="">{{$subCategory->name}} </a>
+                        <li><a href="{{route('courses.index', ['subcategory' => $subCategory->slug])}}">{{$subCategory->name}} </a>
                         </li>
                     @endforeach
                     

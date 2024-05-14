@@ -14,8 +14,15 @@
                             <h4>{{ $courses->first()->category->name }}</h4>
                         </div>
                         <div class="divider" style="width: 90%;"></div>
+                        @if(request()->has('subcategory') && $courses->isNotEmpty() && $courses->first()->subcategory)
+                            <div class="price mt-3 mb-3" style="display: flex; align-items: center;">
+                                <h5>{{ $courses->first()->subcategory->name }}</h5>
+                            </div>
+                        @endif
                     </div>
                     {{-- End ตัวกรอง --}}
+
+
 
                     <div class="card-corse col-md-8 justify-content-center" style="margin-left: 55px">
                         <div class="course d-flex">

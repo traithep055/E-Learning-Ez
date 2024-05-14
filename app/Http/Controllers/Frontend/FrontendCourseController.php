@@ -17,11 +17,17 @@ class FrontendCourseController extends Controller
             $courses = Course::where([
                 'category_id' => $category->id,
                 'status' => true,
-            ])->paginate(12);
+            ])->get();
+        } elseif ($request->has('subcategory')) {
+            $category = SubCategory::where('slug', $request->subcategory)->firstOrFail();
+            $courses = Course::where([
+                'sub_category_id' => $category->id,
+                'status' => true,
+            ])->get();
         } else {
-            $courses = Course::where('status', true)->paginate(12);
+            $courses = Course::where('status', true)->get();
         }
-
+        
         return view('frontend.pages.course', compact('courses'));
     }
 }

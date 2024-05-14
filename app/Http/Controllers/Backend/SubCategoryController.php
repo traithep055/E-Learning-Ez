@@ -39,11 +39,20 @@ class SubCategoryController extends Controller
             'status' => ['required'],
         ]);
 
+        // แปลงชื่อหมวดหมู่เป็น UTF-8
+        $utf8Name = mb_convert_encoding($request->name, 'UTF-8');
+
+        // กรองหรือลบตัวอักษรพิเศษหรืออักขระพิเศษที่ไม่ถูกต้อง
+        $filteredName = preg_replace('/[^\p{L}\p{N}\s]/u', '', $utf8Name);
+
+        // สร้าง slug
+        $slug = Str::slug($filteredName);
+
         $subCategory = new SubCategory();
 
         $subCategory->category_id = $request->category;
         $subCategory->name = $request->name;
-        $subCategory->slug = Str::slug($request->name);
+        $subCategory->slug = $filteredName;
         $subCategory->status = $request->status;
         $subCategory->save();
 
@@ -80,11 +89,20 @@ class SubCategoryController extends Controller
             'status' => ['required'],
         ]);
 
+        // แปลงชื่อหมวดหมู่เป็น UTF-8
+        $utf8Name = mb_convert_encoding($request->name, 'UTF-8');
+
+        // กรองหรือลบตัวอักษรพิเศษหรืออักขระพิเศษที่ไม่ถูกต้อง
+        $filteredName = preg_replace('/[^\p{L}\p{N}\s]/u', '', $utf8Name);
+
+        // สร้าง slug
+        $slug = Str::slug($filteredName);
+
         $subCategory = SubCategory::findOrFail($id);
 
         $subCategory->category_id = $request->category;
         $subCategory->name = $request->name;
-        $subCategory->slug = Str::slug($request->name);
+        $subCategory->slug = $filteredName;
         $subCategory->status = $request->status;
         $subCategory->save();
 
