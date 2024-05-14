@@ -42,6 +42,8 @@ Route::get('admin/login', [AdminController::class, 'login'])->name('admin.login'
 
 /** Course Route */
 Route::get('courses', [FrontendCourseController::class, 'coursesIndex'])->name('courses.index');
+// ดูรายละเอียดคอร์ส
+Route::get('course-detail/{id}', [HomeController::class, 'showcourseDetail'])->name('course-detail');
 
 Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'user', 'as' => 'user.'], function () {
     Route::get('dashboard', [UserDashboardContorller::class, 'index'])->name('dashboard');
@@ -53,6 +55,4 @@ Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'user', 'as' => 
     Route::get('become-teacher', [NewBecomeTeacherController::class, 'index'])->name('become_teacher');
     Route::post('become-teacher', [NewBecomeTeacherController::class, 'store'])->name('become_teacher.store');
 
-    // ดูรายละเอียดคอร์ส
-    Route::get('course-detail/{id}', [HomeController::class, 'showcourseDetail'])->name('course-detail');
 });

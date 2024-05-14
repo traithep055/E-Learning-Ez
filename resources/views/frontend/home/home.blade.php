@@ -57,13 +57,13 @@
                                     <div class="card-all col-md-4">
                                         <!-- คอลัมน์ที่ 1 -->
                                         <div class="card mt-3 m-4" style="width: 15rem;">
-                                            <a href="{{ route('user.course-detail', ['id' => $course->id]) }}">
+                                            <a href="{{ route('course-detail', ['id' => $course->id]) }}">
                                                 <img src="{{$course->image}}" class="card-img-top"
                                                 alt="...">
                                             </a>
                                             <div class="card-body">
                                                 <h5 class="card-title">
-                                                    <a href="{{ route('user.course-detail', ['id' => $course->id]) }}">{{$course->name}}</a>
+                                                    <a href="{{ route('course-detail', ['id' => $course->id]) }}">{{$course->name}}</a>
                                                 </h5>
                                                 <span><a href="#">{{$course->teacher->firstname}}</a></span>
                                                 <span>เรียน 10 คน</span><br>
