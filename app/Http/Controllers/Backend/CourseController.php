@@ -10,7 +10,7 @@ use App\Models\SubCategory;
 use App\Models\Course;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
-use File;
+use Illuminate\Support\Facades\File;
 
 class CourseController extends Controller
 {
