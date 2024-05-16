@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Category;
 use App\Models\SubCategory;
 use App\Models\Course;
+use App\Models\Lesson;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
@@ -147,23 +148,31 @@ class CourseController extends Controller
     /**
      * Remove the specified resource from storage.
      */
+    // 
     public function destroy(string $id)
     {
-        // $course = Course::findOrFail($id); 
-        // $course->delete();
-
-        // return response(['status' => 'success', 'Deleted Successfully!']);
-
         $course = Course::findOrFail($id); 
-
+    
         // ลบไฟล์รูปภาพของคอร์ส
         if ($course->image && File::exists(public_path($course->image))) {
             File::delete(public_path($course->image));
         }
-
+    
+        // หาบทเรียนที่เกี่ยวข้องกับคอร์สและลบไฟล์เอกสารและวิดีโอที่เกี่ยวข้อง
+        $lessons = Lesson::where('course_id', $id)->get();
+        foreach ($lessons as $lesson) {
+            if ($lesson->file_doc && File::exists(public_path($lesson->file_doc))) {
+                File::delete(public_path($lesson->file_doc));
+            }
+            if ($lesson->video_path && File::exists(public_path($lesson->video_path))) {
+                File::delete(public_path($lesson->video_path));
+            }
+            $lesson->delete();
+        }
+    
         // ลบข้อมูลคอร์สในฐานข้อมูล
         $course->delete();
-
+    
         return response(['status' => 'success', 'Deleted Successfully!']);
     }
 
