@@ -62,7 +62,7 @@
                         </div>
                         <div class="from-group wsus__input">
                           <i class="fas fa-solid fa-graduation-cap"></i>
-                          <label>การศึกษา</label>
+                          <label>ประวัติ</label>
                           <textarea name="education" cols="10" rows="10" class="form-control summernote">{{ $teacher->education }}</textarea>
                         </div>
                     </div>

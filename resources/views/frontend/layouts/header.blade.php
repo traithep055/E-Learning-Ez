@@ -18,7 +18,7 @@
         @endauth
         
     </ul>
-    <div class="cart" style="margin-left: 40%">
+    <div class="cart" style="margin-left: 30%">
         <box-icon style="cursor: pointer" name='cart-alt' type='solid' animation='tada' size='md' color='purple'></box-icon>
     </div>
     @if (Route::has('login'))

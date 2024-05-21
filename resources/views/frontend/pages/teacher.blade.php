@@ -22,20 +22,27 @@
                             @foreach ($teachers as $teacher)
                                 <div class="col-md-4 mb-5 d-flex align-items-stretch">
                                     <div class="card card-hover" style="width: 100%;">
-                                        <a href="">
-                                            <img src="" class="card-img-top" alt="...">
-                                        </a>
+                                        @if ($teacher->image == null)
+                                            <a href="{{route('teacher-detail', ['id' => $teacher->id])}}">
+                                                <img src="{{ $teacher->user->image }}" alt="" class="card-img-top">
+                                            </a>
+                                        @else
+                                            <a href="{{route('teacher-detail', ['id' => $teacher->id])}}">
+                                                <img src="{{ $teacher->image }}" alt="" class="card-img-top">
+                                            </a>
+                                        @endif
                                         <div class="card-body">
                                             <h5 class="card-title">
-                                                <a href=""></a>
+                                                <a href="{{route('teacher-detail', ['id' => $teacher->id])}}">
+                                                    {{$teacher->firstname}} {{$teacher->lastname}}
+                                                </a>
                                             </h5>
-                                            <span></a></span>
-                                            <span>เรียน 10 คน</span><br>
-                                            <span>เวลา 10 ชม.</span>
-                                            <span>ระดับ  </span><br>
-                                            <span><b>ราคา  บาท</b></span><br>
-                                            <a href="#" class="btn btn-primary">ตะกร้า</a>
-                                            <a href="#" class="btn btn-primary">ชื้อคอร์ส</a>
+                                            <span>จำนวน {{ $teacher->course ? $teacher->course->count() : 0 }} คอร์ส</span><br>
+                                            {{-- <a href="#" class="btn btn-primary">ตะกร้า</a>
+                                            <a href="#" class="btn btn-primary">ชื้อคอร์ส</a> --}}
+                                            <a href=""><i class="fa fa-brands fa-instagram" style="font-size: 20px; margin-right:8px"></i></a>
+                                            <a href=""><i class="fa fa-brands fa-facebook" style="font-size: 18px; margin-right:8px"></i></a>
+                                            <a href=""><i class="fa fa-brands fa-youtube" style="font-size: 18px; margin-right:8px"></i></a>
                                         </div>
                                     </div>
                                 </div>

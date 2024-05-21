@@ -14,4 +14,11 @@ class FrontendTeacherController extends Controller
         
         return view('frontend.pages.teacher', compact('teachers'));
     }
+
+    public function teacherDetail(string $id) 
+    {
+        $teacher = Teacher::findOrFail($id);
+        
+        return view('frontend.pages.teacher_detail', compact('teacher'));
+    }
 }

@@ -48,6 +48,7 @@ Route::get('course-detail/{id}', [HomeController::class, 'showcourseDetail'])->n
 
 /** แสดง teacher ที่หน้า home */
 Route::get('teachers', [FrontendTeacherController::class, 'index'])->name('teachers.index');
+Route::get('teacher-detail/{id}', [FrontendTeacherController::class, 'teacherDetail'])->name('teacher-detail');
 
 Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'user', 'as' => 'user.'], function () {
     Route::get('dashboard', [UserDashboardContorller::class, 'index'])->name('dashboard');
