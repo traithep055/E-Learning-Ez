@@ -8,6 +8,7 @@ use App\Http\Controllers\Frontend\UserProfileController;
 use App\Http\Controllers\Frontend\NewBecomeTeacherController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\FrontendCourseController;
+use App\Http\Controllers\Frontend\FrontendTeacherController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,6 +45,9 @@ Route::get('admin/login', [AdminController::class, 'login'])->name('admin.login'
 Route::get('courses', [FrontendCourseController::class, 'coursesIndex'])->name('courses.index');
 // ดูรายละเอียดคอร์ส
 Route::get('course-detail/{id}', [HomeController::class, 'showcourseDetail'])->name('course-detail');
+
+/** แสดง teacher ที่หน้า home */
+Route::get('teachers', [FrontendTeacherController::class, 'index'])->name('teachers.index');
 
 Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'user', 'as' => 'user.'], function () {
     Route::get('dashboard', [UserDashboardContorller::class, 'index'])->name('dashboard');

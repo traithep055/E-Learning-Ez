@@ -6,7 +6,7 @@
         <div class="col mt-3">
 
             <div class="card-search" style="margin-top:25px; margin-left:35%">
-                <form action="" class="search-body" method="GET"
+                <form action="{{route('courses.index')}}" class="search-body" method="GET"
                     id="search-form">
                     <div class="input-group">
                         <input type="text" class="form-control" name="searchcard" id="search-body"

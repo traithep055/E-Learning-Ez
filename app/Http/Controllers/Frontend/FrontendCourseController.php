@@ -19,11 +19,21 @@ class FrontendCourseController extends Controller
                 'status' => true,
             ])->get();
         } elseif ($request->has('subcategory')) {
-            $category = SubCategory::where('slug', $request->subcategory)->firstOrFail();
+            $subcategory = SubCategory::where('slug', $request->subcategory)->firstOrFail();
             $courses = Course::where([
-                'sub_category_id' => $category->id,
+                'sub_category_id' => $subcategory->id,
                 'status' => true,
             ])->get();
+        } elseif ($request->has('searchcard')) {
+            $courses = Course::where(function ($query) use ($request) {
+                $query->where('name', 'like', '%'.$request->searchcard.'%')
+                    ->orWhere('content', 'like', '%'.$request->searchcard.'%');
+            })
+            ->orWhereHas('category', function ($query) use ($request) {
+                $query->where('name', 'like', '%'.$request->searchcard.'%')
+                    ->orWhere('content', 'like', '%'.$request->searchcard.'%');
+            })
+            ->get();
         } else {
             $courses = Course::where('status', true)->get();
         }

@@ -7,6 +7,7 @@
         <a {{-- href="{{ route('') }}"--}} class="{{ {{--  (request()->routeIs('')) ? --}} 'active' {{-- :'' --}} }}" style="cursor: pointer">คอร์สเรียนยอดนิยม</a>
         <a {{-- href="{{ route('') }}"--}} class="{{ {{--  (request()->routeIs('')) ? --}} 'active' {{-- :'' --}} }}" style="cursor: pointer">คอร์สเรียนใหม่</a>
         <a {{-- href="{{ route('') }}"--}} class="{{ {{--  (request()->routeIs('')) ? --}} 'active' {{-- :'' --}} }}" style="cursor: pointer">หมวดหมู่คอร์สเรียน</a>
+        <a href="{{ route('teachers.index') }}" class="{{ {{--  (request()->routeIs('')) ? --}} 'active' {{-- :'' --}} }}" style="cursor: pointer">ผู้สอน</a>
         @auth
             @if(auth()->user()->role == 'user')
                 <a href="{{ route('user.dashboard') }}">บัญชีของฉัน</a>
