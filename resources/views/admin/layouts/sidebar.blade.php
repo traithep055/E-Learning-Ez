@@ -22,7 +22,7 @@
         <li class="dropdown">
           <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>จัดการเว็บไซต์</span></a>
           <ul class="dropdown-menu">
-            <li><a class="nav-link" href="">Slider</a></li>
+            <li><a class="nav-link" href="{{route('admin.coupons.index')}}">คูปอง</a></li>
             
           </ul>
         </li>

@@ -19,7 +19,9 @@
         
     </ul>
     <div class="cart" style="margin-left: 30%">
-        <box-icon style="cursor: pointer" name='cart-alt' type='solid' animation='tada' size='md' color='purple'></box-icon>
+        <a href="">
+            <box-icon style="cursor: pointer" name='cart-alt' type='solid' animation='tada' size='md' color='purple'></box-icon>
+        </a>
     </div>
     @if (Route::has('login'))
         @guest
