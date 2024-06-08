@@ -9,6 +9,9 @@ use App\Http\Controllers\Frontend\NewBecomeTeacherController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\FrontendCourseController;
 use App\Http\Controllers\Frontend\FrontendTeacherController;
+use App\Http\Controllers\Backend\CoursePurchaseController;
+use App\Http\Controllers\Backend\CouponController;
+use App\Models\Coupon;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -60,4 +63,28 @@ Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'user', 'as' => 
     Route::get('become-teacher', [NewBecomeTeacherController::class, 'index'])->name('become_teacher');
     Route::post('become-teacher', [NewBecomeTeacherController::class, 'store'])->name('become_teacher.store');
 
+    /** หน้าซื้อคอร์ส */
+    Route::get('course-purchase', [CoursePurchaseController::class, 'create'])->name('course_purchase');
+    Route::post('course_purchases', [CoursePurchaseController::class, 'store'])->name('course_purchase.store');
+
+});
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::resource('admin/coupons', CouponController::class)->except(['show']);
+});
+
+Route::get('/api/coupons/{code}', function ($code) {
+    $coupon = Coupon::where('code', $code)->first();
+
+    if (!$coupon) {
+        return response()->json(['error' => 'Coupon not found'], 404);
+    }
+
+    // ตรวจสอบว่าคูปองยังใช้งานได้อยู่หรือไม่ หากหมดอายุแล้วจะไม่สามารถใช้ได้
+    if ($coupon->expires_at && now()->greaterThanOrEqualTo($coupon->expires_at)) {
+        return response()->json(['error' => 'Coupon has expired'], 400);
+    }
+
+    // ส่งข้อมูลคูปองกลับไปให้กับผู้ใช้
+    return response()->json(['discounted_price' => $coupon->discount, 'discount_percentage' => $coupon->discount_percentage]);
 });

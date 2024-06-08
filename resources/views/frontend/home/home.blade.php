@@ -71,7 +71,7 @@
                                                 <span>ระดับ {{$course->level}} </span><br>
                                                 <span><b>ราคา {{$course->price}} บาท</b></span><br>
                                                 <a href="#" class="btn btn-primary">ตะกร้า</a>
-                                                <a href="#" class="btn btn-primary">ชื้อคอร์ส</a>
+                                                <a href="{{route('user.course_purchase', ['course' => $course->id])}}" class="btn btn-primary">ชื้อคอร์ส</a>
                                             </div>
                                         </div>
                                     </div>
