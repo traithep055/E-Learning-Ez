@@ -65,7 +65,7 @@
                                                 <h5 class="card-title">
                                                     <a href="{{ route('course-detail', ['id' => $course->id]) }}">{{$course->name}}</a>
                                                 </h5>
-                                                <span><a href="#">{{$course->teacher->firstname}}</a></span>
+                                                <span><a href="{{route('teacher-detail', ['id' => $course->teacher->id])}}">{{$course->teacher->firstname}}</a></span>
                                                 <span>เรียน 10 คน</span><br>
                                                 <span>เวลา 10 ชม.</span>
                                                 <span>ระดับ {{$course->level}} </span><br>

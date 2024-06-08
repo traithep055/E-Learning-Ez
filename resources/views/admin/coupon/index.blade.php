@@ -19,7 +19,7 @@
                         <div class="card-header">
                             <h4>คูปองทั้งหมด</h4>
                             <div class="card-header-action">
-                                <a href="{{route('admin.coupons.create')}}" class="btn btn-primary">+ เพิ่มประเภท</a>
+                                <a href="{{route('admin.coupons.create')}}" class="btn btn-primary">+ เพิ่มคูปอง</a>
                             </div>
                         </div>
                         <div class="card-body">
