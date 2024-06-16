@@ -10,6 +10,20 @@ class CoursePurchaes extends Model
     use HasFactory;
 
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'user_id',
+        'course_id',
+        'price',
+        'final_price',
+        'slip_image',
+        'coupon_id',
+    ];
+
+    /**
      * Get the user that purchased the course.
      */
     public function user()

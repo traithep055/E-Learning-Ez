@@ -4,9 +4,12 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Course;
 use App\Models\CoursePurchaes;
 use App\Models\Coupon;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\File;
 
 class CoursePurchaseController extends Controller
 {
@@ -18,6 +21,57 @@ class CoursePurchaseController extends Controller
 
     public function store(Request $request)
     {
-        dd($request->all());    
+        try {
+            $course = Course::findOrFail($request->course);
+            $price = $course->price;
+            
+            $request->validate([
+                'slip_image' => ['nullable', 'image', 'mimes:jpeg,png,jpg', 'max:2048'],
+                'coupon_code' => ['nullable', 'string', 'exists:coupons,code'],
+            ]);
+
+            $course_purchase = new CoursePurchaes();
+
+            if ($request->hasFile('slip_image')) {
+                // อัปโหลดรูปภาพสลิป
+                $slip_image = $request->file('slip_image');
+                $slip_imageName = rand() . '_' . $slip_image->getClientOriginalName();
+                $slip_image->move(public_path('slip_image'), $slip_imageName);
+                
+                // เก็บที่อยู่ของไฟล์สลิปในฐานข้อมูล
+                $path = "/slip_image/" . $slip_imageName;
+                $course_purchase->slip_image = $path;
+            }
+
+            // คำนวณราคาหลังจากใช้คูปอง
+            $finalPrice = $price;
+            $coupon = null;
+            if ($request->filled('coupon_code')) {
+                $coupon = Coupon::where('code', $request->coupon_code)->first();
+                if ($coupon) {
+                    if ($coupon->discount) {
+                        $finalPrice -= $coupon->discount;
+                    } elseif ($coupon->discount_percentage) {
+                        $finalPrice -= $price * ($coupon->discount_percentage / 100);
+                    }
+                }
+            }
+
+            // สร้างรายการการซื้อคอร์ส
+            $course_purchase->user_id = Auth::user()->id;
+            $course_purchase->course_id = $request->course;
+            $course_purchase->price = $price;
+            $course_purchase->final_price = $finalPrice;
+            $course_purchase->coupon_id = $coupon ? $coupon->id : null;
+            $course_purchase->save(); // ต้องบันทึกการซื้อ
+
+            toastr()->success('สั่งซื้อเสร็จสิ้น');
+
+            return redirect()->route('user.learn_course', ['course' => $course->id]);
+        } catch (\Exception $e) {
+            Log::error('การสั่งซื้อคอร์สล้มเหลว: ' . $e->getMessage());
+            toastr()->error('เกิดข้อผิดพลาดในการสั่งซื้อ');
+            return back()->withInput();
+        }
     }
 }
