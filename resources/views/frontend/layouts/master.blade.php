@@ -37,6 +37,8 @@
     <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/responsive.css')}}">
 
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     <!-- Material Icons -->
@@ -107,6 +109,16 @@
     <script src="{{asset('frontend/js/isotope.pkgd.min.js')}}"></script>
     <!--venobox js-->
     <script src="{{asset('frontend/js/venobox.min.js')}}"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <script>
+        @if ($errors->any())
+            @foreach ($errors->all() as $error)
+                toastr.error("{{$error}}")
+            @endforeach
+        @endif
+    </script>
 
     <!--classycountdown js-->
     <script src="{{asset('frontend/js/jquery.classycountdown.js')}}"></script>

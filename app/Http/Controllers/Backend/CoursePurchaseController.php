@@ -26,21 +26,25 @@ class CoursePurchaseController extends Controller
             $price = $course->price;
             
             $request->validate([
-                'slip_image' => ['nullable', 'image', 'mimes:jpeg,png,jpg', 'max:2048'],
+                'slip_image' => ['required', 'image', 'mimes:jpeg,png,jpg', 'max:2048'],
                 'coupon_code' => ['nullable', 'string', 'exists:coupons,code'],
             ]);
 
             $course_purchase = new CoursePurchaes();
 
             if ($request->hasFile('slip_image')) {
-                // อัปโหลดรูปภาพสลิป
+                // Upload slip image
                 $slip_image = $request->file('slip_image');
                 $slip_imageName = rand() . '_' . $slip_image->getClientOriginalName();
                 $slip_image->move(public_path('slip_image'), $slip_imageName);
-                
-                // เก็บที่อยู่ของไฟล์สลิปในฐานข้อมูล
+    
+                // Store slip image path in the database
                 $path = "/slip_image/" . $slip_imageName;
                 $course_purchase->slip_image = $path;
+            } else {
+                // If slip image is not provided, return with an error
+                toastr()->error('กรุณาแนบสลิปการโอนเงิน');
+                return back()->withInput();
             }
 
             // คำนวณราคาหลังจากใช้คูปอง
@@ -70,7 +74,7 @@ class CoursePurchaseController extends Controller
             return redirect()->route('user.learn_course', ['course' => $course->id]);
         } catch (\Exception $e) {
             Log::error('การสั่งซื้อคอร์สล้มเหลว: ' . $e->getMessage());
-            toastr()->error('เกิดข้อผิดพลาดในการสั่งซื้อ');
+            toastr()->error('เกิดข้อผิดพลาดในการสั่งซื้อ ไม่ได้อัพโหลดสลิป');
             return back()->withInput();
         }
     }
