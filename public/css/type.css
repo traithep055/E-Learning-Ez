@@ -43,7 +43,6 @@ header a.active {
 
 header a:hover {
     color: #6c757d;
-    background-color: rgba(234, 176, 232, 0.989);
 }
 
 header .cart {
@@ -88,15 +87,6 @@ header .cart {
     background-color: #5a6268;
 }
 
-.cart{
-    margin: 1%;
-}
-
-.rounded-image {
-    border-radius: 50%;
-    margin-left: 8%;
-    width: 6%;
-}
 
 /*article*/
 .article {
@@ -108,27 +98,36 @@ header .cart {
 
 .card-search {
     width: 60%;
-    margin-left: auto;
     margin-right: auto;
+    margin-bottom: -2%;
 }
 .card-search input {
     margin-left: auto;
     margin-right: auto;
-    height: 50px;
+    height: 40px;
     padding: 1%;
     font-size: 20px;
-    border: 2px solid #000; /* กรอบเส้นขนาด 2px สีดำ */
+    border: 1px solid #727272; /* กรอบเส้นขนาด 2px สีดำ */
 }
 .card-search input:hover {
     margin-left: auto;
     margin-right: auto;
-    height: 50px;
-    border: 2px solid #670065; /* กรอบเส้นขนาด 2px สีดำ */
+    height: 40px;
+    border: 1px solid #670065; /* กรอบเส้นขนาด 2px สีดำ */
 }
-
+.btn-search{
+    width: 5%;
+    border-radius: 15%;
+    border: 1px solid #727272; /* กรอบเส้นขนาด 2px สีดำ */
+}
+.bx-search{
+    width: 5%;
+    margin-left: -2.5%;
+    margin-top: -0.5%;
+}
 /**/
 .card-corse {
-    margin-left: 10%;
+    margin-left: 1%;
 }
 
 /*menu*/
@@ -180,7 +179,7 @@ header .cart {
 
 /*corse*/
 .card-all{
-    margin-left: -1%;
+    margin-left: -2%;
 }
 
 /* foot */

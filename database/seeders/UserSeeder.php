@@ -20,22 +20,22 @@ class UserSeeder extends Seeder
                 'role' => 'admin',
                 'password' => bcrypt('password'),
             ],
-            // [
-            //     'name' => 'Teacher User',
-            //     'firstname' => 'Ben',
-            //     'lastname' => 'Ten',
-            //     'email' => 'teacher@gmail.com',
-            //     'role' => 'teacher',
-            //     'password' => bcrypt('password'),
-            // ],
-            // [
-            //     'name' => 'User',
-            //     'firstname' => 'Ping',
-            //     'lastname' => 'Ping',
-            //     'email' => 'user@gmail.com',
-            //     'role' => 'user',
-            //     'password' => bcrypt('password'),
-            // ],
+            [
+                'name' => 'Teacher User',
+                'firstname' => 'Ben',
+                'lastname' => 'Ten',
+                'email' => 'teacher@gmail.com',
+                'role' => 'teacher',
+                'password' => bcrypt('password'),
+            ],
+            [
+                'name' => 'User',
+                'firstname' => 'Ping',
+                'lastname' => 'Ping',
+                'email' => 'user@gmail.com',
+                'role' => 'user',
+                'password' => bcrypt('password'),
+            ],
         ]);
     }
 }
