@@ -1,17 +1,16 @@
 @extends('frontend.layouts.master')
 
 @section('content')
-<div class="container" style=" margin-left:5%">
+<div class="container" style=" margin-left:0%">
     <div class="row">
         <div class="col mt-3">
-
-            <div class="card-search" style="margin-top:25px; margin-left:35%">
+            <div class="card-search" style="margin-top:25px; margin-left:34%">
                 <form action="{{route('courses.index')}}" class="search-body" method="GET"
                     id="search-form">
                     <div class="input-group">
                         <input type="text" class="form-control" name="searchcard" id="search-body"
                             placeholder="ค้นหาคอร์สเรียน">
-                        <button type="submit" class="btn">
+                        <button type="submit" class="btn-search">
                             <i class='bx bx-search'
                                 style="color: rgb(0, 0, 0); font-size: 25px; position: absolute; top: 60%; transform: translateY(-50%);">
                             </i>
@@ -21,27 +20,26 @@
             </div>
             {{-- End search --}}
             <div class="content d-flex flex-column " style="padding: 2%;">
-                <div class="row mt-3" style=" margin-top:30px; padding: 1%; ">
+                <div class="row mt-3" style=" margin-top:20px; padding: 1%; ">
 
                     {{--start ตัวกรอง --}}
                         @include('frontend.home.sidebar')
                     {{--end ตัวกรอง --}}
 
                     <div class="card-corse col-md-8 justify-content-center"
-                        style=" margin-left:55px">
+                        style=" margin-left:15px">
                         <div class="corse-search " style="padding:10px;">
                             <div class="row">
-                                <div class="text-search col-md-9 my-3">
+                                <div class="text-search col-md-8 my-3" style="margin-left: 6%">
                                     <h4>คอร์สเรียนทั้งหมด</h4>
                                     <h6>ผลลัพธ์ที่ค้นพบ</h6>
                                 </div>
-                                                          
-                                <div class="drop-search col-md-3 my-3 ">
-                                    <div class="dropdown" style="margin-left: 45%">
+                                <div class="drop-search col-md-2 my-3 "  style="margin-left: 10%">
+                                    <div class="dropdown">
                                         <button class="btn dropdown-toggle btn-outline-dark" type="button" id="dropdownMenuButton1" aria-expanded="false">
                                             ทั้งหมด
                                         </button>
-                                        <ul class="dropdown-menu" style="margin-left: 15%" aria-labelledby="dropdownMenuButton1">
+                                        <ul class="dropdown-menu" style="margin-left: 10%" aria-labelledby="dropdownMenuButton1">
                                             <li><a class="dropdown-item" href="#">ล่าสุด</a></li>
                                             <li><a class="dropdown-item" href="#">เก่าสุด</a></li>
                                             <li><a class="dropdown-item" href="#">ทั้งหมด</a></li>
@@ -56,7 +54,7 @@
                                 @foreach ($courses as $course)
                                     <div class="card-all col-md-4">
                                         <!-- คอลัมน์ที่ 1 -->
-                                        <div class="card mt-3 m-4" style="width: 15rem;">
+                                        <div class="card mt-3 m-6" style="width: 15rem;">
                                             <a href="{{ route('course-detail', ['id' => $course->id]) }}">
                                                 <img src="{{$course->image}}" class="card-img-top"
                                                 alt="...">
@@ -76,7 +74,7 @@
                                         </div>
                                     </div>
                                 @endforeach
-                                
+
                                 {{-- <div class="card-all col-md-4">
                                     <!-- คอลัมน์ที่ 1 -->
                                     <div class="card mt-3 m-4" style="width: 15rem;">

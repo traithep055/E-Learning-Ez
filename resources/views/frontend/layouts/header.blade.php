@@ -1,8 +1,7 @@
-<header>
-    <a href="{{ route('home') }}" class="rounded-image" style="margin-left: 200px">
+<header style="margin-top: 20px">
+    <a href="{{ route('home') }}" class="rounded-image" style="margin-left: 110px">
         <img src="{{ asset('images/Logo.png') }}" width="100px" >
     </a>
-      
     <ul style="margin-left: 60px">
         <a {{-- href="{{ route('') }}"--}} class="{{ {{--  (request()->routeIs('')) ? --}} 'active' {{-- :'' --}} }}" style="cursor: pointer">คอร์สเรียนยอดนิยม</a>
         <a {{-- href="{{ route('') }}"--}} class="{{ {{--  (request()->routeIs('')) ? --}} 'active' {{-- :'' --}} }}" style="cursor: pointer">คอร์สเรียนใหม่</a>
@@ -16,7 +15,6 @@
                 <a href="{{ route('teacher.dashboard') }}">บัญชีของฉัน</a>
             @endif
         @endauth
-        
     </ul>
     <div class="cart" style="margin-left: 30%">
         <a href="">
