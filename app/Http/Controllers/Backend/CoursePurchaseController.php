@@ -71,7 +71,8 @@ class CoursePurchaseController extends Controller
 
             toastr()->success('สั่งซื้อเสร็จสิ้น');
 
-            return redirect()->route('user.learn_course', ['course' => $course->id]);
+            // return redirect()->route('user.learn_course', ['course' => $course->id]);
+            return redirect()->route('user.course-bill', ['id' => $course_purchase->id]);
         } catch (\Exception $e) {
             Log::error('การสั่งซื้อคอร์สล้มเหลว: ' . $e->getMessage());
             toastr()->error('เกิดข้อผิดพลาดในการสั่งซื้อ ไม่ได้อัพโหลดสลิป');
