@@ -23,12 +23,11 @@
                         </div>
                     @endif
                     {{-- End ตัวกรอง --}}
-
                     <div class="col-md-8" style="margin-left: 55px">
                         <div class="row">
                             @forelse ($courses as $course)
                                 <div class="col-md-4 mb-5 d-flex align-items-stretch">
-                                    <div class="card card-hover" style="width: 100%;">
+                                    <div class="card card-hover">
                                         <a href="{{ route('course-detail', ['id' => $course->id]) }}">
                                             <img src="{{ $course->image }}" class="card-img-top" alt="...">
                                         </a>
@@ -50,6 +49,7 @@
                                             @else
                                                 <a href="{{route('user.course_purchase', ['course' => $course->id])}}" class="btn btn-primary">ชื้อคอร์ส</a>
                                             @endauth
+                                            <a href="#" class="btn btn-primary mt-5">ชื้อคอร์ส</a>
                                         </div>
                                     </div>
                                 </div>

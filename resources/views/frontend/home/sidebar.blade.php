@@ -5,7 +5,7 @@
     }])
     ->get();
 @endphp
-<div class="menu" style=" width:25%; margin-left:40px">
+<div class="menu" style=" width:23%;">
     <div class="relative_contect d-flex">
         <div class="wsus_menu_category_bar">
             <i class="far fa-bars"></i>
@@ -19,11 +19,11 @@
                         <li><a href="{{route('courses.index', ['subcategory' => $subCategory->slug])}}">{{$subCategory->name}} </a>
                         </li>
                     @endforeach
-                    
+
                 </ul>
             </li>
             @endforeach
-           
+
         </ul>
 
     </div>
@@ -103,5 +103,5 @@
             </label>
         </div>
     </div>
-    
+
 </div>

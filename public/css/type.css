@@ -1,3 +1,4 @@
+/* หน้า header */
 * {
     margin: 0;
     padding: 0;
@@ -14,50 +15,13 @@ body {
     color: black;
 }
 
-header {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 150px;
-}
-
-header ul {
-    width: max-content;
-    list-style-type: none;
-    display: flex;
-    gap: 10px;
-}
-
-header a {
-    text-decoration: none;
-    color: rgb(155, 10, 112);
-    padding: 5px;
-    border-radius: 5px;
-    margin-left: -5px;
-    transition: background-color 0.3s ease;
-}
-
-header a.active {
-    font-weight: bold;
-}
-
-header a:hover {
-    color: #6c757d;
-}
-
-header .cart {
-    display: flex;
-    width: 30px;
-    height: 45px;
-    margin-left: 30%;
-}
-
-
 .logout a {
+    background-color: #993f9b;
     display: inline-block;
-    background-color: rgba(193, 80, 208, 0.2);
-    color: rgb(108, 105, 108);
+    color: rgb(255, 255, 255);
     padding: 5px;
+    width: 90vh;
+    max-width: 91.5px;
     border-radius: 5px;
     border: 1px solid rgba(0, 0, 0, 0.5);
     transition: background-color 0.3s ease, transform 0.3s ease;
@@ -87,7 +51,6 @@ header .cart {
     background-color: #5a6268;
 }
 
-
 /*article*/
 .article {
     width: 95%;
@@ -115,19 +78,19 @@ header .cart {
     height: 40px;
     border: 1px solid #670065; /* กรอบเส้นขนาด 2px สีดำ */
 }
-.btn-search{
+.btn-search {
     width: 5%;
     border-radius: 15%;
     border: 1px solid #727272; /* กรอบเส้นขนาด 2px สีดำ */
 }
-.bx-search{
+.bx-search {
     width: 5%;
     margin-left: -2.5%;
     margin-top: -0.5%;
 }
 /**/
 .card-corse {
-    margin-left: 1%;
+    width: 90vh;
 }
 
 /*menu*/
@@ -148,11 +111,10 @@ header .cart {
 }
 
 /*กรอง-ล้าง*/
-.filter{
+.filter {
     font-size: 15px;
 }
 /*drop*/
-
 
 /*divider*/
 .divider {
@@ -162,31 +124,49 @@ header .cart {
 }
 
 /*cate*/
-.category-text{
+.category-text {
     color: black;
 }
 
 /*level-price*/
-.price{
+.price {
     color: #000;
 }
-.level{
+.level {
     color: #000;
 }
-.form-check-label{
+.form-check-label {
     color: #000;
 }
 
 /*corse*/
-.card-all{
-    margin-left: -2%;
+.card-all {
+    width: 90vh;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.card-all .card {
+    width: 90vh;
+    justify-content: center;
+}
+.course {
+    width: 90vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+/* .login-logout */
+
 /* foot */
-.foot-logo{
+.foot-logo {
     text-align: center;
     align-items: center;
 }
-.foot-logo span{
+.foot-logo span {
     color: #000;
+
 }
+
