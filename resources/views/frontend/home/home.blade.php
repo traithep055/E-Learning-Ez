@@ -1,7 +1,7 @@
 @extends('frontend.layouts.master')
 
 @section('content')
-<div class="container" style=" margin-left:0%">
+<div class="container" style=" margin-left:0%, width:90vh">
     <div class="row">
         <div class="col mt-3">
             <div class="card-search" style="margin-top:25px; margin-left:34%">
@@ -26,7 +26,7 @@
                         @include('frontend.home.sidebar')
                     {{--end ตัวกรอง --}}
 
-                    <div class="card-corse col-md-8 justify-content-center"
+                    <div class="card-corse col-md-9 justify-content-center"
                         style=" margin-left:15px">
                         <div class="corse-search " style="padding:10px;">
                             <div class="row">
@@ -49,12 +49,12 @@
 
                             </div>
                         </div>
-                        <div class="course d-flex">
+                        <div class="course">
                             <div class="row ">
                                 @foreach ($courses as $course)
-                                    <div class="card-all col-md-4">
+                                    <div class="card-all col-md-2" style="width: 250px;">
                                         <!-- คอลัมน์ที่ 1 -->
-                                        <div class="card mt-3 m-6" style="width: 15rem;">
+                                        <div class="card mt-3 mb-2" style="width: 100%;,height:10px">
                                             <a href="{{ route('course-detail', ['id' => $course->id]) }}">
                                                 <img src="{{$course->image}}" class="card-img-top"
                                                 alt="...">
@@ -68,46 +68,11 @@
                                                 <span>เวลา 10 ชม.</span>
                                                 <span>ระดับ {{$course->level}} </span><br>
                                                 <span><b>ราคา {{$course->price}} บาท</b></span><br>
-                                                <a href="{{route('user.course_purchase', ['course' => $course->id])}}" class="btn btn-primary">ชื้อคอร์ส</a>
+                                                <a href="{{route('user.course_purchase', ['course' => $course->id])}}" class="btn btn-primary mt-3">ชื้อคอร์ส</a>
                                             </div>
                                         </div>
                                     </div>
                                 @endforeach
-
-                                {{-- <div class="card-all col-md-4">
-                                    <!-- คอลัมน์ที่ 1 -->
-                                    <div class="card mt-3 m-4" style="width: 15rem;">
-                                        <img src="{{ asset('images/Logo.png') }}" class="card-img-top"
-                                            alt="...">
-                                        <div class="card-body">
-                                            <h5 class="card-title">ชื่อคอร์ส</h5>
-                                            <span>link profile คนสอน พร้อมชื่อ</span>
-                                            <span>คนซื้อคอร์ส</span>
-                                            <span>เวลา</span>
-                                            <span>ระดับ</span>
-                                            <span>ราคา</span>
-                                            <a href="#" class="btn btn-primary">ตะกร้า</a>
-                                            <a href="#" class="btn btn-primary">ชื้อคอร์ส</a>
-                                        </div>
-                                    </div>
-                                </div> --}}
-                                {{-- <div class="card-all col-md-4">
-                                    <!-- คอลัมน์ที่ 1 -->
-                                    <div class="card mt-3 m-4" style="width: 15rem;">
-                                        <img src="{{ asset('images/Logo.png') }}" class="card-img-top"
-                                            alt="...">
-                                        <div class="card-body">
-                                            <h5 class="card-title">ชื่อคอร์ส</h5>
-                                            <span>link profile คนสอน พร้อมชื่อ</span>
-                                            <span>คนซื้อคอร์ส</span>
-                                            <span>เวลา</span>
-                                            <span>ระดับ</span>
-                                            <span>ราคา</span>
-                                            <a href="#" class="btn btn-primary">ตะกร้า</a>
-                                            <a href="#" class="btn btn-primary">ชื้อคอร์ส</a>
-                                        </div>
-                                    </div>
-                                </div> --}}
                             </div>
                         </div>
                     </div>
