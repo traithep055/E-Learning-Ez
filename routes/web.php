@@ -13,6 +13,7 @@ use App\Http\Controllers\Backend\CoursePurchaseController;
 use App\Http\Controllers\Backend\CouponController;
 use App\Http\Controllers\Frontend\LearnController;
 use App\Http\Controllers\Frontend\BillController;
+use App\Http\Controllers\Frontend\MyCourseController;
 use App\Models\Coupon;
 use Illuminate\Support\Facades\Route;
 
@@ -72,6 +73,9 @@ Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'user', 'as' => 
     /** หน้าใบเสร็จ */
     Route::get('course-bill/{id}', [BillController::class, 'BillCourse'])->name('course-bill');
     Route::get('course-download-pdf{id}', [BillController::class, 'downloadPDFbill'])->name('course_bill.downloadPDF');
+
+    /** หน้าคอร์สของ User */
+    Route::get('mycourse', [MyCourseController::class, 'index'])->name('mycourse');
 
     /** หน้าการเรียน */
     Route::get('learn-course', [LearnController::class, 'index'])->name('learn_course');

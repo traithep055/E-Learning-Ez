@@ -29,4 +29,10 @@ class Course extends Model
         return $this->belongsTo(SubCategory::class, 'sub_category_id');
     }
 
+    public function purchasedCourses()
+    {
+        return $this->belongsToMany(User::class, 'course_purchaes', 'course_id', 'user_id');
+    }
+
+
 }
