@@ -3708,8 +3708,8 @@ fieldset:disabled .btn {
 
 .btn-primary {
   --bs-btn-color: #000;
-  --bs-btn-bg: #e91e63;
-  --bs-btn-border-color: #e91e63;
+  --bs-btn-bg: #4F6F52;
+  --bs-btn-border-color: #1ee94d;
   --bs-btn-hover-color: #000;
   --bs-btn-hover-bg: #ec407a;
   --bs-btn-hover-border-color: #eb3573;
@@ -20627,19 +20627,19 @@ fieldset:disabled .btn {
 
 .btn-primary,
 .btn.bg-gradient-primary {
-  box-shadow: 0 3px 3px 0 rgba(233, 30, 99, 0.15), 0 3px 1px -2px rgba(233, 30, 99, 0.2), 0 1px 5px 0 rgba(233, 30, 99, 0.15);
+  box-shadow: 0 3px 3px 0 #E8DFCA, 0 3px 1px -2px #E8DFCA, 0 1px 5px 0 #E8DFCA;
 }
 
 .btn-primary:hover,
 .btn.bg-gradient-primary:hover {
-  background-color: #e91e63;
-  border-color: #e91e63;
-  box-shadow: 0 14px 26px -12px rgba(233, 30, 99, 0.4), 0 4px 23px 0 rgba(233, 30, 99, 0.15), 0 8px 10px -5px rgba(233, 30, 99, 0.2);
+  background-color: #E8DFCA;
+  border-color: #329874;
+  box-shadow: 0 14px 26px -12px #E8DFCA, 0 4px 23px 0 #E8DFCA, 0 8px 10px -5px #E8DFCA;
 }
 
 .btn-primary .btn.bg-outline-primary,
 .btn.bg-gradient-primary .btn.bg-outline-primary {
-  border: 1px solid #e91e63;
+  border: 1px solid #329874;
 }
 
 .btn-primary:not(:disabled):not(.disabled).active,
@@ -20648,8 +20648,8 @@ fieldset:disabled .btn {
 .btn.bg-gradient-primary:not(:disabled):not(.disabled).active,
 .btn.bg-gradient-primary:not(:disabled):not(.disabled):active,
 .show>.btn.bg-gradient-primary.dropdown-toggle {
-  color: color-yiq(#e91e63);
-  background-color: #e91e63;
+  color: color-yiq(#329874);
+  background-color: #329874;
 }
 
 .btn-primary.focus,
@@ -21073,7 +21073,7 @@ fieldset:disabled .btn {
 
 .btn-primary:hover,
 .btn.bg-gradient-primary:hover {
-  color: #fff;
+  color: #000;
 }
 
 .btn-secondary,
