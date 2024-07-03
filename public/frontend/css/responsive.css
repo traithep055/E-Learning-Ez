@@ -2313,17 +2313,7 @@
   }
 
   /* HEADER SRART */
-  header {
-    height: 60px;
-    padding: 0;
-    position: fixed;
-    top: 0px;
-    left: 0;
-    background: #08C;
-    z-index: 999;
-    border: none;
-  }
-
+ 
   .wsus_logo_area {
     text-align: center;
   }
@@ -3778,16 +3768,6 @@
   }
 
   /* HEADER SRART */
-  header {
-    height: 60px;
-    padding: 0;
-    position: fixed;
-    top: 0px;
-    left: 0;
-    background: #08C;
-    z-index: 999;
-    border: none;
-  }
 
   .wsus_logo_area {
     text-align: center;

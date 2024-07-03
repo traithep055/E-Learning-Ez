@@ -66,7 +66,7 @@ p {
   text-transform: capitalize;
   font-weight: 600;
   color: #fff;
-  background: #08C;
+  background: rgb(18, 123, 175);
   padding: 12px 25px;
   border: none;
   border-radius: 30px;
@@ -299,63 +299,6 @@ p {
 /*======================
 	HEADER START
 ========================*/
-header {
-  padding: 1px 2%;
-  margin-left: -2%;
-  height: 90px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  box-sizing: border-box;
-  justify-content: center;
-}
-
-@media (max-width: 768px) {
-  header {
-    padding: 1px 5%;
-    height: 70px;
-  }
-}
-
-@media (max-width: 480px) {
-  header {
-    padding: 1px 10%;
-    height: 50px;
-  }
-}
-
-header ul {
-    width: max-content;
-    list-style-type: none;
-    display: flex;
-    gap: 10px;
-}
-
-header a {
-    text-decoration: none;
-    color: rgb(8, 151, 0);
-    padding: 5px;
-    border-radius: 5px;
-    margin-left: -5px;
-    transition: background-color 0.3s ease;
-}
-
-header a.active {
-    font-weight: bold;
-}
-
-header a:hover {
-    color: #6c757d;
-}
-
-header .cart {
-    display: flex;
-    width: 30px;
-    height: 45px;
-    margin-left: 30%;
-}
-
-
 .wsus__header_logo {
   width: 75%;
 }
@@ -700,14 +643,14 @@ header .cart {
   justify-content: space-between;
   cursor: pointer;
   overflow: hidden;
-  width: 50px;
-  height: 50px;
-  padding: 0;
+  width: 35px;
+  height: 25px;
+  padding: 2px;
   text-align: center;
   line-height: 48px;
   display: block;
   font-size: 20px;
-  background: rgba(252, 0, 176, 1);
+  background: rgb(61, 83, 63);
   position: relative;
   transition: all linear 0.3s;
   -webkit-transition: all linear 0.3s ease;

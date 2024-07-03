@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="{{asset('frontend/css/home.css')}}">
 <footer style=" padding:2%; margin-top:2%">
     <div class="row">
         <div class="foot col-md-3" style=" margin:1%">
@@ -33,7 +34,7 @@
     <div class="divider" style="width: 100%;"></div>
         <span> Copyright © 2024 </span>
         <div class="icon-f" style="margin-left:95%; margin-top:-2%">
-            <box-icon name='facebook' type='logo' animation='tada' color='purple' ></box-icon>
-            <box-icon name='instagram' type='logo' animation='tada' color='purple' ></box-icon>
+            <box-icon name='facebook' type='logo' animation='tada' color='#06D001' ></box-icon>
+            <box-icon name='instagram' type='logo' animation='tada' color='#06D001' ></box-icon>
         </div>
 </footer>
