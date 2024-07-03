@@ -20,7 +20,7 @@
                 <form action="{{ route('login') }}" method="post">
                     @csrf
                     <div class="input-field">
-                        
+
                         <input id="email" type="email" name="email" value="{{old('email')}}" placeholder="Enter your email" required>
                         <i class="uil uil-envelope"></i>
                     </div>
@@ -33,8 +33,8 @@
                             required>
                         <i class="uil uil-lock icon"></i>
                         <i class="uil uil-eye-slash showHidePw"></i>
-                        
-                        
+
+
                     </div>
                     @if($errors->has('password'))
                             <span class="error" style="color: red">{{ $errors->first('password') }}</span>
@@ -51,7 +51,7 @@
                     <div class="input-field">
                         <style>
                             input[type="submit"] {
-                                background-color: #b37cba;
+                                background-color: #7dba7c;
                                 /* สีม่วง */
                                 color: #ffffff;
                                 /* สีข้อความ */
@@ -64,7 +64,8 @@
                             }
                             /* เม้าส์ไปชี้ปุ่ม Submit */
                             input[type="submit"]:hover {
-                                background-color: #8c6196;
+                                background-color: #E8DFCA;
+                                color: black;
                                 /* สีม่วงอ่อน */
                             }
                         </style>
