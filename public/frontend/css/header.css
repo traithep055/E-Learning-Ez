@@ -79,31 +79,32 @@ header .logo {
     margin-left: 25%;
 }
 .logout a {
-    background-color: #4F6F52;
+    background-color: #ffffff;
     display: inline-block;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     padding: 5px;
     width: 90vh;
     max-width: 91.5px;
     border-radius: 5px;
-    border: 1px solid rgba(0, 0, 0, 0.5);
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .logout a:hover {
-    background-color: rgba(134, 85, 136, 0.862);
+    background-color: #F5EFE6;
     transform: scale(1.05);
     color: #000;
     border: 1px solid rgb(255, 255, 255);
+}
+.logout a:hover i{
+    color: #cd871e;
 }
 
 .logout i {
     font-size: 20px;
     vertical-align: middle;
     margin-right: 5px;
-    color: #e2e5bf;
+    color: #000000;
     margin-top: -2%;
-
 }
 
 .btn-secondary {
