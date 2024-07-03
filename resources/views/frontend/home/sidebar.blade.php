@@ -19,7 +19,6 @@
                         <li><a href="{{route('courses.index', ['subcategory' => $subCategory->slug])}}">{{$subCategory->name}} </a>
                         </li>
                     @endforeach
-
                 </ul>
             </li>
             @endforeach
@@ -35,10 +34,10 @@
             <span>ตัวกรอง</span>
         </div>
         <div class="clearn col-md-8 ">
-            <button class="btn"
-                style="width: 85%; font-size:15px; margin-left:15%; color: red; margin-top: -10px">
+            <p class="btn "
+                style="width: 85%; font-size:15px; margin-left:15%; color: rgb(207, 137, 7); margin-top: -10px">
                 ล้างตัวกรอง
-            </button>
+            </p>
         </div>
     </div>
     <div class="text-menu style="width: 100%;>

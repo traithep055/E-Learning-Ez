@@ -1,0 +1,19 @@
+.container{
+    margin-top: 10%;
+}
+
+/* footer */
+.foot-logo {
+    text-align: center;
+    align-items: center;
+}
+.foot-logo span {
+    color: #000;
+}
+
+.foot .row{
+    color: #000;
+}
+.foot .row:hover{
+    color: #210476;
+}

@@ -1,9 +1,11 @@
+<link rel="stylesheet" href="{{asset('frontend/css/header.css')}}">
 <header>
     <div class="logo">
         <a href="{{ route('home') }}" class="rounded-image">
-        <img src="{{ asset('images/Logo.png') }}" width="100px" >
+        <img src="{{ asset('images/Logo.png') }}" width="50%" >
     </a>
     </div>
+    {{-- choice --}}
     <div class="choice">
         <ul>
         <a class="{{'active'}}" style="cursor: pointer">คอร์สเรียนยอดนิยม</a>
@@ -20,9 +22,10 @@
         @endauth
     </ul>
     </div>
+    {{-- login-singin --}}
     @if (Route::has('login'))
         @guest
-        <div class="logout" style="margin-left: 27%">
+        <div class="logout" >
             <a href="{{ route('login') }}"  >
                 Sign In
                 <i class='bx bx-log-out'></i>

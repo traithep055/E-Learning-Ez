@@ -1,10 +1,10 @@
+<link rel="stylesheet" href="{{asset('frontend/css/home.css')}}">
 @extends('frontend.layouts.master')
-
 @section('content')
 <div class="container" style=" margin-left:0%, width:90vh">
     <div class="row">
         <div class="col mt-3">
-            <div class="card-search" style="margin-top:25px; margin-left:34%">
+            <div class="card-search" style="margin-top:25px; margin-left:31%">
                 <form action="{{route('courses.index')}}" class="search-body" method="GET"
                     id="search-form">
                     <div class="input-group">
@@ -61,14 +61,14 @@
                                             </a>
                                             <div class="card-body">
                                                 <h5 class="card-title">
-                                                    <a href="{{ route('course-detail', ['id' => $course->id]) }}">{{$course->name}}</a>
+                                                    <a href="{{ route('course-detail', ['id' => $course->id]) }}" >{{$course->name}}</a>
                                                 </h5>
-                                                <span><a href="{{route('teacher-detail', ['id' => $course->teacher->id])}}">{{$course->teacher->firstname}}</a></span>
+                                                <span><a href="{{route('teacher-detail', ['id' => $course->teacher->id])}}" class="teacher">{{$course->teacher->firstname}}</a></span>
                                                 <span>เรียน {{$course->purchasedCourses->count()}} คน</span><br>
                                                 <span>เวลา 10 ชม.</span>
                                                 <span>ระดับ {{$course->level}} </span><br>
                                                 <span><b>ราคา {{$course->price}} บาท</b></span><br>
-                                                <a href="{{route('user.course_purchase', ['course' => $course->id])}}" class="btn btn-primary mt-3">ชื้อคอร์ส</a>
+                                                <a href="{{route('user.course_purchase', ['course' => $course->id])}}" class="btn mt-3">ซื้อคอร์ส</a>
                                             </div>
                                         </div>
                                     </div>
