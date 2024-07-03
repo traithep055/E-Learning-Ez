@@ -6,8 +6,8 @@
     <a href="dsahboard.html" class="dash_logo"><img src="images/logo.png" alt="logo" class="img-fluid"></a>
     <ul class="dashboard_link">
       <li><a class="active" href="{{route('user.dashboard')}}"><i class="fas fa-tachometer"></i>Dashboard</a></li>
-      <li><a href="dsahboard_order.html"><i class="fas fa-list-ul"></i> Orders</a></li>
       <li><a href="{{route('home')}}"><i class="far fa-house"></i> หน้าหลัก</a></li>
+      <li><a href="{{route('user.mycourse')}}"><i class="fas fa-solid fa-book"></i> การเรียนรู้ของฉัน</a></li>
       <li><a href="dsahboard_review.html"><i class="far fa-star"></i> Reviews</a></li>
       <li><a href="dsahboard_wishlist.html"><i class="far fa-heart"></i> Wishlist</a></li>
       <li><a href="{{route('user.profile')}}"><i class="far fa-user"></i> โปรไฟล์</a></li>

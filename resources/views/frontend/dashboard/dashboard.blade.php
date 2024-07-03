@@ -10,9 +10,9 @@
             <div class="wsus__dashboard">
               <div class="row">
                 <div class="col-xl-2 col-6 col-md-4">
-                  <a class="wsus__dashboard_item red" href="dsahboard_order.html">
-                    <i class="far fa-address-book"></i>
-                    <p>order</p>
+                  <a class="wsus__dashboard_item red" href="{{route('user.mycourse')}}">
+                    <i class="fas fa-solid fa-book"></i>
+                    <p>การเรียนรู้ของฉัน</p>
                   </a>
                 </div>
                 <div class="col-xl-2 col-6 col-md-4">
@@ -36,7 +36,7 @@
                 <div class="col-xl-2 col-6 col-md-4">
                   <a class="wsus__dashboard_item orange" href="{{route('user.profile')}}">
                     <i class="fas fa-user-shield"></i>
-                    <p>profile</p>
+                    <p>โปรไฟล์</p>
                   </a>
                 </div>
                 <div class="col-xl-2 col-6 col-md-4">

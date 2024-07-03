@@ -1,0 +1,83 @@
+@extends('frontend.dashboard.layouts.master')
+
+@section('content')
+  <!--=============================
+    DASHBOARD START
+  ==============================-->
+  <style>
+    .card-hover:hover {
+      transform: translateY(-10px);
+      transition: transform 0.3s;
+    }
+
+    .card-title a {
+      color: #333;
+      text-decoration: none;
+    }
+
+    .card-title a:hover {
+      color: #007bff;
+    }
+
+    .wsus__dashboard_profile .card {
+      border: 1px solid #ddd;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .wsus__dashboard_profile .card-body {
+      padding: 1rem;
+    }
+
+    .card-img-top {
+      height: 200px;
+      object-fit: cover;
+      width: 100%;
+    }
+  </style>
+
+  <section id="wsus__dashboard" class="py-5">
+    <div class="container-fluid">
+      @include('frontend.dashboard.layouts.sidebar')
+
+      <div class="row">
+        <div class="col-xl-9 col-xxl-10 col-lg-9 ms-auto">
+          <div class="dashboard_content mt-2 mt-md-0">
+            <h3 class="mb-4"><i class="fas fa-graduation-cap"></i> การเรียนรู้ของฉัน</h3>
+            <div class="wsus__dashboard_profile">
+              <div class="wsus__dash_pro_area">
+                <div class="course">
+                  <div class="row">
+                    @foreach ($mycourses as $mycourse)
+                      <div class="col-md-4 mb-5 d-flex align-items-stretch">
+                        <div class="card card-hover h-100" style="width: 100%;">
+                          <a href="{{ route('course-detail', ['id' => $mycourse->id]) }}">
+                            <img src="{{ $mycourse->course->image }}" class="card-img-top" alt="{{ $mycourse->name }}">
+                          </a>
+                          <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">
+                              <a href="{{ route('course-detail', ['id' => $mycourse->id]) }}">{{ $mycourse->name }}</a>
+                            </h5>
+                            <p class="card-text">
+                              <span>โดย <a href="#">{{ $mycourse->course->teacher->firstname }}</a></span><br>
+                              <span><i class="fas fa-users"></i> {{ $mycourse->course->purchasedCourses->count() }}</span><br>
+                              <span><i class="fas fa-clock"></i> เวลา 10 ชม.</span><br>
+                              <span><i class="fas fa-layer-group"></i> ระดับ {{ $mycourse->course->level }}</span>
+                            </p>
+                            <a href="{{ route('user.learn_course', ['course' => $mycourse->id]) }}" class="btn btn-primary mt-auto">เรียน</a>
+                          </div>
+                        </div>
+                      </div> 
+                    @endforeach
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--=============================
+    DASHBOARD END
+  ==============================-->
+@endsection
