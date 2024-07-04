@@ -7,7 +7,7 @@
             <div class="card-search" style="margin-top:25px; margin-left:31%">
                 <form action="{{route('courses.index')}}" class="search-body" method="GET"
                     id="search-form">
-                    <div class="input-group">
+                    <div class="input-group" style="margin-top:15%">
                         <input type="text" class="form-control" name="searchcard" id="search-body"
                             placeholder="ค้นหาคอร์สเรียน">
                         <button type="submit" class="btn-search">

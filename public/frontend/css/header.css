@@ -7,25 +7,26 @@ header {
   box-sizing: border-box;
   justify-content: center;
   margin-top: 2%;
-    height: 60px;
+    height: 100px;
     padding: 0;
     position: fixed;
-    top: 0px;
+    top: -40px;
     left: 0;
     z-index: 999;
     border: none;
+    background-color: #f0f2cb79;
 }
 
 @media (max-width: 768px) {
   header {
-    padding: 1px 5%;
+    padding: 1px;
     height: 70px;
   }
 }
 
 @media (max-width: 480px) {
   header {
-    padding: 1px 10%;
+    padding: 1px;
     height: 50px;
   }
 }
@@ -55,7 +56,7 @@ header a:hover {
 }
 
 header .logo {
-    margin-left: -8%;
+    margin-left: -40%;
 }
 
 .choice{
@@ -75,9 +76,7 @@ header .logo {
 }
 
 /* log-singin */
-.logout{
-    margin-left: 25%;
-}
+
 .logout a {
     background-color: #ffffff;
     display: inline-block;
