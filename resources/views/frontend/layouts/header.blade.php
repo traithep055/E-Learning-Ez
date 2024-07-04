@@ -26,7 +26,7 @@
     @if (Route::has('login'))
         @guest
         <div class="logout" >
-            <a href="{{ route('login') }}"  >
+            <a href="{{ route('login') }}" style="margin-left: 800%" >
                 Sign In
                 <i class='bx bx-log-out'></i>
             </a>
@@ -36,7 +36,7 @@
         <div class="logout m-2" >
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
-                <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();" style="margin-left: 305%" class="dropdown-item has-icon text-dark">
+                <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();" style="margin-left:800%" class="dropdown-item has-icon text-dark">
                     <i class="fas fa-sign-out-alt"></i> Logout
                 </a>
             </form>

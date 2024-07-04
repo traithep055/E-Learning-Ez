@@ -15,10 +15,10 @@
                             <img src="{{$course->teacher->image}}" alt="" style="border-radius: 50%; width: 50px; height: 50px; margin-right: 10px;">
                             <a href="{{route('teacher-detail', ['id' => $course->teacher_id])}}"><h5>{{$course->teacher->firstname}} {{$course->teacher->lastname}}</h5></a>
                         </div>
-                    
-                       
+
+
                         <div class="divider" style="width: 90%;"></div>
-                        <a href="#" class="btn btn-primary">ชื้อคอร์ส</a>
+                        <a href="#" class="btn btn-primary">ซื้อคอร์ส</a>
                     </div>
                     {{--end ตัวกรอง --}}
 
