@@ -3,7 +3,7 @@
 @section('content')
 
 
-<div class="container" style=" margin-left:5%">
+<div class="container mt-6" style=" margin-left:5%">
     <div class="row">
         <div class="col mt-3">
             <div class="content d-flex flex-column " style="padding: 2%;">

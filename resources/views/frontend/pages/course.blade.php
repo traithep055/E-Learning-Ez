@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container" style="margin-left: 5%">
+<div class="container mt-8" style="margin-left: 5%">
     <div class="row">
         <div class="col mt-3">
             <div class="content d-flex flex-column " style="padding: 2%;">
@@ -42,14 +42,13 @@
                                             <span><b>ราคา {{ $course->price }} บาท</b></span><br>
                                             @auth
                                                 @if($user->purchasedCourses->contains($course->id))
-                                                    <a href="#" class="btn btn-primary">เริ่มเรียน</a>
+                                                    <a href="{{ route('user.learn_course', ['course' => $course->id]) }}" class="btn btn-primary">เริ่มเรียน</a>
                                                 @else
                                                     <a href="{{route('user.course_purchase', ['course' => $course->id])}}" class="btn btn-primary">ชื้อคอร์ส</a>
                                                 @endif
                                             @else
                                                 <a href="{{route('user.course_purchase', ['course' => $course->id])}}" class="btn btn-primary">ชื้อคอร์ส</a>
                                             @endauth
-                                            <a href="#" class="btn btn-primary mt-5">ชื้อคอร์ส</a>
                                         </div>
                                     </div>
                                 </div>
