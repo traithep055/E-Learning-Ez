@@ -55,7 +55,7 @@
                           </a>
                           <div class="card-body d-flex flex-column">
                             <h5 class="card-title">
-                              <a href="{{ route('course-detail', ['id' => $mycourse->id]) }}">{{ $mycourse->name }}</a>
+                              <a href="{{ route('course-detail', ['id' => $mycourse->id]) }}">{{ $mycourse->course->name }}</a>
                             </h5>
                             <p class="card-text">
                               <span>โดย <a href="#">{{ $mycourse->course->teacher->firstname }}</a></span><br>
@@ -63,7 +63,7 @@
                               <span><i class="fas fa-clock"></i> เวลา 10 ชม.</span><br>
                               <span><i class="fas fa-layer-group"></i> ระดับ {{ $mycourse->course->level }}</span>
                             </p>
-                            <a href="{{ route('user.learn_course', ['course' => $mycourse->id]) }}" class="btn btn-primary mt-auto">เรียน</a>
+                            <a href="{{ route('user.learn_course', ['course' => $mycourse->course->id]) }}" class="btn btn-primary mt-auto">เรียน</a>
                           </div>
                         </div>
                       </div> 
