@@ -50,20 +50,20 @@
                     @foreach ($mycourses as $mycourse)
                       <div class="col-md-4 mb-5 d-flex align-items-stretch">
                         <div class="card card-hover h-100" style="width: 100%;">
-                          <a href="{{ route('course-detail', ['id' => $mycourse->id]) }}">
-                            <img src="{{ $mycourse->course->image }}" class="card-img-top" alt="{{ $mycourse->name }}">
+                          <a href="{{ route('course-detail', ['id' => $mycourse->course->id]) }}">
+                            <img src="{{ $mycourse->course->image }}" class="card-img-top" alt="{{ $mycourse->course->name }}">
                           </a>
                           <div class="card-body d-flex flex-column">
                             <h5 class="card-title">
-                              <a href="{{ route('course-detail', ['id' => $mycourse->id]) }}">{{ $mycourse->name }}</a>
+                              <a href="{{ route('course-detail', ['id' => $mycourse->course->id]) }}">{{ $mycourse->course->name }}</a>
                             </h5>
                             <p class="card-text">
-                              <span>โดย <a href="#">{{ $mycourse->course->teacher->firstname }}</a></span><br>
+                              <span>โดย <a href="{{route('teacher-detail', ['id' => $mycourse->course->teacher->id])}}">{{ $mycourse->course->teacher->firstname }}</a></span><br>
                               <span><i class="fas fa-users"></i> {{ $mycourse->course->purchasedCourses->count() }}</span><br>
                               <span><i class="fas fa-clock"></i> เวลา 10 ชม.</span><br>
                               <span><i class="fas fa-layer-group"></i> ระดับ {{ $mycourse->course->level }}</span>
                             </p>
-                            <a href="{{ route('user.learn_course', ['course' => $mycourse->id]) }}" class="btn btn-primary mt-auto">เรียน</a>
+                            <a href="{{ route('user.learn_course', ['course' => $mycourse->course->id]) }}" class="btn btn-primary mt-auto">เรียน</a>
                           </div>
                         </div>
                       </div> 

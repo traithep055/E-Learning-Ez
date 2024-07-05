@@ -43,6 +43,7 @@
 </head>
 <body>
     <div class="container">
+        <img src="{{ public_path('images/logo.png') }}" alt="Logo" width="200px" style="margin-top: 0">
         <div class="card">
             <div class="card-header">
                 ใบเสร็จการสั่งซื้อคอร์สเรียน

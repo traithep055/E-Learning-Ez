@@ -1,7 +1,7 @@
 @extends('frontend.layouts.master')
 
 @section('content')
-<div class="container" style="margin-top: 8%">
+<div class="container mt-8" style="margin-top: 8%">
     <h2 class="mt-6">ซื้อคอร์ส</h2>
     <button type="button" class="btn btn-info mb-4" data-toggle="modal" data-target="#paymentModal">วิธีการจ่าย</button>
 

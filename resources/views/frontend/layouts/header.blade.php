@@ -2,8 +2,8 @@
 <header>
     <div class="logo">
         <a href="{{ route('home') }}" class="rounded-image">
-        <img src="{{ asset('images/Logo.png') }}" width="50%" >
-    </a>
+            <img src="{{ asset('images/Logo.png') }}" width="50%" >
+        </a>
     </div>
     {{-- choice --}}
     <div class="choice">
