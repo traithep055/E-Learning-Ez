@@ -79,7 +79,7 @@ Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'user', 'as' => 
 
     /** หน้าการเรียน */
     Route::get('learn-course', [LearnController::class, 'index'])->name('learn_course');
-
+    Route::get('learn-course/{course}/{lesson:slug}', [LearnController::class, 'learn'])->name('learn_course.lesson');
 });
 
 Route::group(['middleware' => 'auth'], function () {

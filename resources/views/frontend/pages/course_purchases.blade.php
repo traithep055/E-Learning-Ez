@@ -12,7 +12,7 @@
                 <div class="form-group">
                     <img src="{{$course->image}}" alt="" width="70%" class="img-fluid">
                     <h4 class="mt-2">คอร์ส {{$course->name}}</h4>
-                    <p>จำนวน {{$course->lesson->count()}} บทเรียน 10 ชั่วโมง</p>
+                    <p>จำนวน {{$course->lessons->count()}} บทเรียน 10 ชั่วโมง</p>
                 </div>
             </div>
             <div class="col-md-6">
