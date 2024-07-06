@@ -82,7 +82,7 @@ class LessonController extends Controller
 
         $lesson->course_id = $request->course;
         $lesson->lesson_name = $request->lesson_name;
-        $lesson->slug = Str::slug($request->lesson_name);
+        $lesson->slug = $request->lesson_name;
         $lesson->description = $request->description;
         $lesson->video_url = $request->video_url;
         $lesson->save();
@@ -161,7 +161,7 @@ class LessonController extends Controller
         }
 
         $lesson->lesson_name = $request->lesson_name;
-        $lesson->slug = Str::slug($request->lesson_name);
+        $lesson->slug = $request->lesson_name;
         $lesson->description = $request->description;
         $lesson->video_url = $request->video_url;
         $lesson->save();

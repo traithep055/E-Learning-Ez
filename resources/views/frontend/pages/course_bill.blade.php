@@ -99,7 +99,7 @@
     </div>
     <div class="button-group">
         <a href="{{ route('home') }}" class="btn btn-warning">กลับหน้าหลัก</a>
-        <a href="#" class="btn btn-success">เริ่มเรียน</a>
+        <a href="{{route('user.mycourse')}}" class="btn btn-success">เริ่มเรียน</a>
     </div>
 </div>
 @endsection

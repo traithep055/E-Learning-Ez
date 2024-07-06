@@ -42,7 +42,7 @@
                                             <span><b>ราคา {{ $course->price }} บาท</b></span><br>
                                             @auth
                                                 @if($user->purchasedCourses->contains($course->id))
-                                                    <a href="{{ route('user.learn_course', ['course' => $course->id]) }}" class="btn btn-primary">เริ่มเรียน</a>
+                                                    <a href="{{ route('user.learn_course.lesson', ['course' => $course->id, 'lesson' => $course->lessons->first()->slug]) }}" class="btn btn-primary">เริ่มเรียน</a>
                                                 @else
                                                     <a href="{{route('user.course_purchase', ['course' => $course->id])}}" class="btn btn-primary">ชื้อคอร์ส</a>
                                                 @endif
