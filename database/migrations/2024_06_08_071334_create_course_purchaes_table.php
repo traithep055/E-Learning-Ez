@@ -19,6 +19,7 @@ return new class extends Migration
             $table->double('final_price'); // Final price after applying coupon
             $table->text('slip_image')->nullable(); // Path to uploaded slip image
             $table->foreignId('coupon_id')->nullable()->constrained('coupons')->onDelete('set null'); // Nullable coupon ID
+            $table->string('order_number')->unique(); // Unique order number
             $table->timestamps();
         });
     }

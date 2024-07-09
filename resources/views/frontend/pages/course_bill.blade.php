@@ -70,12 +70,12 @@
                     <h2>การสั่งซื้อ</h2>
                 </div>
                 <div class="card-body">
-                    <a href="{{ route('user.course_bill.downloadPDF', ['id' => $coursepurchae->id]) }}" class="btn btn-primary btn-sm">พิมพ์ใบเสร็จ</a>
+                    <a href="{{ route('user.course_bill.downloadPDF', ['order_number' => $coursepurchae->order_number]) }}" class="btn btn-primary btn-sm">พิมพ์ใบเสร็จ</a>
                     <div class="table-responsive">
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th>#</th>
+                                    <th>หมายเลขใบเสร็จ</th>
                                     <th>ชื่อคอร์ส</th>
                                     <th>ราคาปกติ</th>
                                     <th>ราคาหลังหักส่วนลด</th>
@@ -84,7 +84,7 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td style="font-weight: bold">{{ $coursepurchae->id }}</td>
+                                    <td style="font-weight: bold">{{ $coursepurchae->order_number }}</td>
                                     <td style="font-weight: bold">{{ $coursepurchae->course->name }}</td>
                                     <td style="font-weight: bold">{{ $coursepurchae->price }}</td>
                                     <td style="font-weight: bold">{{ $coursepurchae->final_price }}</td>

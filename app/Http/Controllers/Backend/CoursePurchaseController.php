@@ -10,6 +10,7 @@ use App\Models\CoursePurchaes;
 use App\Models\Coupon;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 
 class CoursePurchaseController extends Controller
 {
@@ -61,18 +62,22 @@ class CoursePurchaseController extends Controller
                 }
             }
 
+            // Generate random order number
+            $orderNumber = Str::upper(Str::random(10));
+
             // สร้างรายการการซื้อคอร์ส
             $course_purchase->user_id = Auth::user()->id;
             $course_purchase->course_id = $request->course;
             $course_purchase->price = $price;
             $course_purchase->final_price = $finalPrice;
             $course_purchase->coupon_id = $coupon ? $coupon->id : null;
+            $course_purchase->order_number = $orderNumber; // Save the order number
             $course_purchase->save(); // ต้องบันทึกการซื้อ
 
             toastr()->success('สั่งซื้อเสร็จสิ้น');
 
             // return redirect()->route('user.learn_course', ['course' => $course->id]);
-            return redirect()->route('user.course-bill', ['id' => $course_purchase->id]);
+            return redirect()->route('user.course-bill', ['order_number' => $course_purchase->order_number]);
         } catch (\Exception $e) {
             Log::error('การสั่งซื้อคอร์สล้มเหลว: ' . $e->getMessage());
             toastr()->error('เกิดข้อผิดพลาดในการสั่งซื้อ ไม่ได้อัพโหลดสลิป');

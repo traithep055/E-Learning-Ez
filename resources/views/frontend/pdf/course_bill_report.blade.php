@@ -54,7 +54,7 @@
                     <tbody>
                         <tr>
                             <th>เลขที่ใบเสร็จ</th>
-                            <td>{{ $purchase->id }}</td>
+                            <td>{{ $purchase->order_number }}</td>
                         </tr>
                         <tr>
                             <th>วันที่</th>
