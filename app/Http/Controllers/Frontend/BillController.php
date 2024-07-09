@@ -11,16 +11,16 @@ use View;
 
 class BillController extends Controller
 {
-    public function BillCourse($id) 
+    public function BillCourse($order_number)
     {
-        $coursepurchae = CoursePurchaes::findOrFail($id);
+        $coursepurchae = CoursePurchaes::where('order_number', $order_number)->firstOrFail();
 
         return view('frontend.pages.course_bill', compact('coursepurchae'));
     }
 
-    public function downloadPDFbill($id) 
+    public function downloadPDFbill($order_number)
     {
-        $purchase = CoursePurchaes::findOrFail($id);
+        $purchase = CoursePurchaes::where('order_number', $order_number)->firstOrFail();
         
         // Render the Blade view to a string
         $html = View::make('frontend.pdf.course_bill_report', compact('purchase'))->render();

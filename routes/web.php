@@ -71,8 +71,8 @@ Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'user', 'as' => 
     Route::post('course_purchases', [CoursePurchaseController::class, 'store'])->name('course_purchase.store');
 
     /** หน้าใบเสร็จ */
-    Route::get('course-bill/{id}', [BillController::class, 'BillCourse'])->name('course-bill');
-    Route::get('course-download-pdf{id}', [BillController::class, 'downloadPDFbill'])->name('course_bill.downloadPDF');
+    Route::get('course-bill/{order_number}', [BillController::class, 'BillCourse'])->name('course-bill');
+    Route::get('course-download-pdf{order_number}', [BillController::class, 'downloadPDFbill'])->name('course_bill.downloadPDF');
 
     /** หน้าคอร์สของ User */
     Route::get('mycourse', [MyCourseController::class, 'index'])->name('mycourse');
