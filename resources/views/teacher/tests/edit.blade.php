@@ -15,12 +15,12 @@
           <h4>สำหรับคอร์ส: {{ $course->name }}</h4>
           <div class="wsus__dashboard_profile mt-4">
             <div class="wsus__dash_pro_area">
-              <form action="{{ route('teacher.tests.update', ['test' => $test->id]) }}" method="POST" enctype="multipart/form-data">
+              <form action="{{ route('teacher.tests.update', ['test' => $test->id, 'course' => $course->id]) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="mb-3">
                   <label for="name" class="form-label">ชื่อแบบทดสอบ</label>
-                  <input type="text" class="form-control" id="name" name="name" value="{{ $test->name }}">
+                  <input type="text" class="form-control" id="name" name="name" value="{{ $test->name }}" required>
                 </div>
 
                 <div class="mb-3">
@@ -31,7 +31,8 @@
                 <h4>คำถาม</h4>
                 <div id="questions">
                     @foreach ($test->questions as $index => $question)
-                    <div class="question mb-4 border p-3 rounded">
+                    <div class="question mb-4 border p-3 rounded" data-question-id="{{ $question->id }}">
+                        <input type="hidden" name="questions[{{ $index }}][id]" value="{{ $question->id }}">
                         <label for="question_{{ $index }}" class="form-label">คำถาม {{ $index + 1 }}</label>
                         <input type="text" name="questions[{{ $index }}][question]" id="question_{{ $index }}" class="form-control" value="{{ $question->question }}" required>
 
@@ -54,6 +55,8 @@
                             <option value="C" {{ $question->correct_option == 'C' ? 'selected' : '' }}>C</option>
                             <option value="D" {{ $question->correct_option == 'D' ? 'selected' : '' }}>D</option>
                         </select>
+
+                        <button type="button" class="btn btn-danger remove-question mt-3">ลบคำถาม</button>
                     </div>
                     @endforeach
                 </div>
@@ -107,8 +110,16 @@
                 <option value="C">C</option>
                 <option value="D">D</option>
             </select>
+
+            <button type="button" class="btn btn-danger remove-question mt-3">ลบคำถาม</button>
         `;
         document.getElementById('questions').appendChild(newQuestion);
+    });
+
+    document.addEventListener('click', function(e) {
+        if (e.target && e.target.classList.contains('remove-question')) {
+            e.target.closest('.question').remove();
+        }
     });
 </script>
 @endpush

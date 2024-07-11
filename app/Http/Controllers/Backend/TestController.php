@@ -66,7 +66,7 @@ class TestController extends Controller
             $testQuestion->save();
         }
 
-        toastr()->success('Created Tests Successfully');
+        toastr()->success('สร้างแบบทดสอบแล้ว');
         
         return redirect()->route('teacher.tests.index', ['course' => $course->id]);
     }
@@ -94,7 +94,51 @@ class TestController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        dd($request->all());
+        $course = Course::findOrFail($request->course);
+        $test = Test::findOrFail($id);
+
+        $validatedData = $request->validate([
+            'name' => 'required|string',
+            'description' => 'nullable|string',
+            'questions.*.id' => 'nullable|integer|exists:test_questions,id',
+            'questions.*.question' => 'required|string',
+            'questions.*.option_a' => 'required|string',
+            'questions.*.option_b' => 'required|string',
+            'questions.*.option_c' => 'required|string',
+            'questions.*.option_d' => 'required|string',
+            'questions.*.correct_option' => 'required|in:A,B,C,D',
+        ]);
+
+        $test->name = $request->name;
+        $test->description = $request->description;
+        $test->save();
+
+        $questionIds = [];
+        foreach ($validatedData['questions'] as $questionData) {
+            if (isset($questionData['id'])) {
+                $testQuestion = TestQuestion::findOrFail($questionData['id']);
+            } else {
+                $testQuestion = new TestQuestion();
+                $testQuestion->test_id = $test->id;
+            }
+
+            $testQuestion->question = $questionData['question'];
+            $testQuestion->option_a = $questionData['option_a'];
+            $testQuestion->option_b = $questionData['option_b'];
+            $testQuestion->option_c = $questionData['option_c'];
+            $testQuestion->option_d = $questionData['option_d'];
+            $testQuestion->correct_option = $questionData['correct_option'];
+            $testQuestion->save();
+
+            $questionIds[] = $testQuestion->id;
+        }
+
+        // ลบคำถามที่ไม่ได้อยู่ในรายการ
+        $test->questions()->whereNotIn('id', $questionIds)->delete();
+
+        toastr()->success('แก้ไขแบบทดสอบเรียบร้อยแล้ว');
+
+        return redirect()->route('teacher.tests.index', ['course' => $course->id]);
     }
 
     /**
