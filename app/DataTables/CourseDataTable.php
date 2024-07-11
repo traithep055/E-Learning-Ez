@@ -63,7 +63,7 @@ class CourseDataTable extends DataTable
                     </button>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item has-icon" href="'.route('teacher.lesson.index', ['course' => $query->id]).'"> บทเรียน</a></li>
-                        <li><a class="dropdown-item has-icon" href=""> Variants</a></li>
+                        <li><a class="dropdown-item has-icon" href="'.route('teacher.tests.index', ['course' => $query->id]).'"> แบบทดสอบ</a></li>
                     </ul>
                 </div>';
     

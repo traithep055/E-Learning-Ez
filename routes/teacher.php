@@ -4,6 +4,7 @@ use App\Http\Controllers\Backend\TeacherController;
 use App\Http\Controllers\Backend\TeacherProfileController;
 use App\Http\Controllers\Backend\CourseController;
 use App\Http\Controllers\Backend\LessonController;
+use App\Http\Controllers\Backend\TestController;
 use Illuminate\Support\Facades\Route;
 
 /***** Teacher Route *****/
@@ -27,3 +28,5 @@ Route::put('lesson/delvideo/{id}', [LessonController::class, 'DelVideo'])->name(
 Route::get('lesson/create', [LessonController::class, 'create'])->name('lesson.create');
 Route::resource('lesson', LessonController::class);
 
+/** Test Route */
+Route::resource('tests', TestController::class);
