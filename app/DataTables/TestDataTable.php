@@ -31,7 +31,7 @@ class TestDataTable extends DataTable
             })
             ->addColumn('action', function($query){
                 $editBtn = "<a href='".route('teacher.tests.edit', ['test' => $query->id, 'course' => request()->query('course')])."' class='btn btn-primary'><i class='far fa-edit'></i></a>";
-                $deleteBtn = "<a href='' class='btn btn-danger delete-item' ><i class='far fa-trash-alt'></i></a>";
+                $deleteBtn = "<a href='".route('teacher.tests.destroy', $query->id)."' class='btn btn-danger delete-item' ><i class='far fa-trash-alt'></i></a>";
     
                 // $moreBtn = '<div class="btn-group dropstart" style="margin-left:3px">
                 //     <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">

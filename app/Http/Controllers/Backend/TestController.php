@@ -146,6 +146,9 @@ class TestController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $test = Test::findOrFail($id);
+        $test->delete();
+
+        return response(['status' => 'success', 'message' => 'Deleted Successfully']);
     }
 }
