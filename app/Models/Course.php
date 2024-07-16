@@ -34,5 +34,9 @@ class Course extends Model
         return $this->belongsToMany(User::class, 'course_purchaes', 'course_id', 'user_id');
     }
 
-
+    // ความสัมพันธ์กับแบบทดสอบ
+    public function test()
+    {
+        return $this->hasOne(Test::class);
+    }
 }
