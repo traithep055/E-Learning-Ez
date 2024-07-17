@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Course;
 use App\Models\Lesson;
+use App\Models\TestResult;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class LearnController extends Controller
@@ -16,6 +18,7 @@ class LearnController extends Controller
 
     public function learn($courseId, $lessonSlug)
     {
+        $user = Auth::user();
         $course = Course::findOrFail($courseId);
         $lesson = Lesson::where('course_id', $courseId)->where('slug', $lessonSlug)->firstOrFail();
 
@@ -30,6 +33,14 @@ class LearnController extends Controller
                             ->orderBy('id')
                             ->first();
 
-        return view('frontend.pages.learn', compact('course', 'lesson', 'previousLesson', 'nextLesson'));
+        // Check if user has passed the test with a score greater than 80%
+        $hasPassedTest = TestResult::where('user_id', $user->id)
+                                   ->whereHas('test.course', function($query) use ($courseId) {
+                                       $query->where('id', $courseId);
+                                   })
+                                   ->where('score', '>', 80)
+                                   ->exists();
+
+        return view('frontend.pages.learn', compact('course', 'lesson', 'previousLesson', 'nextLesson', 'hasPassedTest'));
     }
 }

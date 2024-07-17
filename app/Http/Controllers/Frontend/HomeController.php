@@ -33,7 +33,13 @@ class HomeController extends Controller
     public function showcourseDetail(string $id) 
     {
         $course = Course::findOrFail($id);
+        $user = Auth::user();
 
-        return view('frontend.pages.course_detail', compact('course'));
+        $hasPurchased = false;
+        if ($user) {
+            $hasPurchased = $user->purchasedCourses->contains($course->id);
+        }
+
+        return view('frontend.pages.course_detail', compact('course', 'hasPurchased'));
     }
 }

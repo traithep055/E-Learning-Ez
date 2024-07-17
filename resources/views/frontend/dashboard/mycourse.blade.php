@@ -66,6 +66,14 @@
                           @else
                             <span class="text-muted">ไม่มีบทเรียน</span>
                           @endif
+
+                          <!-- ตรวจสอบว่าผู้ใช้ผ่านการทดสอบใด ๆ ของคอร์สนี้หรือไม่ -->
+                          @foreach ($passedTests as $test)
+                            @if ($test->test->course_id == $mycourse->id)
+                              <a href="" class="btn btn-success mt-2">รับใบประกาศณียบัตร</a>
+                              @break
+                            @endif
+                          @endforeach
                         </div>
                       </div>
                     </div> 
