@@ -1,6 +1,7 @@
 @extends('admin.layouts.master')
 
 @section('content')
+
 <section class="section">
     <div class="section-header">
       <h1>Dashboard</h1>
@@ -65,7 +66,7 @@
             </div>
           </div>
         </div>
-      </div>                  
-    </div>   
+      </div>
+    </div>
 </section>
 @endsection
