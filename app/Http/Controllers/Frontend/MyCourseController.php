@@ -16,9 +16,9 @@ class MyCourseController extends Controller
         $user = Auth::user();
         $mycourses = $user->purchasedCourses()->with('lessons', 'teacher', 'purchasedCourses')->get();
 
-        // ดึงผลการทดสอบที่มีคะแนน > 80%
+        // ดึงผลการทดสอบที่มีคะแนน >= 80%
         $passedTests = TestResult::where('user_id', $user->id)
-            ->where('score', '>', 80)
+            ->where('score', '>=', 80)
             ->get();
 
         return view('frontend.dashboard.mycourse', compact('mycourses', 'passedTests'));
