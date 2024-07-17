@@ -39,7 +39,11 @@
                                 <a href="{{ route('user.learn_course.lesson', ['course' => $course->id, 'lesson' => $nextLesson->slug]) }}" class="btn btn-primary">บทเรียนถัดไป</a>
                             @else
                                 <p class="mt-2">คุณได้เรียนจบบทเรียนทั้งหมดแล้ว!</p>
-                                <a href="{{ route('user.tests.take', ['course' => $course->id]) }}" class="btn btn-primary">ทำแบบทดสอบ</a>
+                                @if ($hasPassedTest)
+                                    <a href="" class="btn btn-primary">รับใบประกาศณียบัตร</a>
+                                @else
+                                    <a href="{{ route('user.tests.take', ['course' => $course->id]) }}" class="btn btn-primary">ทำแบบทดสอบ</a>
+                                @endif
                             @endif
                         </div>
                     </div>
