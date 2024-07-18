@@ -20,12 +20,10 @@
                         <label>รูปภาพ</label>
                         <input type="file" class="form-control" name="image">
                     </div>
-
                     <div class="form-group wsus__input">
                         <label>ชื่อ</label>
                         <input type="text" class="form-control" name="name" value="{{old('name')}}">
                     </div>
-
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group wsus__input">
@@ -43,7 +41,6 @@
                                 <label for="inputState">ประเภทย่อย</label>
                                 <select id="inputState" class="form-control sub-category" name="sub_category">
                                     <option value="">Select</option>
-
                                 </select>
                             </div>
                         </div>

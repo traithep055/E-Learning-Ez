@@ -66,7 +66,7 @@ p {
   text-transform: capitalize;
   font-weight: 600;
   color: #fff;
-  background: rgb(18, 123, 175);
+  background: #14410a;
   padding: 12px 25px;
   border: none;
   border-radius: 30px;
@@ -80,7 +80,7 @@ p {
 
 .common_btn:hover {
   color: #fff;
-  background: rgb(2, 82, 122);
+  background: #d7bdac;
 }
 
 .see_btn {
@@ -154,7 +154,7 @@ p {
 
 .add_cart:hover {
   color: #fff;
-  background: rgb(2, 82, 122);
+  background: #EECEB9;
 }
 
 /*======================
@@ -249,7 +249,7 @@ p {
 }
 
 .wsus__topbar_dropdown li a:hover {
-  background: #aad8ff73;
+  background: #EECEB9;
   color: #007aff;
 }
 
@@ -360,7 +360,7 @@ p {
   top: 50%;
   transform: translateY(-50%);
   right: 2px;
-  background: #aad8ffab;
+  background: #EECEB9;
   padding: 16px 35px;
   border-radius: 80px;
   transition: all linear 0.3s;
@@ -729,7 +729,7 @@ p {
 
 .wsus_menu_cat_item>li:hover>a {
   color: #007aff;
-  background: #aad8ff73;
+  background: #EECEB9;
 }
 
 .wsus_menu_cat_item>li:hover .wsus__droap_arrow::after {
@@ -1415,7 +1415,7 @@ PRODUCT MODAL VIEW END
   font-size: 0;
   width: 30px;
   height: 8px;
-  background: #76c3ff;
+  background: #EECEB9;
   border-radius: 50px;
   margin: 0 5px;
   outline: 0;
@@ -1423,7 +1423,7 @@ PRODUCT MODAL VIEW END
 }
 
 #wsus__banner .slick-dots li.slick-active button {
-  background: #0086ee;
+  background: #EECEB9;
 }
 
 /*======================
@@ -1723,7 +1723,7 @@ PRODUCT MODAL VIEW END
 .wsus__single_pro_icon li a:hover {
   color: #fff !important;
   border-color: #08C;
-  background: #08C;
+  background: #EECEB9;
 }
 
 .wsus__product_details {
@@ -2123,13 +2123,13 @@ HOME BLOGS END
 .single_banner_2 h3,
 .single_banner_2 .shop_btn {
   color: #353535;
-  border-color: #353535;
+  border-color: #EECEB9;
 }
 
 .single_banner_2 .shop_btn:hover {
   color: #fff;
   background: #08C;
-  border-color: #08C;
+  border-color: #EECEB9;
 }
 
 /*======================
@@ -2461,7 +2461,7 @@ WEEKLY BEST ITEM START
 #wsus__weekly_best .prv_arr:hover,
 .home_blogs .nxt_arr:hover,
 .home_blogs .prv_arr:hover {
-  background: #045c9f;
+  background: #EECEB9;
   opacity: 1;
 }
 
@@ -2974,7 +2974,7 @@ PPRODUCT PAGE START
 }
 
 .wsus__sidebar_filter {
-  background: #08C;
+  background: #E68369;
   display: none;
   align-items: center;
   justify-content: space-between;
@@ -3099,8 +3099,8 @@ PPRODUCT PAGE START
 }
 
 .form-check-input:checked {
-  background-color: #08C;
-  border-color: #08C;
+  background-color: #ffea98;
+  border-color: #edeba2;
 }
 
 .form-check label {
@@ -3117,7 +3117,7 @@ PPRODUCT PAGE START
 }
 
 .form-check label:hover {
-  color: #54b3fd;
+  color: #E68369;
 }
 
 .form-check-input:focus {
@@ -3143,7 +3143,7 @@ PPRODUCT PAGE START
 }
 
 .wsus__product_sidebar ul li a:hover {
-  color: #08C;
+  color: #E68369;
 }
 
 .price_ranger label {
@@ -3433,7 +3433,7 @@ PRODUCT DETAILS START
 }
 
 .wsus__pro_det_video:hover {
-  background: #2a9df5cb;
+  background: #EECEB9;
   color: #fff;
 }
 
@@ -6670,7 +6670,7 @@ WISHLIST PAGE START
   align-items: center;
   justify-content: end;
   padding: 5px 20px;
-  background: #0b2c3d;
+  background: #254336;
 }
 
 .wsusd__dashboard_user {
@@ -6699,7 +6699,7 @@ WISHLIST PAGE START
 .dashboard_sidebar {
   width: 15%;
   height: 100vh;
-  background: #0b2c3d;
+  background: #fff;
   position: fixed;
   top: 0;
   left: 0;
@@ -6709,11 +6709,11 @@ WISHLIST PAGE START
 .dash_logo {
   width: 100%;
   text-align: center;
-  margin-top: 7px;
+  margin-top: 20px;
 }
 
 .dash_logo img {
-  width: 80px;
+  width: 150px;
   margin-top: 10px;
   border-radius: 5px;
 }
@@ -6725,12 +6725,12 @@ WISHLIST PAGE START
   height: 500px;
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: #08C #0b172d;
+  scrollbar-color: #EECEB9 #6B8A7A;
 }
 
 .dashboard_link li a {
   font-size: 15px;
-  color: #e8e8e8;
+  color: #000;
   font-weight: 500;
   text-transform: capitalize;
   border-bottom: 1px solid #fffefe17;
@@ -6753,7 +6753,8 @@ WISHLIST PAGE START
 
 .dashboard_link li a:hover,
 .dashboard_link li a.active {
-  background: #051a25;
+  background: #254336;
+  color: #FFF;
 }
 
 .dashboard_content h3 {
@@ -6805,27 +6806,27 @@ WISHLIST PAGE START
 }
 
 .wsus__dashboard .red {
-  background: #f91942;
+  background: #1A3636;
 }
 
 .wsus__dashboard .green {
-  background: #1ec38b;
+  background: #254336;
 }
 
 .wsus__dashboard .orange {
-  background: #fd7e14;
+  background: #D6BD98;
 }
 
 .wsus__dashboard .blue {
-  background: #0072e3;
+  background: #B7B597;
 }
 
 .wsus__dashboard .sky {
-  background: #61affd;
+  background: #677D6A;
 }
 
 .wsus__dashboard .purple {
-  background: #7c007c;
+  background: #EECEB9;
 }
 
 .wsus__dashboard_item:hover {
@@ -7047,7 +7048,7 @@ WISHLIST PAGE START
 }
 
 .wsus__dashboard_order .status a:hover {
-  background: #08C;
+  background: #EECEB9;
   color: #fff;
 }
 
@@ -7195,6 +7196,11 @@ WISHLIST PAGE START
   font-weight: 500;
   margin-bottom: 10px;
 }
+.wsus__dash_pro_area .btn {
+    color: #000;
+    background-color: #88AB8E;
+    border-color: #F2F1EB;
+}
 
 .wsus__dash_pro_single {
   display: flex;
@@ -7210,7 +7216,7 @@ WISHLIST PAGE START
   text-align: center;
   border-radius: 3px;
   margin-right: 10px;
-  color: #08C;
+  color: #88AB8E;
   border: 1px solid #eee;
 }
 
@@ -7238,9 +7244,7 @@ WISHLIST PAGE START
   position: absolute;
   bottom: 0;
   left: 0;
-  background: #6fbcfb85;
-  width: 100%;
-  padding: 10px;
+  width: 250px;
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -7267,7 +7271,7 @@ WISHLIST PAGE START
 }
 
 .wsus__dash_add_single h4 span {
-  color: #08C;
+  color: #ECCEAE;
   text-transform: capitalize;
   font-weight: 500;
   border: 1px solid#08C;
@@ -7312,7 +7316,7 @@ WISHLIST PAGE START
   color: #fff;
   padding: 5px;
   width: 100%;
-  background: #08C;
+  background: #88AB8E;
 }
 
 .wsus__address_btn a i {
@@ -7362,7 +7366,7 @@ WISHLIST PAGE START
 .close_icon {
   width: 40px;
   height: 40px;
-  background: #08C;
+  background: #DAD3BE;
   text-align: center;
   line-height: 40px;
   color: #fff;
@@ -7383,7 +7387,7 @@ WISHLIST PAGE START
   width: 40px;
   height: 40px;
   line-height: 40px;
-  background: #08C;
+  background: #254336;
   font-size: 20px;
   transition: all linear 0.3s;
   -webkit-transition: all linear 0.3s ease;
@@ -7393,7 +7397,7 @@ WISHLIST PAGE START
 }
 
 .close_icon .dash_close {
-  background: red;
+  background: #DAD3BE;
   opacity: 0;
 }
 
@@ -7462,7 +7466,7 @@ TERMS & CONDITION START
   text-transform: capitalize;
   font-size: 16px;
   font-weight: 500;
-  color: #08C;
+  color: #ECCEAE;
 }
 
 /*======================
@@ -7487,12 +7491,12 @@ FORGET PASSWORD START
 
 .wsus__forget_area .qiestion_icon i {
   font-size: 40px;
-  color: #08C;
+  color: #ECCEAE;
   margin-bottom: 15px;
 }
 
 .wsus__forget_area h4 {
-  color: red;
+  color: ECCEAE;
   margin-bottom: 20px;
   text-align: center;
 }
@@ -7504,7 +7508,7 @@ FORGET PASSWORD START
 
 .wsus__forget_area p span {
   text-transform: uppercase;
-  color: #08C;
+  color: #ECCEAE;
   font-weight: 700;
   display: block;
 }
@@ -7572,7 +7576,7 @@ PAYMENT PAGE  START
 .wsus__pay_info_area .nav-pills .nav-link {
   margin-bottom: 10px;
   padding: 15px 0px;
-  background: #08C;
+  background: #ECCEAE;
   border-radius: 30px;
 }
 
@@ -7589,7 +7593,7 @@ PAYMENT PAGE  START
 
 .wsus__pay_info_area .nav-pills .nav-link.active,
 .wsus__pay_info_area .nav-pills .nav-link:hover {
-  background: rgb(2, 82, 122);
+  background: #EECEB9;
 }
 
 .wsus__pay_info_area .tab-pane {
@@ -7706,7 +7710,7 @@ PAYMENT PAGE  START
   content: "\f00c";
   top: 1px;
   left: 0;
-  color: #08C;
+  color: #E9CE1E;
   font-size: 14px;
   border: none;
 }
@@ -7899,7 +7903,7 @@ TRACKING ORDER START
 }
 
 .progtrckr li:nth-child(1)::after {
-  background: #08C;
+  background: #88AB8E;
 }
 
 .progtrckr li:nth-child(2)::before {
@@ -7911,13 +7915,13 @@ TRACKING ORDER START
 }
 
 .check_mark::before {
-  background: #08C !important;
+  background: #88AB8E !important;
   color: #fff !important;
-  border-color: #08C !important;
+  border-color: #88AB8E !important;
 }
 
 .check_mark::after {
-  background: #08C !important;
+  background: #88AB8E !important;
 }
 
 .red_mark::before {
@@ -8245,7 +8249,7 @@ CUSTOM PAGE END
   color: #fff;
   width: 100%;
   text-align: center;
-  background: #08C;
+  background: #ECCEAE;
   padding: 8px 0px 10px 0px;
 }
 
@@ -8435,7 +8439,7 @@ DAILY DEALS DETAILS END
 .wsus__single_brand::after {
   position: absolute;
   content: "";
-  background: #08C;
+  background: #ECCEAE;
   width: 70%;
   height: 70%;
   top: 50%;
@@ -8463,7 +8467,7 @@ DAILY DEALS DETAILS END
   position: absolute;
   top: 0;
   left: 0;
-  background: #08C;
+  background: #ECCEAE;
   color: #fff;
   text-transform: capitalize;
   font-size: 14px;
@@ -9330,7 +9334,7 @@ DASHBOARD CHAT START
   height: 40px;
   border-radius: 50%;
   border: none;
-  background: #08C;
+  background: #EECEB9;
   color: #fff;
   padding-right: 2px;
   transition: all linear .3s;
@@ -9486,6 +9490,15 @@ a:not([href]):not([class]):hover {
 .create_button {
     text-align: right;
     margin-bottom: 10px;
+}
+.create_button a{
+    color: #254336;
+}
+.create_button .btn{
+    text-align: right;
+    margin-bottom: 10px;
+    background-color: #EEE7DA;
+    border-color: #F6E6CB;
 }
 
 #flexSwitchCheckDefault {
