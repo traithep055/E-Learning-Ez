@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container" style="margin-left: 5%">
+<div class="container mt-8" style="margin-left: 5%">
     <div class="row">
         <div class="col mt-3">
             <div class="content d-flex flex-column " style="padding: 2%;">
@@ -11,7 +11,7 @@
                     {{-- Start ตัวกรอง --}}
                         <div class="menu" style="width: 25%; margin-left: 40px">
                             <div class="price mt-3 mb-3" style="display: flex; align-items: center;">
-                                <h4>Teacher</h4>
+                                <h4>ผู้สอน</h4>
                             </div>
                             <div class="divider" style="width: 90%;"></div>
                         </div>
