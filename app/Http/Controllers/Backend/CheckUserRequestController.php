@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Become_teacher;
 use App\Models\User;
+use App\Models\Teacher;
 use DB;
 
 class CheckUserRequestController extends Controller
@@ -33,7 +34,7 @@ class CheckUserRequestController extends Controller
 
     public function approve(Request $request, $id)  
     {
-        // ดึงข้อมูลคำขอเป็นครู (teacher request)
+        // ดึงข้อมูลคำขอเป็นครู
         $teacherRequest = Become_teacher::findOrFail($id);
         
         // ดึงข้อมูลผู้ใช้
@@ -47,20 +48,25 @@ class CheckUserRequestController extends Controller
         $teacherRequest->status = 'approve';
         $teacherRequest->save();
         
-        toastr()->success('Teacher request has been approved successfully.');
+        // สร้าง entry ใหม่ในตาราง teachers
+        $teacher = new Teacher();
+        $teacher->user_id = $user->id;
+        $teacher->save(); // บันทึกข้อมูลลงในฐานข้อมูล
+        
+        toastr()->success('อนุมัติคำขอเป็นครูเรียบร้อยแล้ว.');
         return redirect()->back();
     }
 
     public function decline(Request $request, $id)  
     {
-        // ดึงข้อมูลคำขอเป็นครู (teacher request)
+        // ดึงข้อมูลคำขอเป็นครู
         $teacherRequest = Become_teacher::findOrFail($id);
         
         // เปลี่ยนสถานะเป็น "decline" สำหรับคำขอเป็นครู
         $teacherRequest->status = 'decline';
         $teacherRequest->save();
         
-        toastr()->success('Teacher request has been decline successfully.');
+        toastr()->success('ปฏิเสธคำขอเป็นครูเรียบร้อยแล้ว.');
         return redirect()->back();
     }
 
