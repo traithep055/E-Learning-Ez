@@ -34,14 +34,14 @@ body {
     height: 40px;
     padding: 1%;
     font-size: 20px;
-    border: 1px solid #727272; /* กรอบเส้นขนาด 2px สีดำ */
+    border: 1px solid #A8DBFF; /* กรอบเส้นขนาด 2px สีดำ */
 }
 
 .btn-search {
-    background-color: #E8DFCA;
+    background-color: #A8DBFF;
     width: 5%;
     border-radius: 15%;
-    border: 1px solid #b1ababa0; /* กรอบเส้นขนาด 2px สีดำ */
+    border: 1px solid #98dae4a0; /* กรอบเส้นขนาด 2px สีดำ */
 }
 .bx-search {
     width: 5%;
@@ -97,7 +97,7 @@ body {
     color: #000;
 }
 .form-check-label {
-    color: #000;
+    color: #000000;
 }
 
 /*corse*/
@@ -121,26 +121,26 @@ body {
 
 
 .card .card-body .btn{
-    background-color: #D6EFD8;
-    color: rgb(21, 61, 27);
+    background-color: #A8DBFF;
+    color: rgb(22, 21, 61);
 }
 .card .card-body .btn:hover{
-    background-color: #E8DFCA;
-    color: rgb(0, 0, 0);
+    background-color: #7db7de;
+    color: rgb(44, 59, 58);
     /* border: 1px solid rgba(76, 91, 77, 0.5); */
 }
 
 .card-body .card-title a{
-    color: rgb(21, 56, 28);
+    color: rgb(10, 72, 102);
 }
 .card-body .card-title:hover a{
-    color: rgb(33, 169, 124);
+    color: rgb(17, 109, 167);
 }
 .card-body .teacher{
-    color: #e49100;
+    color: #8ec5d5;
 }
 .card-body .teacher:hover {
-    color: rgb(33, 169, 124);
+    color: rgb(1, 108, 129);
 }
 
 /* .login-logout */
