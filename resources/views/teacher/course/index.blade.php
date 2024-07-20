@@ -15,7 +15,7 @@
       <div class="row">
         <div class="col-xl-9 col-xxl-10 col-lg-9 ms-auto">
           <div class="dashboard_content mt-2 mt-md-0">
-            <h3><i class="far fa-solid fa-book"></i> Courses</h3>
+            <h3><i class="far fa-solid fa-book"></i> คอร์ส</h3>
             <div class="create_button">
                 <a href="{{route('teacher.courses.create')}}" class="btn btn-primary"><i class="fas fa-plus"></i> สร้างคอร์ส</a>
             </div>

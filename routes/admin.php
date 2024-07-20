@@ -8,6 +8,7 @@ use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\SubCategoryController;
 use App\Http\Controllers\Backend\CouponController;
 use App\Http\Controllers\Backend\AllCourseController;
+use App\Http\Controllers\Backend\BillReportController;
 use Illuminate\Support\Facades\Route;
 
 /*** Admin Route ***/
@@ -41,3 +42,6 @@ Route::resource('coupons', CouponController::class);
 
 /** All Course Report */
 Route::get('all-course', [AllCourseController::class, 'index'])->name('all-course');
+
+/** Bill Report */
+Route::get('bill-report', [BillReportController::class, 'AdminBillReport'])->name('bill-report');
