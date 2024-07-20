@@ -30,6 +30,7 @@
           <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-solid fa-book"></i> <span>รายงาน</span></a>
           <ul class="dropdown-menu">
             <li><a class="nav-link" href="{{route('admin.all-course')}}">คอร์ส</a></li>
+            <li><a class="nav-link" href="{{route('admin.bill-report')}}">การซื้อคอร์ส</a></li>
             
           </ul>
         </li>

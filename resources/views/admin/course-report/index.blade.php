@@ -25,6 +25,7 @@
                                     <tr>
                                         <th scope="col">#</th>
                                         <th scope="col">ชื่อคอร์ส</th>
+                                        <th scope="col">จำนวนผู้เรียน</th>
                                         <th scope="col">ราคา</th>
                                         {{-- <th scope="col">Course Type</th> --}}
                                         <th scope="col">ผู้สอน</th>
@@ -38,7 +39,10 @@
                                                 {{$course->name}}
                                             </td>
                                             <td>
-                                                {{ $course->price }}
+                                                {{$course->purchasedCourses->count()}} คน
+                                            </td>
+                                            <td>
+                                                {{ $course->price }} บาท
                                             </td>
                                             {{-- <td>
                                                 @switch($course->course_type)

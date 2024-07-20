@@ -16,9 +16,9 @@
                   </a>
                 </div>
                 <div class="col-xl-2 col-6 col-md-4">
-                  <a class="wsus__dashboard_item green" href="dsahboard_download.html">
-                    <i class="fal fa-cloud-download"></i>
-                    <p>download</p>
+                  <a class="wsus__dashboard_item green" href="{{ route('teacher.course-students') }}">
+                    <i class="fas fa-solid fa-user"></i>
+                    <p>ข้อมูลผู้เรียน</p>
                   </a>
                 </div>
                 <div class="col-xl-2 col-6 col-md-4">
