@@ -8,7 +8,7 @@ body {
   scroll-behavior: smooth;
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
-  background: #f5f6f7;
+  background: #ffffff;
 }
 
 ul,
@@ -66,7 +66,7 @@ p {
   text-transform: capitalize;
   font-weight: 600;
   color: #fff;
-  background: #14410a;
+  background: #168be5;
   padding: 12px 25px;
   border: none;
   border-radius: 30px;
@@ -80,7 +80,7 @@ p {
 
 .common_btn:hover {
   color: #fff;
-  background: #d7bdac;
+  background: #accfd7;
 }
 
 .see_btn {
@@ -249,7 +249,7 @@ p {
 }
 
 .wsus__topbar_dropdown li a:hover {
-  background: #EECEB9;
+  background: #a44b10;
   color: #007aff;
 }
 
@@ -360,7 +360,7 @@ p {
   top: 50%;
   transform: translateY(-50%);
   right: 2px;
-  background: #EECEB9;
+  background: #c65205;
   padding: 16px 35px;
   border-radius: 80px;
   transition: all linear 0.3s;
@@ -3099,8 +3099,8 @@ PPRODUCT PAGE START
 }
 
 .form-check-input:checked {
-  background-color: #ffea98;
-  border-color: #edeba2;
+  background-color: #00a6ff;
+  border-color: #00bbff;
 }
 
 .form-check label {
@@ -3365,7 +3365,7 @@ PPRODUCT PAGE START
 .preloader {
   width: 100%;
   height: 80vh;
-  background: #fff;
+  background: hsl(0, 0%, 100%);
   position: relative;
   z-index: 99;
   border: 1px solid #eee;
@@ -6669,8 +6669,9 @@ WISHLIST PAGE START
   display: flex;
   align-items: center;
   justify-content: end;
-  padding: 5px 20px;
-  background: #254336;
+  padding: 5px 40px;
+  background: #FFF;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .wsusd__dashboard_user {
@@ -6697,6 +6698,7 @@ WISHLIST PAGE START
 }
 
 .dashboard_sidebar {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   width: 15%;
   height: 100vh;
   background: #fff;
@@ -6725,7 +6727,7 @@ WISHLIST PAGE START
   height: 500px;
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: #EECEB9 #6B8A7A;
+  scrollbar-color: #137BC5 #6B8A7A;
 }
 
 .dashboard_link li a {
@@ -6753,8 +6755,8 @@ WISHLIST PAGE START
 
 .dashboard_link li a:hover,
 .dashboard_link li a.active {
-  background: #254336;
-  color: #FFF;
+  background: #A8DBFF;
+  color: #000;
 }
 
 .dashboard_content h3 {
@@ -6806,27 +6808,27 @@ WISHLIST PAGE START
 }
 
 .wsus__dashboard .red {
-  background: #1A3636;
+  background: #002F74;
 }
 
 .wsus__dashboard .green {
-  background: #254336;
+  background: #0E6EAD;
 }
 
 .wsus__dashboard .orange {
-  background: #D6BD98;
+  background: #4EB2FF;
 }
 
 .wsus__dashboard .blue {
-  background: #B7B597;
+  background: #2B9AFC;
 }
 
 .wsus__dashboard .sky {
-  background: #677D6A;
+  background: #0086ee;
 }
 
 .wsus__dashboard .purple {
-  background: #EECEB9;
+  background: #A8DBFF;
 }
 
 .wsus__dashboard_item:hover {
@@ -7048,7 +7050,7 @@ WISHLIST PAGE START
 }
 
 .wsus__dashboard_order .status a:hover {
-  background: #EECEB9;
+  background: #4EB6FF;
   color: #fff;
 }
 
@@ -7198,7 +7200,12 @@ WISHLIST PAGE START
 }
 .wsus__dash_pro_area .btn {
     color: #000;
-    background-color: #88AB8E;
+    background-color: #A8DBFF;
+    border-color: #F2F1EB;
+}
+.wsus__dash_pro_area .btn:hover {
+    color: #fff;
+    background-color: #137BC5;
     border-color: #F2F1EB;
 }
 
@@ -7216,7 +7223,7 @@ WISHLIST PAGE START
   text-align: center;
   border-radius: 3px;
   margin-right: 10px;
-  color: #88AB8E;
+  color: #A8DBFF;
   border: 1px solid #eee;
 }
 
@@ -7271,7 +7278,7 @@ WISHLIST PAGE START
 }
 
 .wsus__dash_add_single h4 span {
-  color: #ECCEAE;
+  color: #4EB6FF;
   text-transform: capitalize;
   font-weight: 500;
   border: 1px solid#08C;
@@ -7316,7 +7323,7 @@ WISHLIST PAGE START
   color: #fff;
   padding: 5px;
   width: 100%;
-  background: #88AB8E;
+  background: #A8DBFF;
 }
 
 .wsus__address_btn a i {
@@ -7366,7 +7373,7 @@ WISHLIST PAGE START
 .close_icon {
   width: 40px;
   height: 40px;
-  background: #DAD3BE;
+  background: #A8DBFF;
   text-align: center;
   line-height: 40px;
   color: #fff;
@@ -7387,7 +7394,7 @@ WISHLIST PAGE START
   width: 40px;
   height: 40px;
   line-height: 40px;
-  background: #254336;
+  background: #A8DBFF;
   font-size: 20px;
   transition: all linear 0.3s;
   -webkit-transition: all linear 0.3s ease;
@@ -7397,7 +7404,7 @@ WISHLIST PAGE START
 }
 
 .close_icon .dash_close {
-  background: #DAD3BE;
+  background: #030607;
   opacity: 0;
 }
 
@@ -7710,7 +7717,7 @@ PAYMENT PAGE  START
   content: "\f00c";
   top: 1px;
   left: 0;
-  color: #E9CE1E;
+  color: #E0CE;
   font-size: 14px;
   border: none;
 }
@@ -7903,7 +7910,7 @@ TRACKING ORDER START
 }
 
 .progtrckr li:nth-child(1)::after {
-  background: #88AB8E;
+  background: #A8DBFF;
 }
 
 .progtrckr li:nth-child(2)::before {
@@ -7915,13 +7922,13 @@ TRACKING ORDER START
 }
 
 .check_mark::before {
-  background: #88AB8E !important;
+  background: #A8DBFF !important;
   color: #fff !important;
-  border-color: #88AB8E !important;
+  border-color: #A8DBFF !important;
 }
 
 .check_mark::after {
-  background: #88AB8E !important;
+  background: #A8DBFF !important;
 }
 
 .red_mark::before {
@@ -9218,11 +9225,11 @@ DASHBOARD CHAT START
 }
 
 .wsus__chatlist .wsus_chat_list_text .status.active {
-  color: #5ba835;
+  color: #137BC5;
 }
 
 .wsus__chatlist .wsus_chat_list_text .status.active::after {
-  background: #5ba835;
+  background: #137BC5;
 }
 
 .wsus__chat_area_body {
@@ -9269,7 +9276,7 @@ DASHBOARD CHAT START
 .wsus__chat_single_text p {
   text-align: left;
   padding: 10px;
-  background: #eeeeeeb3;
+  background: #137BC5;
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -9345,7 +9352,7 @@ DASHBOARD CHAT START
 }
 
 .wsus__chat_area_footer form button:hover {
-  background: #5ba835;
+  background: #137BC5;
 }
 
 /*======================
@@ -9382,7 +9389,7 @@ DASHBOARD CHAT END
 
 .modal_btn button:focus {
   color: #fff;
-  background-color: #157347;
+  background-color: #FFFFFF;
   border-color: #146c43;
   box-shadow: none;
 }
@@ -9492,13 +9499,13 @@ a:not([href]):not([class]):hover {
     margin-bottom: 10px;
 }
 .create_button a{
-    color: #254336;
+    color: #030607;
 }
 .create_button .btn{
     text-align: right;
     margin-bottom: 10px;
-    background-color: #EEE7DA;
-    border-color: #F6E6CB;
+    background-color: #A8DBFF;
+    border-color: #FFF9FF;
 }
 
 #flexSwitchCheckDefault {
