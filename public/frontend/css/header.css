@@ -14,8 +14,10 @@ header {
     left: 0;
     z-index: 999;
     border: none;
-    background-color: #f0f2cb79;
-}
+    background-color: #ffffff79;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
+    }
+
 
 @media (max-width: 768px) {
   header {
@@ -52,7 +54,7 @@ header a.active {
 }
 
 header a:hover {
-    color: #1A4D2E;
+    color: #281a4d;
 }
 
 header .logo {
@@ -65,14 +67,15 @@ header .logo {
     padding: 1px 2px;
 }
 .choice .active{
-    background-color: #E8DFCA;
+    /* background-color: #A8DBFF; */
     padding: 5px 5px;
     margin: 2px;
     font-weight: 100;
+    color:#0c3450 ;
 }
 .choice .active:hover{
     background-color: #ffffff;
-    color: #1f4929;
+    color: #A8DBFF;
 }
 
 /* log-singin */
@@ -89,13 +92,13 @@ header .logo {
 }
 
 .logout a:hover {
-    background-color: #F5EFE6;
+    background-color: #ffffff;
     transform: scale(1.05);
-    color: #000;
+    color: #A8DBFF;
     border: 1px solid rgb(255, 255, 255);
 }
 .logout a:hover i{
-    color: #cd871e;
+    color: #A8DBFF;
 }
 
 .logout i {
@@ -107,7 +110,7 @@ header .logo {
 }
 
 .btn-secondary {
-    background-color: #6c757d;
+    background-color: #1773c3;
     border: none;
     color: white;
     transition: background-color 0.3s ease;

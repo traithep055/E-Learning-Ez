@@ -35,7 +35,7 @@
         </div>
         <div class="clearn col-md-8 ">
             <p class="btn "
-                style="width: 85%; font-size:15px; margin-left:15%; color: rgb(207, 137, 7); margin-top: -10px">
+                style="width: 85%; font-size:15px; margin-left:15%; color: rgba(255, 0, 0, 0.513); margin-top: -10px">
                 ล้างตัวกรอง
             </p>
         </div>
