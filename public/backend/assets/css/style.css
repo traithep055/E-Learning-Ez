@@ -1764,7 +1764,7 @@ a.dropdown-item {
   font-weight: 500;
   line-height: 1.2; }
   a.dropdown-item:focus, a.dropdown-item:active, a.dropdown-item.active {
-    background-color: #6777ef;
+    background-color: #ffffff;
     color: #fff !important; }
 
 .dropdown-divider {
