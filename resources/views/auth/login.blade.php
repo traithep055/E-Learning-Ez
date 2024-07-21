@@ -51,7 +51,7 @@
                     <div class="input-field">
                         <style>
                             input[type="submit"] {
-                                background-color: #7dba7c;
+                                background-color: #40acf4;
                                 /* สีม่วง */
                                 color: #ffffff;
                                 /* สีข้อความ */
@@ -64,7 +64,7 @@
                             }
                             /* เม้าส์ไปชี้ปุ่ม Submit */
                             input[type="submit"]:hover {
-                                background-color: #E8DFCA;
+                                background-color: #9fd9ff;
                                 color: black;
                                 /* สีม่วงอ่อน */
                             }
