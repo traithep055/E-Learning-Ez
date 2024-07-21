@@ -3,7 +3,7 @@
       <i class="far fa-bars dash_bar"></i>
       <i class="far fa-times dash_close"></i>
     </span>
-    <a href="{{route('teacher.dashboard')}}" class="dash_logo"><img src="{{asset('images/logo2.png')}}" alt="logo" class="img-fluid" width="300" height="200"></a>
+    <a href="{{route('teacher.dashboard')}}" class="dash_logo"><img src="{{asset('images/logo.png')}}" alt="logo" class="img-fluid" width="100" height="200"></a>
     <ul class="dashboard_link">
       <li><a class="active" href="{{route('teacher.dashboard')}}"><i class="fas fa-tachometer"></i>Dashboard</a></li>
       <li><a href="{{route('teacher.courses.index')}}"><i class="far fa-address-book"></i> คอร์สของฉัน</a></li>

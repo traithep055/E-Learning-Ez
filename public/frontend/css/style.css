@@ -6711,12 +6711,12 @@ WISHLIST PAGE START
 .dash_logo {
   width: 100%;
   text-align: center;
-  margin-top: 20px;
 }
 
 .dash_logo img {
-  width: 150px;
-  margin-top: 10px;
+  width: 250px;
+  margin-top: -55px;
+  margin-bottom: -115px;
   border-radius: 5px;
 }
 

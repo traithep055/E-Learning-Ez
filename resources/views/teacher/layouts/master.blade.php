@@ -159,7 +159,7 @@
 
     <!-- Dynamic Delete alart -->
 
-    
+
 
 <!-- Dynamic Delete alert -->
 <script>
@@ -216,7 +216,7 @@
     });
 </script>
 
-   
+
 
   @stack('scripts')
 </body>

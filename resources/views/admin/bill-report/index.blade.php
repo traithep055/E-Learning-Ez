@@ -1,7 +1,7 @@
 @extends('admin.layouts.master')
 
 @section('content')
-    <!-- Main Content --> 
+    <!-- Main Content -->
     <section class="section">
         <div class="section-header">
             <h1>การซื้อคอร์สทั้งหมด</h1>
