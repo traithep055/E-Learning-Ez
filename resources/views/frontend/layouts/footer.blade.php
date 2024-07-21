@@ -34,7 +34,7 @@
     <div class="divider" style="width: 100%;"></div>
         <span> Copyright © 2024 </span>
         <div class="icon-f" style="margin-left:95%; margin-top:-2%">
-            <box-icon name='facebook' type='logo' animation='tada' color='#06D001' ></box-icon>
-            <box-icon name='instagram' type='logo' animation='tada' color='#06D001' ></box-icon>
+            <box-icon name='facebook' type='logo' animation='tada' color='#4EB6FF' ></box-icon>
+            <box-icon name='instagram' type='logo' animation='tada' color='#4EB6FF' ></box-icon>
         </div>
 </footer>
