@@ -3775,20 +3775,20 @@ fieldset:disabled .btn {
 }
 
 .btn-warning {
-  --bs-btn-color: #ffffff;
-  --bs-btn-bg: #00fb11;
-  --bs-btn-border-color: #fb8c00;
+  --bs-btn-color: #030303;
+  --bs-btn-bg: #76b6ef;
+  --bs-btn-border-color: #00c5fb;
   --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: #fc9d26;
-  --bs-btn-hover-border-color: #fb981a;
+  --bs-btn-hover-bg: #89d8e7;
+  --bs-btn-hover-border-color: #1afbd9;
   --bs-btn-focus-shadow-rgb: 213, 119, 0;
   --bs-btn-active-color: #000;
-  --bs-btn-active-bg: #fca333;
-  --bs-btn-active-border-color: #fb981a;
+  --bs-btn-active-bg: #33e4fc;
+  --bs-btn-active-border-color: #1afbe4;
   --bs-btn-active-shadow: none;
   --bs-btn-disabled-color: #000;
-  --bs-btn-disabled-bg: #fb8c00;
-  --bs-btn-disabled-border-color: #fb8c00;
+  --bs-btn-disabled-bg: #00bcfb;
+  --bs-btn-disabled-border-color: #00c9fb;
 }
 
 .btn-danger {
@@ -20627,7 +20627,7 @@ fieldset:disabled .btn {
 
 .btn-primary,
 .btn.bg-gradient-primary {
-  box-shadow: 0 3px 3px 0 #E8DFCA, 0 3px 1px -2px #E8DFCA, 0 1px 5px 0 #E8DFCA;
+  box-shadow: 0 1px 1px 0 #202940, 0 1px 0px -2px #202940, 0 1px 0px 0 #202940;
 }
 
 .btn-primary:hover,
@@ -20805,22 +20805,10 @@ fieldset:disabled .btn {
   color: #1A73E8;
 }
 
-.btn-warning,
-.btn.bg-gradient-warning {
-  box-shadow: 0 3px 3px 0 rgba(251, 140, 0, 0.15), 0 3px 1px -2px rgba(251, 140, 0, 0.2), 0 1px 5px 0 rgba(251, 140, 0, 0.15);
+.btn-warning{
+    font-size: 15px;
 }
 
-.btn-warning:hover,
-.btn.bg-gradient-warning:hover {
-  background-color: #4c82af;
-  border-color: #fb8c00;
-  box-shadow: 0 14px 26px -12px rgba(251, 140, 0, 0.4), 0 4px 23px 0 rgba(251, 140, 0, 0.15), 0 8px 10px -5px rgba(251, 140, 0, 0.2);
-}
-
-.btn-warning .btn.bg-outline-warning,
-.btn.bg-gradient-warning .btn.bg-outline-warning {
-  border: 1px solid #fb8c00;
-}
 
 .btn-warning:not(:disabled):not(.disabled).active,
 .btn-warning:not(:disabled):not(.disabled):active,
@@ -20836,7 +20824,7 @@ fieldset:disabled .btn {
 .btn-warning:focus,
 .btn.bg-gradient-warning.focus,
 .btn.bg-gradient-warning:focus {
-  color: #fff;
+  color: #000;
 }
 
 .btn-outline-warning {
@@ -21122,7 +21110,7 @@ fieldset:disabled .btn {
 
 .btn-warning,
 .btn.bg-gradient-warning {
-  color: #fff;
+  color: #000;
 }
 
 .btn-warning:hover,

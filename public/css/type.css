@@ -121,14 +121,10 @@ body {
 
 
 .card .card-body .btn{
-    background-color: #A8DBFF;
+    background-color: #ffffff;
     color: rgb(22, 21, 61);
 }
-.card .card-body .btn:hover{
-    background-color: #7db7de;
-    color: rgb(44, 59, 58);
-    /* border: 1px solid rgba(76, 91, 77, 0.5); */
-}
+
 
 .card-body .card-title a{
     color: rgb(10, 72, 102);
