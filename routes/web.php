@@ -15,6 +15,7 @@ use App\Http\Controllers\Frontend\LearnController;
 use App\Http\Controllers\Frontend\BillController;
 use App\Http\Controllers\Frontend\MyCourseController;
 use App\Http\Controllers\Frontend\ExamController;
+use App\Http\Controllers\Frontend\CertificateController;
 use App\Models\Coupon;
 use Illuminate\Support\Facades\Route;
 
@@ -85,6 +86,10 @@ Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'user', 'as' => 
     /** หน้าการทำข้อสอบ */
     Route::get('courses/{course}/test', [ExamController::class, 'take'])->name('tests.take');
     Route::post('tests/{test}/submit', [ExamController::class, 'submit'])->name('tests.submit');
+    Route::get('tests/{test}/result', [ExamController::class, 'result'])->name('tests.result');
+
+    /** ใบประกาศนียบัตร */
+    Route::get('certificate/download/{course_id}', [CertificateController::class, 'getCertificate'])->name('certificate.download');
 });
 
 Route::group(['middleware' => 'auth'], function () {

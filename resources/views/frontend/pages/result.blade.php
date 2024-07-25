@@ -10,12 +10,6 @@
         @foreach ($incorrectQuestions as $question)
             <div class="mb-4">
                 <p><strong>คำถาม:</strong> {{ $question['question'] }}</p>
-                {{-- <p><strong>ตัวเลือกคำตอบ:</strong></p>
-                <ul>
-                    @foreach ($question['options'] as $key => $option)
-                        <li>{{ $key }}. {{ $option }}</li>
-                    @endforeach
-                </ul> --}}
                 <p><strong>คำตอบที่ถูกต้อง:</strong> {{ $question['correct_answer'] }}. {{ $question['options'][$question['correct_answer']] }}</p>
                 <p><strong>คำตอบของคุณ:</strong> {{ $question['user_answer'] }}. {{ $question['options'][$question['user_answer']] ?? 'ไม่ได้เลือก' }}</p>
             </div>
@@ -27,7 +21,7 @@
 
     <div class="mt-4">
         @if ($scorePercentage >= 80)
-            <a href="#" class="btn btn-success">รับใบประกาศณียบัตร</a>
+            <a href="{{ route('user.certificate.download', ['course_id' => $test->course->id]) }}" target="_blank" class="btn btn-success">รับใบประกาศณียบัตร</a>
         @endif
     </div>
 </div>

@@ -38,7 +38,7 @@ class LearnController extends Controller
                                    ->whereHas('test.course', function($query) use ($courseId) {
                                        $query->where('id', $courseId);
                                    })
-                                   ->where('score', '>', 80)
+                                   ->where('score', '>=', 80)
                                    ->exists();
 
         return view('frontend.pages.learn', compact('course', 'lesson', 'previousLesson', 'nextLesson', 'hasPassedTest'));
