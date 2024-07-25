@@ -40,7 +40,7 @@
                             @else
                                 <p class="mt-2">คุณได้เรียนจบบทเรียนทั้งหมดแล้ว!</p>
                                 @if ($hasPassedTest)
-                                    <a href="" class="btn btn-primary">รับใบประกาศณียบัตร</a>
+                                    <a href="{{ route('user.certificate.download', ['course_id' => $course->id]) }}" target="_blank" class="btn btn-primary">รับใบประกาศณียบัตร</a>
                                 @else
                                     <a href="{{ route('user.tests.take', ['course' => $course->id]) }}" class="btn btn-primary">ทำแบบทดสอบ</a>
                                 @endif

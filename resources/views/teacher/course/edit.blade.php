@@ -69,10 +69,10 @@
                         </div>
                     </div>
 
-                    {{-- <div class="form-group wsus__input">
-                        <label>SKU</label>
-                        <input type="text" class="form-control" name="sku" value="{{$course->sku}}">
-                    </div> --}}
+                    <div class="form-group wsus__input">
+                        <label>จำนวนชั่วโมง</label>
+                        <input type="number" class="form-control" name="hours" value="{{ old('hours') }}" step="0.01">
+                    </div>
 
                     <div class="form-group wsus__input">
                         <label>ราคา</label>

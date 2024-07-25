@@ -56,7 +56,11 @@
                             <a href="{{ route('course-detail', ['id' => $mycourse->id]) }}">{{ $mycourse->name }}</a>
                           </h5>
                           <p class="card-text">
-                            <span>โดย <a href="{{route('teacher-detail', ['id' => $mycourse->teacher->id])}}">{{ $mycourse->teacher->firstname }}</a></span><br>
+                            @if ($mycourse->teacher)
+                              <span>โดย <a href="{{ route('teacher-detail', ['id' => $mycourse->teacher->id]) }}">{{ $mycourse->teacher->firstname }}</a></span><br>
+                            @else
+                              <span>โดย <span class="text-muted">ข้อมูลผู้สอนไม่มี</span></span><br>
+                            @endif
                             <span><i class="fas fa-users"></i> {{ $mycourse->purchasedCourses->count() }}</span><br>
                             <span><i class="fas fa-clock"></i> เวลา 10 ชม.</span><br>
                             <span><i class="fas fa-layer-group"></i> ระดับ {{ $mycourse->level }}</span>
@@ -69,8 +73,12 @@
 
                           <!-- ตรวจสอบว่าผู้ใช้ผ่านการทดสอบใด ๆ ของคอร์สนี้หรือไม่ -->
                           @foreach ($passedTests as $test)
-                            @if ($test->test->course_id == $mycourse->id)
-                              <a href="" class="btn btn-success mt-2">รับใบประกาศณียบัตร</a>
+                            @if ($test->test && $test->test->course_id == $mycourse->id)
+                              @if ($test->test->course)
+                                <a href="{{ route('user.certificate.download', ['course_id' => $test->test->course->id]) }}" target="_blank" class="btn btn-success mt-2">รับใบประกาศณียบัตร</a>
+                              @else
+                                <span class="text-muted">ไม่สามารถรับใบประกาศณียบัตรได้</span>
+                              @endif
                               @break
                             @endif
                           @endforeach

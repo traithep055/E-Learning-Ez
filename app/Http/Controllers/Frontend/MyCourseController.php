@@ -19,6 +19,7 @@ class MyCourseController extends Controller
         // ดึงผลการทดสอบที่มีคะแนน >= 80%
         $passedTests = TestResult::where('user_id', $user->id)
             ->where('score', '>=', 80)
+            ->with('test') // Make sure to load the test relationship
             ->get();
 
         return view('frontend.dashboard.mycourse', compact('mycourses', 'passedTests'));

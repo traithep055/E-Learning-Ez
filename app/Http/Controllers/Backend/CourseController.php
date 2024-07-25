@@ -45,6 +45,7 @@ class CourseController extends Controller
             'price' => ['required', 'numeric'],
             'content' => ['required'],
             'status' => ['required'],
+            'hours' => ['required', 'numeric']
         ]);
 
 
@@ -72,6 +73,7 @@ class CourseController extends Controller
         $course->price = $request->price;
         $course->course_type = 'new_arrival';
         $course->status = $request->status;
+        $course->hours = $request->hours;
         $course->save();
 
         toastr()->success('Created Course Successfully');
@@ -111,6 +113,7 @@ class CourseController extends Controller
             'price' => ['required', 'numeric'],
             'content' => ['required'],
             'status' => ['required'],
+            'hours' => ['required', 'numeric']
         ]);
 
 
@@ -138,6 +141,7 @@ class CourseController extends Controller
         $course->price = $request->price;
         $course->course_type = 'new_arrival';
         $course->status = $request->status;
+        $course->hours = $request->hours;
         $course->save();
 
         toastr()->success('Update Course Successfully');
