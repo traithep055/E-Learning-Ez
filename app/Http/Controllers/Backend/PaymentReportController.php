@@ -8,9 +8,9 @@ use App\Models\CoursePurchaes;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
-class CourseStdController extends Controller
+class PaymentReportController extends Controller
 {
-    public function showStudents(Request $request)
+    public function PaymentReport(Request $request) 
     {
         // ดึงข้อมูลคอร์สทั้งหมดที่ผู้สอนที่ล็อกอินอยู่สร้างขึ้น
         $courses = Course::where('teacher_id', Auth::user()->teacher->id)->get(); 
@@ -25,6 +25,6 @@ class CourseStdController extends Controller
             }
         }
 
-        return view('teacher.report.course-std.students', compact('courses', 'students', 'selectedCourse'));
+        return view('teacher.report.payment-report.payment', compact('courses', 'students', 'selectedCourse'));
     }
 }

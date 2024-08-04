@@ -22,9 +22,9 @@
                   </a>
                 </div>
                 <div class="col-xl-2 col-6 col-md-4">
-                  <a class="wsus__dashboard_item sky" href="dsahboard_review.html">
-                    <i class="fas fa-star"></i>
-                    <p>review</p>
+                  <a class="wsus__dashboard_item sky" href="{{route('teacher.course-payment')}}">
+                    <i class="fas fa-solid fa-receipt"></i>
+                    <p>การชำระเงิน</p>
                   </a>
                 </div>
                 <div class="col-xl-2 col-6 col-md-4">

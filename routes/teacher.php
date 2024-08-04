@@ -6,6 +6,7 @@ use App\Http\Controllers\Backend\CourseController;
 use App\Http\Controllers\Backend\LessonController;
 use App\Http\Controllers\Backend\TestController;
 use App\Http\Controllers\Backend\CourseStdController;
+use App\Http\Controllers\Backend\PaymentReportController;
 use Illuminate\Support\Facades\Route;
 
 /***** Teacher Route *****/
@@ -34,3 +35,6 @@ Route::resource('tests', TestController::class);
 
 /** Students in Course */
 Route::get('course-students', [CourseStdController::class, 'showStudents'])->name('course-students');
+
+/** Payment Report in Courses */
+Route::get('course-payment', [PaymentReportController::class, 'PaymentReport'])->name('course-payment');
