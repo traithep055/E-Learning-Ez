@@ -20625,21 +20625,21 @@ fieldset:disabled .btn {
   transform: translateX(-5px);
 }
 
-.btn-primary,
+/* .btn-primary,
 .btn.bg-gradient-primary {
   box-shadow: 0 1px 1px 0 #202940, 0 1px 0px -2px #202940, 0 1px 0px 0 #202940;
-}
+} */
 
 .btn-primary:hover,
 .btn.bg-gradient-primary:hover {
   background-color: #4EB6FF;
-  border-color: #4EB6FF;
+  border-color: #fff;
   box-shadow: 0 14px 2px -12px #fff, 0 4px 1px 0 #fff, 0 8px 10px 5px #fff;
 }
 
 .btn-primary .btn.bg-outline-primary,
 .btn.bg-gradient-primary .btn.bg-outline-primary {
-  border: 1px solid #329874;
+  border: 1px solid #fff;
 }
 
 .btn-primary:not(:disabled):not(.disabled).active,
@@ -20648,8 +20648,8 @@ fieldset:disabled .btn {
 .btn.bg-gradient-primary:not(:disabled):not(.disabled).active,
 .btn.bg-gradient-primary:not(:disabled):not(.disabled):active,
 .show>.btn.bg-gradient-primary.dropdown-toggle {
-  color: color-yiq(#329874);
-  background-color: #329874;
+  color: color-yiq(#fff);
+  background-color: #fff;
 }
 
 .btn-primary.focus,
