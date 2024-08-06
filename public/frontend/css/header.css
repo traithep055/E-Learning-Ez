@@ -41,9 +41,11 @@ header ul {
 }
 
 header a {
+    font-size: 15px;
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: #0c3450;
     padding: 5px;
+    margin-top: 2.5px;
     border-radius: 5px;
     margin-left: -5px;
     transition: background-color 0.3s ease;
@@ -54,7 +56,7 @@ header a.active {
 }
 
 header a:hover {
-    color: #281a4d;
+    color: rgb(162, 218, 251);
 }
 
 header .logo {
