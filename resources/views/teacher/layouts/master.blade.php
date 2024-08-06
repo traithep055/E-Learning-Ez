@@ -46,6 +46,15 @@
     }
   </script>
     @vite(['resources/js/app.js', 'resources/js/frontend.js']) --}}
+    <style>
+        body {
+            background-image: url('{{ asset('images/back.jpg') }}');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+</style>
 </head>
 
 <body>
