@@ -33,7 +33,15 @@
   gtag('config', 'UA-94034622-3');
 </script>
 <!-- /END GA --></head>
-
+<style>
+        body {
+            background-image: url('{{ asset('images/back.jpg') }}');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+</style>
 <body>
   <div id="app">
     <div class="main-wrapper main-wrapper-1">
