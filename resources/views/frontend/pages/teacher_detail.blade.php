@@ -57,7 +57,7 @@
                                                 <span>เวลา 10 ชม.</span>
                                                 <span>ระดับ {{ $course->level }} </span><br>
                                                 <span><b>ราคา {{ $course->price }} บาท</b></span><br>
-                                                @if ($course->purchasedCourses->contains('id', $user->id))
+                                                @if ($user && $course->purchasedCourses->contains('id', $user->id))
                                                 <a href="{{ route('user.learn_course.lesson', ['course' => $course->id, 'lesson' => $course->lessons->first()->slug]) }}" class="btn btn-primary">เรียน</a>
                                                 @else
                                                     <a href="{{ route('user.course_purchase', ['course' => $course->id]) }}" class="btn btn-primary">ชื้อคอร์ส</a>
