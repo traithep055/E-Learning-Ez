@@ -30,7 +30,7 @@
                 <div class="col-xl-2 col-6 col-md-4">
                   <a class="wsus__dashboard_item blue" href="{{route('teacher.course-certificate')}}">
                     <i class="fas fa-solid fa-passport"></i>
-                    <p>ผู้ที่ได้รับใบประกาศณียบัตร</p>
+                    <p>ใบประกาศณียบัตร</p>
                   </a>
                 </div>
                 <div class="col-xl-2 col-6 col-md-4">

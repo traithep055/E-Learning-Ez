@@ -62,7 +62,7 @@
                               <span>โดย <span class="text-muted">ข้อมูลผู้สอนไม่มี</span></span><br>
                             @endif
                             <span><i class="fas fa-users"></i> {{ $mycourse->purchasedCourses->count() }}</span><br>
-                            <span><i class="fas fa-clock"></i> เวลา 10 ชม.</span><br>
+                            <span><i class="fas fa-clock"></i> เวลา {{ $mycourse->hours }} ชม.</span><br>
                             <span><i class="fas fa-layer-group"></i> ระดับ {{ $mycourse->level }}</span>
                           </p>
                           @if ($mycourse->lessons->isNotEmpty())

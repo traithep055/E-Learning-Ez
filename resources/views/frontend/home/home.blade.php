@@ -65,7 +65,7 @@
                                                 </h5>
                                                 <span><a href="{{route('teacher-detail', ['id' => $course->teacher->id])}}" class="teacher">{{$course->teacher->firstname}}</a></span>
                                                 <span>เรียน {{$course->purchasedCourses->count()}} คน</span><br>
-                                                <span>เวลา 10 ชม.</span>
+                                                <span>เวลา {{$course->hours}} ชม.</span>
                                                 <span>ระดับ {{$course->level}} </span><br>
                                                 <span><b>ราคา {{$course->price}} บาท</b></span><br>
                                                 <a href="{{route('user.course_purchase', ['course' => $course->id])}}" class="btn mt-3">ซื้อคอร์ส</a>

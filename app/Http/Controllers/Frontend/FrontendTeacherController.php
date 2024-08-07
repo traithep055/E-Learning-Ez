@@ -17,8 +17,9 @@ class FrontendTeacherController extends Controller
 
     public function teacherDetail(string $id) 
     {
-        $teacher = Teacher::findOrFail($id);
+        $teacher = Teacher::with('course.purchasedCourses')->findOrFail($id);
+        $user = auth()->user();
         
-        return view('frontend.pages.teacher_detail', compact('teacher'));
+        return view('frontend.pages.teacher_detail', compact('teacher', 'user'));
     }
 }

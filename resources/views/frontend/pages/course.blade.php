@@ -37,7 +37,7 @@
                                             </h5>
                                             <span><a href="#">{{ $course->teacher->firstname }}</a></span>
                                             <span>เรียน {{$course->purchasedCourses->count()}} คน</span><br>
-                                            <span>เวลา 10 ชม.</span>
+                                            <span>เวลา {{$course->hours}} ชม.</span>
                                             <span>ระดับ {{ $course->level }} </span><br>
                                             <span><b>ราคา {{ $course->price }} บาท</b></span><br>
                                             @auth
