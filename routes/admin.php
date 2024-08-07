@@ -9,6 +9,7 @@ use App\Http\Controllers\Backend\SubCategoryController;
 use App\Http\Controllers\Backend\CouponController;
 use App\Http\Controllers\Backend\AllCourseController;
 use App\Http\Controllers\Backend\BillReportController;
+use App\Http\Controllers\Backend\CeReportController;
 use Illuminate\Support\Facades\Route;
 
 /*** Admin Route ***/
@@ -45,3 +46,6 @@ Route::get('all-course', [AllCourseController::class, 'index'])->name('all-cours
 
 /** Bill Report */
 Route::get('bill-report', [BillReportController::class, 'AdminBillReport'])->name('bill-report');
+
+/** Certificate Report */
+Route::get('cert-report', [CeReportController::class, 'CertReportAdmin'])->name('cert-report');

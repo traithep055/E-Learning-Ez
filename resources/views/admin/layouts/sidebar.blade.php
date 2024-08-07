@@ -31,6 +31,7 @@
           <ul class="dropdown-menu">
             <li><a class="nav-link" href="{{route('admin.all-course')}}">คอร์ส</a></li>
             <li><a class="nav-link" href="{{route('admin.bill-report')}}">การซื้อคอร์ส</a></li>
+            <li><a class="nav-link" href="{{route('admin.cert-report')}}">ใบประกาศณียบัตร</a></li>
             
           </ul>
         </li>
