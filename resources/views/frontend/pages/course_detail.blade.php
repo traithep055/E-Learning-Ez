@@ -30,7 +30,7 @@
                                 <div class="text-search col-md-9 my-3">
                                     <img src="{{$course->image}}" alt="" width="100px">
                                     <h5 class="mt-2">{{$course->name}}</h5>
-                                    <h6>จำนวน {{$course->lessons->count()}} บทเรียน ระดับ {{$course->level}} เวลา 10 ชม.</h6>
+                                    <h6>จำนวน {{$course->lessons->count()}} บทเรียน ระดับ {{$course->level}} เวลา {{$course->hours}} ชม.</h6>
                                 </div>
                                 <div class=" col-md-3 my-4 ">
                                     <div style="margin-left: 45%">
