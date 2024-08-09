@@ -1,12 +1,4 @@
 <link rel="stylesheet" href="{{ asset('frontend/css/home.css') }}">
-<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="{{ asset('images/Logo.png') }}" class="d-block mx-auto" alt="...">
-        </div>
-    </div>
-</div>
-
 <footer style=" padding:2%; margin-top:2%">
     <div class="row">
         <div class="foot col-md-3" style=" margin:1%">
