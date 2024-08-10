@@ -15,12 +15,6 @@ body {
     justify-content: center;
 }
 
-/*article*/
-.article {
-    width: 95%;
-    margin-left: 2%;
-}
-
 /*168*/
 
 .card-search {
@@ -52,12 +46,23 @@ body {
 /**/
 .card-corse {
     width: 90vh;
+    /* background-color: red; */
+    margin-top: -5%;
+    padding: 7%;
+
+}
+.slide-nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -15%;
 }
 
 /*menu*/
 .menu {
     align-items: center;
     padding: 1%;
+    justify-content: center;
 }
 .text-menu {
     font-size: 22px;
@@ -112,8 +117,6 @@ body {
     justify-content: center;
 }
 .course {
-    width: 90vh;
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;

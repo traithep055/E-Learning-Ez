@@ -58,9 +58,9 @@
 
     <!--///////////////////// -->
     {{-- start main content --}}
-    <article class="article">
+    {{-- <article class="article"> --}}
         @yield('content')
-    </article>
+    {{-- </article> --}}
     {{-- end main content --}}
 
     <!-- JavaScript code -->
@@ -72,7 +72,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
-    
+
     {{-- ////start footer//// --}}
         @include('frontend.layouts.footer')
     {{-- ////end footer//// --}}
