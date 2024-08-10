@@ -7,7 +7,7 @@
         ])
         ->get();
 @endphp
-<div class="menu" style=" width:23%;">
+<div class="menu">
     <div class="relative_contect d-flex">
         <div class="wsus_menu_category_bar">
             <i class="far fa-bars"></i>
@@ -26,7 +26,7 @@
                 </li>
             @endforeach
         </ul>
-        <div class="drop-search col-md-2 my-3 mt-0" style="margin-left: 50%">
+        {{-- <div class="drop-search col-md-2 my-3 mt-0" style="margin-left: 50%">
             <div class="dropdown">
                 <button class="btn dropdown-toggle btn-outline-dark" type="button" id="dropdownMenuButton1"
                     aria-expanded="false">
@@ -38,7 +38,7 @@
                     <li><a class="dropdown-item" href="#">ทั้งหมด</a></li>
                 </ul>
             </div>
-        </div>
+        </div> --}}
     </div>
     {{-- เส้นขีด --}}
     <div class="divider" style="width: 100%;"></div>
