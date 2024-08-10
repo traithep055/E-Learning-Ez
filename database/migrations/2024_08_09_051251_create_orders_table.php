@@ -13,10 +13,12 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
+            $table->string('order_number')->unique(); // Unique order number
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('package_id')->constrained()->onDelete('cascade');
             $table->enum('status', ['pending', 'completed', 'failed'])->default('pending');
             $table->decimal('total', 8, 2);
+            $table->text('payment_slip')->nullable(); // Path to uploaded slip image
             $table->timestamps();
         });
     }
