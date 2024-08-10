@@ -12,7 +12,7 @@
                         </video>
                     </div>
                     <div class="carousel-inner">
-                        <button>ดูรายละเอียด</button>
+                        <button><a style="color: #fff" href="{{ route('user.show_package') }}">รายละเอียด</a></button>
                             <img src="{{ asset('images/Paket 1.jpg') }} " width="640" height="360">
                     </div>
                 </div>
