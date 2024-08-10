@@ -61,4 +61,16 @@ class User extends Authenticatable
     {
         return $this->hasMany(TestResult::class);
     }
+
+    // A user can have many orders
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
+
+    // A user can have many subscriptions
+    public function subscriptions()
+    {
+        return $this->hasMany(Subscription::class);
+    }
 }

@@ -10,6 +10,7 @@ use App\Http\Controllers\Backend\CouponController;
 use App\Http\Controllers\Backend\AllCourseController;
 use App\Http\Controllers\Backend\BillReportController;
 use App\Http\Controllers\Backend\CeReportController;
+use App\Http\Controllers\Backend\PackageController;
 use Illuminate\Support\Facades\Route;
 
 /*** Admin Route ***/
@@ -49,3 +50,6 @@ Route::get('bill-report', [BillReportController::class, 'AdminBillReport'])->nam
 
 /** Certificate Report */
 Route::get('cert-report', [CeReportController::class, 'CertReportAdmin'])->name('cert-report');
+
+/** Package Route */
+Route::resource('package', PackageController::class);
