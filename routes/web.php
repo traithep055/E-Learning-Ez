@@ -71,6 +71,8 @@ Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'user', 'as' => 
 
     /** ซื้อแพ็คเกจเสริม */
     Route::get('all-package', [SubscriptionController::class, 'showPackage'])->name('show_package');
+    Route::get('package-purchase', [SubscriptionController::class, 'packagePurchase'])->name('package_purchase');
+    Route::post('buy-package', [SubscriptionController::class, 'buyPackage'])->name('package_purchase.buy');
 
     /** หน้าซื้อคอร์ส */
     Route::get('course-purchase', [CoursePurchaseController::class, 'create'])->name('course_purchase');
@@ -79,6 +81,8 @@ Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'user', 'as' => 
     /** หน้าใบเสร็จ */
     Route::get('course-bill/{order_number}', [BillController::class, 'BillCourse'])->name('course-bill');
     Route::get('course-download-pdf{order_number}', [BillController::class, 'downloadPDFbill'])->name('course_bill.downloadPDF');
+    Route::get('package-bill/{order_number}', [BillController::class, 'BillPackage'])->name('package-bill');
+    Route::get('package-download-pdf{order_number}', [BillController::class, 'downloadPDFBillPackage'])->name('package_bill.downloadPDF');
 
     /** หน้าคอร์สของ User */
     Route::get('mycourse', [MyCourseController::class, 'index'])->name('mycourse');
