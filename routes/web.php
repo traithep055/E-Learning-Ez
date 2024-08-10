@@ -16,6 +16,7 @@ use App\Http\Controllers\Frontend\BillController;
 use App\Http\Controllers\Frontend\MyCourseController;
 use App\Http\Controllers\Frontend\ExamController;
 use App\Http\Controllers\Frontend\CertificateController;
+use App\Http\Controllers\Backend\SubscriptionController;
 use App\Models\Coupon;
 use Illuminate\Support\Facades\Route;
 
@@ -67,6 +68,9 @@ Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'user', 'as' => 
     // ส่งคำขอจาก user เป็น teacher
     Route::get('become-teacher', [NewBecomeTeacherController::class, 'index'])->name('become_teacher');
     Route::post('become-teacher', [NewBecomeTeacherController::class, 'store'])->name('become_teacher.store');
+
+    /** ซื้อแพ็คเกจเสริม */
+    Route::get('all-package', [SubscriptionController::class, 'showPackage'])->name('show_package');
 
     /** หน้าซื้อคอร์ส */
     Route::get('course-purchase', [CoursePurchaseController::class, 'create'])->name('course_purchase');

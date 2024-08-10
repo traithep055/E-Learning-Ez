@@ -9,7 +9,7 @@
         </div>
         <div class="foot col-md-3" style="background-color: rgb(255, 255, 255); margin:1%">
             <div class="row">
-                <a href="">สมัครสมาชิกรายปี</a>
+                <a href="{{route('user.show_package')}}">สมัครแพ็คเกจรายปี</a>
                 <a href="">คอร์สเรียน</a>
                 <a href="">เกี่ยวกับองค์กร</a>
             </div>
