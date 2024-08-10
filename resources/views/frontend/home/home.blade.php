@@ -11,6 +11,9 @@
                             <source src="{{ asset('images/EZ Academy.mp4') }}" type="video/mp4">
                         </video>
                     </div>
+                    <div class="carousel-inner">
+                            <img src="{{ asset('images/Paket 1.jpg') }} " width="640" height="360">
+                    </div>
                 </div>
                 {{-- End search --}}
                 <div class="content d-flex flex-column " style="padding: 2%;">

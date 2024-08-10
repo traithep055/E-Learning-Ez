@@ -1,5 +1,10 @@
 <link rel="stylesheet" href="{{ asset('frontend/css/home.css') }}">
 <footer style=" padding:2%; margin-top:2%">
+    <div id="carouselExampleFade" class="carousel slide mb-8" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <img src="{{ asset('images/slide2.jpg') }} " width="1301" height="350">
+        </div>
+    </div>
     <div class="row">
         <div class="foot col-md-3" style=" margin:1%">
             <div class="foot-logo p-2">
@@ -9,7 +14,7 @@
         </div>
         <div class="foot col-md-3" style="background-color: rgb(255, 255, 255); margin:1%">
             <div class="row">
-                <a href="{{route('user.show_package')}}">สมัครแพ็คเกจรายปี</a>
+                <a href="{{ route('user.show_package') }}">สมัครแพ็คเกจรายปี</a>
                 <a href="">คอร์สเรียน</a>
                 <a href="">เกี่ยวกับองค์กร</a>
             </div>
