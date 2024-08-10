@@ -12,6 +12,7 @@
                         </video>
                     </div>
                     <div class="carousel-inner">
+                        <button>ดูรายละเอียด</button>
                             <img src="{{ asset('images/Paket 1.jpg') }} " width="640" height="360">
                     </div>
                 </div>

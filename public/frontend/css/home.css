@@ -16,9 +16,32 @@
     margin-top: 10%;
     display: flex;
     justify-content: center;  /* จัดแนวนอนให้อยู่ตรงกลาง */
-    align-items: center;  
+    align-items: center;
 }
-
+.carousel-inner button {
+    position: absolute;
+    top: 90%; /* ปรับตามตำแหน่งที่ต้องการ */
+    left: 50%;
+    transform: translate(-50%, -50%); /* ทำให้ปุ่มอยู่กลางรูป */
+    z-index: 10; /* ทำให้ปุ่มอยู่ด้านบน */
+    background-color: rgba(0, 0, 0, 0.5); /* เพิ่มสีพื้นหลังที่มีความโปร่งใส */
+    color: white; /* สีตัวอักษร */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.carousel-inner button:hover {
+    position: absolute;
+    top: 90%; /* ปรับตามตำแหน่งที่ต้องการ */
+    left: 50%;
+    transform: translate(-50%, -50%); /* ทำให้ปุ่มอยู่กลางรูป */
+    z-index: 10; /* ทำให้ปุ่มอยู่ด้านบน */
+    background-color: rgba(255, 255, 255, 0.5); /* เพิ่มสีพื้นหลังที่มีความโปร่งใส */
+    color: white; /* สีตัวอักษร */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
 .carousel-inner {
     background-color: rgb(255, 255, 255);
     width: 100%;
