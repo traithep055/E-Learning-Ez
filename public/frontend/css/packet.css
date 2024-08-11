@@ -1,0 +1,96 @@
+.align-items-stretch .card-package {
+    background-color: rgb(255, 255, 255);
+    padding: 2%;
+    width: 340px; /* เพิ่มขนาดความกว้าง */
+    height: 440px; /* เพิ่มขนาดความสูง */
+    position: relative;
+    border-radius: 20px; /* มุมโค้ง (สามารถปรับได้ตามความต้องการ) */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* แรงเงาเพิ่มขึ้นเพื่อให้ชัดเจน */
+}
+
+/* .card-body{
+ background: linear-gradient(to bottom right, rgb(0, 76, 153), rgb(0, 26, 97));
+    padding: 5%;} */
+
+.card-body-package {
+    width: 320px; /* กำหนดขนาดให้ตามต้องการ */
+    height: 420px;
+    margin-top: 2%;
+    background: linear-gradient(
+        to bottom right,
+        rgb(1, 113, 205),
+        rgb(0, 0, 102)
+    );
+    border-radius: 15px; /* มุมโค้ง */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* แรงเงา */
+    position: relative;
+    overflow: hidden; /* ซ่อนส่วนที่เกินออกมาจากมุมโค้ง */
+}
+
+.card-body-package::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 120px;
+    height: 120px;
+    box-shadow: 0 4px 6px 1px rgba(0, 0, 0, 0.445),
+        0 2px 4px 1px rgba(0, 0, 0, 0.249);
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.3), transparent);
+    border-radius: 50%;
+}
+
+.card-body-package .title-package p {
+    font-size: 45px;
+    color: rgb(255, 255, 255);
+    margin-top: 70px;
+    margin-left: 38%;
+    font-weight: 100;
+    text-shadow: 2px 3px 7px rgb(0, 0, 0);
+}
+.card-body-package span p {
+    width: 170px;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.757); /* ปรับสีให้เข้มขึ้นตามในภาพ */
+    text-align: center;
+    line-height: 1.5; /* เพิ่มช่องว่างระหว่างบรรทัด */
+    margin: 0 auto; /* จัดให้อยู่ตรงกลาง */
+}
+.card-body-package .card-text-package {
+    width: 170px;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.757); /* ปรับสีให้เข้มขึ้นตามในภาพ */
+    text-align: center;
+    line-height: 1.5; /* เพิ่มช่องว่างระหว่างบรรทัด */
+    margin: 0 auto; /* จัดให้อยู่ตรงกลาง */
+    margin-bottom: 5%;
+}
+.card-body-package .percent p {
+    margin-top: -10%;
+    font-size: 50px;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin-bottom: -5%;
+    text-shadow: 2px 3px 7px rgb(0, 0, 0);
+}
+.card-body-package .percent span {
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.846);
+    margin-bottom: -5%;
+    text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.592);
+    margin-left: 41%;
+}
+.card-body-package .line {
+    border-top: 1px solid rgba(255, 255, 255, 0.272);
+    width: 25%;
+    margin: 10 auto; /* จัดตำแหน่งให้อยู่กลาง */
+}
+.card-body-package .btn-package {
+    color: #ffffff;
+        margin-left: 38%;
+
+}
+.card-body-package .btn-package:hover {
+    color: #ffffff;
+}
