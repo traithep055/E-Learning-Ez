@@ -33,6 +33,11 @@
                                 </div>
 
                                 <div class="form-group">
+                                    <label>ส่วนลด (%)</label>
+                                    <input type="number" name="discount" id="discount" step="0.01" class="form-control" value="{{old('discount')}}" required>
+                                </div>
+
+                                <div class="form-group">
                                     <label for="duration">ระยะเวลา:</label>
                                     <select id="inputState" class="form-control" name="duration">
                                         <option value="">Select</option>

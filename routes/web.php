@@ -106,16 +106,24 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::get('/api/coupons/{code}', function ($code) {
     $coupon = Coupon::where('code', $code)->first();
-
+    
     if (!$coupon) {
-        return response()->json(['error' => 'Coupon not found'], 404);
+        return response()->json(['error' => 'ไม่พบคูปอง'], 404);
     }
 
-    // ตรวจสอบว่าคูปองยังใช้งานได้อยู่หรือไม่ หากหมดอายุแล้วจะไม่สามารถใช้ได้
+    // ตรวจสอบว่าคูปองหมดอายุแล้วหรือไม่
     if ($coupon->expires_at && now()->greaterThanOrEqualTo($coupon->expires_at)) {
-        return response()->json(['error' => 'Coupon has expired'], 400);
+        return response()->json(['error' => 'คูปองนี้หมดอายุแล้ว'], 400);
     }
 
-    // ส่งข้อมูลคูปองกลับไปให้กับผู้ใช้
-    return response()->json(['discounted_price' => $coupon->discount, 'discount_percentage' => $coupon->discount_percentage]);
+    // ตรวจสอบว่าคูปองนี้ถูกจำกัดการใช้งานเฉพาะผู้ใช้หรือไม่
+    if ($coupon->user_id && auth()->id() !== $coupon->user_id) {
+        return response()->json(['error' => 'คูปองนี้ไม่สามารถใช้กับบัญชีของคุณได้'], 403);
+    }
+
+    // ส่งข้อมูลคูปองกลับไปให้ผู้ใช้หากคูปองยังใช้งานได้
+    return response()->json([
+        'discounted_price' => $coupon->discount,
+        'discount_percentage' => $coupon->discount_percentage
+    ]);
 });
