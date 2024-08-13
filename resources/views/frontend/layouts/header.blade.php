@@ -20,14 +20,14 @@
                     <a href="{{ route('teacher.dashboard') }}">บัญชีของฉัน</a>
                 @endif
             @endauth
-            <div class="card-search" style="margin-top:-25px; margin-left:31%">
+             <div class="card-search">
                 <form action="{{ route('courses.index') }}" class="search-body" method="GET" id="search-form">
-                    <div class="input-group" style="margin-top:15%">
+                    <div class="input-group" style="margin-top:-10%">
                         <input type="text" class="form-control" name="searchcard" id="search-body"
                             placeholder="ค้นหาคอร์สเรียน">
                         <button type="submit" class="btn-search">
                             <i class='bx bx-search'
-                                style="color: rgb(0, 0, 0); font-size: 25px; position: absolute; top: 60%; transform: translateY(-50%);">
+                                style="color: rgb(0, 0, 0);margin-top:-10%; font-size: 25px; position: absolute; top: 60%; transform: translateY(-50%);">
                             </i>
                         </button>
                     </div>
@@ -37,7 +37,7 @@
             @if (Route::has('login'))
                 @guest
                     <div class="logout">
-                        <a href="{{ route('login') }}" style="margin-left: 800%">
+                        <a href="{{ route('login') }}">
                             Sign In
                             <i class='bx bx-log-out'></i>
                         </a>
