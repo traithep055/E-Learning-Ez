@@ -28,7 +28,7 @@
                                     <tr>
                                         <th scope="col" style="width: 100px">#</th>
                                         <th scope="col">ชื่อแพ็คเกจ</th>
-                                        {{-- <th scope="col">คำอธิบาย</th> --}}
+                                        <th scope="col">ส่วนลด %</th>
                                         <th scope="col" style="width: 200px">ระยะเวลา</th>
                                         <th scope="col">ราคา</th>
                                         <th scope="col">สร้างเมื่อวันที่</th>
@@ -42,9 +42,9 @@
                                             <td>
                                                 {{ $package->name }}
                                             </td>
-                                            {{-- <td>
-                                                1 year subscription
-                                            </td> --}}
+                                            <td>
+                                                {{ number_format($package->discount, 0) }}
+                                            </td>
                                             <td>
                                                 @switch($package->duration)
                                                     @case('1_year')
