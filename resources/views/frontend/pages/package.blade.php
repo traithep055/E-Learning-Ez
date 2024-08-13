@@ -25,7 +25,7 @@
                                         <p href="">{{ $package->name }}</p>
                                     </h5>
                                     <h5 class="percent">
-                                        <p> 50 %</p>
+                                        <p> {{ number_format($package->discount, 0) }} %</p>
                                         <span>/ คอร์ส </span>
                                     </h5>
                                     <span>
