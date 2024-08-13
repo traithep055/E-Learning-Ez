@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Package;
 use App\Models\Order;
 use App\Models\Subscription;
+use App\Models\Coupon;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
@@ -69,12 +70,15 @@ class SubscriptionController extends Controller
         switch ($package->duration) {
             case '1_year':
                 $endDate = $startDate->copy()->addYear();
+                $coupondiscount = $package->discount;
                 break;
             case '2_years':
                 $endDate = $startDate->copy()->addYears(2);
+                $coupondiscount = $package->discount;
                 break;
             case '3_years':
                 $endDate = $startDate->copy()->addYears(3);
+                $coupondiscount = $package->discount;
                 break;
             default:
                 return response()->json(['error' => 'Invalid package duration'], 400);
@@ -82,12 +86,21 @@ class SubscriptionController extends Controller
 
         // Create a subscription
         $subscription = new Subscription();
-        $subscription->user_id = Auth::user()->id;;
+        $subscription->user_id = Auth::user()->id;
         $subscription->package_id = $package->id;
         $subscription->start_date = $startDate;
         $subscription->end_date = $endDate;
         $subscription->save();
 
+        // สร้างคูปองสำหรับผู้ที่ซื้อแพ็คเกจ
+        $coupon = new Coupon();
+        $coupon->package_id = $package->id;
+        $coupon->user_id = Auth::user()->id;
+        $coupon->code = $orderNumber;
+        $coupon->discount_percentage = $coupondiscount;
+        $coupon->expires_at = $endDate;
+        $coupon->save();
+        
         toastr()->success('สั่งซื้อเสร็จสิ้น');
 
         return redirect()->route('user.package-bill', ['order_number' => $order->order_number]);

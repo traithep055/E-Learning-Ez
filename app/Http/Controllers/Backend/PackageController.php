@@ -34,6 +34,7 @@ class PackageController extends Controller
             'name' => 'required|string|max:255',
             'description' => 'required|string',
             'duration' => 'required|in:1_year,2_years,3_years',
+            'discount' => 'required|numeric|min:0',
             'price' => 'required|numeric|min:0',
         ]);
 
@@ -41,6 +42,7 @@ class PackageController extends Controller
         $package->name = $request->name;
         $package->description = $request->description;
         $package->duration = $request->duration;
+        $package->discount = $request->discount;
         $package->price = $request->price;
         $package->save();
 
@@ -75,6 +77,7 @@ class PackageController extends Controller
             'name' => 'required|string|max:255',
             'description' => 'required|string',
             'duration' => 'required|in:1_year,2_years,3_years',
+            'discount' => 'required|numeric|min:0',
             'price' => 'required|numeric|min:0',
         ]);
 
@@ -82,6 +85,7 @@ class PackageController extends Controller
         $package->name = $request->name;
         $package->description = $request->description;
         $package->duration = $request->duration;
+        $package->discount = $request->discount;
         $package->price = $request->price;
         $package->save();
 
