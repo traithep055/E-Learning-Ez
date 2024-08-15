@@ -17,6 +17,7 @@ use App\Http\Controllers\Frontend\MyCourseController;
 use App\Http\Controllers\Frontend\ExamController;
 use App\Http\Controllers\Frontend\CertificateController;
 use App\Http\Controllers\Backend\SubscriptionController;
+use App\Http\Controllers\Frontend\ReviewController;
 use App\Models\Coupon;
 use Illuminate\Support\Facades\Route;
 
@@ -98,6 +99,11 @@ Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'user', 'as' => 
 
     /** ใบประกาศนียบัตร */
     Route::get('certificate/download/{course_id}', [CertificateController::class, 'getCertificate'])->name('certificate.download');
+
+    /** หน้ารีวิวคอร์สของ User */
+    Route::get('mycourse-review', [ReviewController::class, 'myCoursesReview'])->name('mycourse.review');
+    Route::post('courses/{course}/review', [ReviewController::class, 'storeReview'])->name('courses.storeReview');
+
 });
 
 Route::group(['middleware' => 'auth'], function () {
