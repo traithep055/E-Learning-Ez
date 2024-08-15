@@ -55,6 +55,7 @@ Route::get('admin/login', [AdminController::class, 'login'])->name('admin.login'
 Route::get('courses', [FrontendCourseController::class, 'coursesIndex'])->name('courses.index');
 // ดูรายละเอียดคอร์ส
 Route::get('course-detail/{id}', [HomeController::class, 'showcourseDetail'])->name('course-detail');
+Route::get('course-detail/{id}/reviews', [HomeController::class, 'loadMoreReviews'])->name('course-reviews');
 
 /** แสดง teacher ที่หน้า home */
 Route::get('teachers', [FrontendTeacherController::class, 'index'])->name('teachers.index');
