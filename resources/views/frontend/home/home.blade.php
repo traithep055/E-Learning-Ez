@@ -43,6 +43,7 @@
                                         <span><a href="{{ route('teacher-detail', ['id' => $course->teacher->id]) }}"
                                                 class="teacher">{{ $course->teacher->firstname }}</a></span>
                                         <span>เรียน {{ $course->purchasedCourses->count() }} คน</span><br>
+                                        <span>เรทติ้ง {{ $course->reviewSummary ? $course->reviewSummary->average_rating : '-' }}</span><br>
                                         <span>เวลา {{ $course->hours }} ชม.</span>
                                         <span>ระดับ {{ $course->level }} </span><br>
                                         <span><b>ราคา {{ $course->price }} บาท</b></span><br>

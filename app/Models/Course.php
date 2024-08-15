@@ -39,4 +39,16 @@ class Course extends Model
     {
         return $this->hasOne(Test::class);
     }
+
+    // ความสัมพันธ์กับรีวิว
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
+
+    // ความสัมพันธ์กับสรุปคะแนนรีวิว (ถ้ามี)
+    public function reviewSummary()
+    {
+        return $this->hasOne(CourseReviewSummary::class);
+    }
 }
