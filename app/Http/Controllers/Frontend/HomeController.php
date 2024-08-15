@@ -40,6 +40,33 @@ class HomeController extends Controller
             $hasPurchased = $user->purchasedCourses->contains($course->id);
         }
 
-        return view('frontend.pages.course_detail', compact('course', 'hasPurchased'));
+        // Get the first 3 reviews
+        $reviews = $course->reviews()->take(3)->get();
+        $totalReviews = $course->reviews->count();
+
+        return view('frontend.pages.course_detail', compact('course', 'hasPurchased', 'reviews', 'totalReviews'));
     }
+
+    public function loadMoreReviews(Request $request, $id)
+    {
+        $course = Course::findOrFail($id);
+
+        // Get reviews starting from the 4th review
+        $reviews = $course->reviews()->skip(3)->take(10)->get(); // Adjust number of reviews per page as needed
+
+        $hasMore = $course->reviews()->count() > 3 + $reviews->count();
+
+        $response = $reviews->map(function ($review) {
+            return [
+                'user_image' => $review->user->image ?? asset('images/user-profile.jpg'),
+                'user_name' => $review->user->name,
+                'rating' => $review->rating,
+                'comment' => $review->comment,
+                'created_at' => $review->created_at->format('d/m/Y'),
+            ];
+        });
+
+        return response()->json(['reviews' => $response, 'hasMore' => $hasMore]);
+    }
+
 }
