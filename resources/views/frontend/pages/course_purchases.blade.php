@@ -1,6 +1,15 @@
 @extends('frontend.layouts.master')
 
 @section('content')
+<style>
+    #qr-code-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 100%;
+}
+</style>
 <div class="container mt-8" style="margin-top: 8%">
     <h2 class="mt-6">ซื้อคอร์ส</h2>
     <button type="button" class="btn btn-info mb-4" data-toggle="modal" data-target="#paymentModal">วิธีการจ่าย</button>
@@ -49,78 +58,112 @@
 </div>
 
 <!-- Modal -->
+<!-- Modal -->
 <div class="modal fade" id="paymentModal" tabindex="-1" role="dialog" aria-labelledby="paymentModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="paymentModalLabel">วิธีการจ่าย</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body text-center">
-        <img src="{{ asset('images/qr-code.jpeg') }}" alt="QR Code" class="img-fluid mb-3" style="max-width: 200px;">
-        <p>บัญชี: ธนาคารกรุงเทพ</p>
-        <p>ชื่อบัญชี: นาย ไตรเทพ น้อยแสง</p>
-        <p>เลขบัญชี: 640-0-444383</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
-      </div>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="paymentModalLabel">วิธีการจ่าย</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center">
+                <div id="qr-code-image" class="img-fluid mb-3">
+                    <!-- QR Code จะถูกใส่ที่นี่โดย JavaScript -->
+                </div>
+                {{-- <p>บัญชี: </p>
+                <p>ชื่อบัญชี: นาย</p>
+                <p>เลขบัญชี: </p> --}}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 @endsection
 
 @push('scripts')
 <script>
-    document.getElementById('coupon_code').addEventListener('keypress', function(event) {
-        // ตรวจสอบว่าปุ่มที่กดคือปุ่ม Enter หรือไม่
-        if (event.keyCode === 13) {
-            event.preventDefault(); // ป้องกันการส่งฟอร์ม
-            applyCoupon(); // เรียกใช้ฟังก์ชั่นสำหรับการใช้คูปอง
-        }
-    });
+    document.addEventListener('DOMContentLoaded', function() {
+        var applyCouponButton = document.getElementById('apply-coupon');
+        var couponCodeInput = document.getElementById('coupon_code');
+        var paymentModal = document.getElementById('paymentModal');
 
-    document.getElementById('apply-coupon').addEventListener('click', function() {
-        applyCoupon(); // เรียกใช้ฟังก์ชั่นสำหรับการใช้คูปองเมื่อกดปุ่ม
-    });
+        couponCodeInput.addEventListener('keypress', function(event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                applyCoupon();
+            }
+        });
 
-    // ฟังก์ชั่นสำหรับใช้คูปอง
-    function applyCoupon() {
-        var couponCode = document.getElementById('coupon_code').value;
+        applyCouponButton.addEventListener('click', function() {
+            applyCoupon();
+        });
 
-        fetch('/api/coupons/' + couponCode)
-            .then(response => response.json())
-            .then(data => {
-                if (data.discounted_price !== undefined) {
-                    var originalPrice = parseFloat(document.getElementById('original_price').innerText);
-                    var discountedPrice = 0;
-                    if (data.discounted_price !== null) {
-                        // หากค่าส่วนลดไม่ใช่ null ให้คำนวณราคาหลังหักส่วนลด
-                        discountedPrice = originalPrice - parseFloat(data.discounted_price);
-                    } else if (data.discount_percentage !== null) {
-                        // หากเปอร์เซ็นต์ส่วนลดไม่ใช่ null ให้คำนวณราคาหลังหักส่วนลดด้วยเปอร์เซ็นต์
-                        discountedPrice = originalPrice - (originalPrice * (parseFloat(data.discount_percentage) / 100));
+        function applyCoupon() {
+            var couponCode = couponCodeInput.value.trim();
+            var originalPrice = parseFloat(document.getElementById('original_price').innerText);
+            var discountedPrice = originalPrice;
+
+            if (couponCode === '') {
+                // ไม่มีคูปอง, จึงไม่ต้องตรวจสอบคูปอง
+                updateQRCode(discountedPrice);
+                return;
+            }
+
+            fetch('/api/coupons/' + couponCode)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.discounted_price !== undefined) {
+                        if (data.discounted_price !== null) {
+                            discountedPrice = originalPrice - parseFloat(data.discounted_price);
+                        } else if (data.discount_percentage !== null) {
+                            discountedPrice = originalPrice - (originalPrice * (parseFloat(data.discount_percentage) / 100));
+                        }
+                        document.getElementById('discounted_price').innerText = discountedPrice.toFixed(2);
+                        var couponInfo = document.getElementById('coupon-info');
+                        if (data.discounted_price !== null) {
+                            couponInfo.innerText = 'ส่วนลด ' + data.discounted_price + ' บาท จากการใช้คูปอง';
+                        } else if (data.discount_percentage !== null) {
+                            couponInfo.innerText = 'ส่วนลด ' + data.discount_percentage + ' % จากการใช้คูปอง';
+                        }
+                        couponInfo.style.display = 'block';
                     } else {
-                        // หากค่าส่วนลดเป็น null ให้ราคาหลังหักส่วนลดเป็นราคาปกติ
-                        discountedPrice = originalPrice;
+                        document.getElementById('coupon-info').innerText = 'ไม่พบคูปองหรือคูปองไม่ถูกต้อง';
+                        document.getElementById('coupon-info').style.display = 'block';
                     }
-                    document.getElementById('discounted_price').innerText = discountedPrice.toFixed(2);
-                    if (data.discounted_price !== null) {
-                        document.getElementById('coupon-info').innerText = 'ส่วนลด ' + data.discounted_price + ' บาท จากการใช้คูปอง';
-                    } else if (data.discount_percentage !== null) {
-                        document.getElementById('coupon-info').innerText = 'ส่วนลด ' + data.discount_percentage + ' % จากการใช้คูปอง';
-                    }
-                    document.getElementById('coupon-info').style.display = 'block';
-                } else {
-                    document.getElementById('coupon-info').innerText = 'ไม่พบคูปองหรือคูปองไม่ถูกต้อง';
-                    document.getElementById('coupon-info').style.display = 'block';
-                }
+
+                    updateQRCode(discountedPrice);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+
+        function updateQRCode(price) {
+            var qrCodeImage = document.getElementById('qr-code-image');
+            fetch('{{ route('user.generate-qr-code') }}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                },
+                body: JSON.stringify({ price: price })
+            })
+            .then(response => response.text())
+            .then(svg => {
+                qrCodeImage.innerHTML = svg;
             })
             .catch(error => {
                 console.error('Error:', error);
             });
-    }
+        }
+
+        // โหลด QR Code ของราคาคอร์สเริ่มต้นเมื่อหน้าเว็บโหลด
+        var originalPrice = parseFloat(document.getElementById('original_price').innerText);
+        updateQRCode(originalPrice);
+    });
 </script>
 @endpush
