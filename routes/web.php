@@ -18,6 +18,7 @@ use App\Http\Controllers\Frontend\ExamController;
 use App\Http\Controllers\Frontend\CertificateController;
 use App\Http\Controllers\Backend\SubscriptionController;
 use App\Http\Controllers\Frontend\ReviewController;
+use App\Http\Controllers\Backend\QRCodeController;
 use App\Models\Coupon;
 use Illuminate\Support\Facades\Route;
 
@@ -104,6 +105,9 @@ Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'user', 'as' => 
     /** หน้ารีวิวคอร์สของ User */
     Route::get('mycourse-review', [ReviewController::class, 'myCoursesReview'])->name('mycourse.review');
     Route::post('courses/{course}/review', [ReviewController::class, 'storeReview'])->name('courses.storeReview');
+
+    /** payment */
+    Route::post('/api/generate-qr-code', [QRCodeController::class, 'generate'])->name('generate-qr-code');
 
 });
 
