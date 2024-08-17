@@ -8,13 +8,13 @@
     {{-- choice --}}
     <div class="choice">
         <ul>
-            <a class="{{ 'active' }}" style="cursor: pointer">คอร์สเรียนยอดนิยม</a>
-            <a class="{{ 'active' }}" style="cursor: pointer">คอร์สเรียนใหม่</a>
-            <a class="{{ 'active' }}" style="cursor: pointer">หมวดหมู่คอร์สเรียน</a>
-            <a href="{{ route('teachers.index') }}" class="{{ 'active' }}" style="cursor: pointer">ผู้สอน</a>
+            <a class="{{ 'active' }}" style="cursor: pointer">ยอดนิยม</a>
+            <a class="{{ 'active' }}" style="cursor: pointer">คอร์สใหม่</a>
+            <a class="{{ 'active' }}" style="cursor: pointer">หมวดหมู่</a>
+            <a href="{{ route('teachers.index') }}" class="{{ 'active' }}" style="cursor: pointer; width: 5%">ผู้สอน</a>
             @auth
                 @if (auth()->user()->role == 'user')
-                    <a href="{{ route('user.dashboard') }}">บัญชีของฉัน</a>
+                    <a href="{{ route('user.dashboard') }}" style="cursor: pointer; width: 10%">บัญชีของฉัน</a>
                 @endif
                 @if (auth()->user()->role == 'teacher')
                     <a href="{{ route('teacher.dashboard') }}">บัญชีของฉัน</a>
@@ -25,11 +25,6 @@
                     <div class="input-group" style="margin-top:-10%">
                         <input type="text" class="form-control" name="searchcard" id="search-body"
                             placeholder="ค้นหาคอร์สเรียน">
-                        <button type="submit" class="btn-search">
-                            <i class='bx bx-search'
-                                style="color: rgb(0, 0, 0);margin-top:-10%; font-size: 25px; position: absolute; top: 60%; transform: translateY(-50%);">
-                            </i>
-                        </button>
                     </div>
                 </form>
             </div>
@@ -44,7 +39,7 @@
                     </div>
                 @endguest
                 @auth
-                    <form method="POST" action="{{ route('logout') }}">
+                    <form method="POST" action="{{ route('logout') }}" >
                         @csrf
                         <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();"
                             class="dropdown-item has-icon text-dark logout-link">

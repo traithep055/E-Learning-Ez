@@ -10,12 +10,11 @@ header {
 .logo img {
     width: 200px;
     height: auto;
-    margin: 20px;
 }
 
 .choice {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-grow: 1;
     padding: 0 10px;
@@ -26,7 +25,7 @@ header {
     display: flex;
     margin: 0;
     padding: 0;
-    gap: 10px;
+    gap: 2px;
     width: 100%; /* Ensure ul takes up the full width */
 }
 
@@ -36,9 +35,9 @@ header {
 
 .choice a {
     display: block;
-    padding: 10px 5px;
-    width: 400px;
-    font-size: 20px;
+    width: 8%;
+    padding: 5px 2px;
+    font-size: 17px;
     text-decoration: none;
     color: #000;
     text-align: center; /* Center the text in each li */
@@ -50,11 +49,11 @@ header {
     border-radius: 5px;
 }
 
-/* Search Box Styles */
 .card-search {
     display: flex;
-    justify-content: center;
+    justify-content: right;
     align-items: center;
+    margin-top: -0.5%;
 }
 
 .input-group {
@@ -66,6 +65,7 @@ input.form-control {
     padding: 5px 40px 5px 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 15px;
 }
 
 .btn-search {
@@ -78,13 +78,23 @@ input.form-control {
     cursor: pointer;
 }
 
-/* Logout and Auth Styles */
+.account-link {
+    margin-right: 15px;
+    white-space: nowrap;
+}
+
 .logout a {
     display: flex;
     align-items: center;
     text-decoration: none;
     color: #000;
-    margin-left: auto;
+    width: 100%;
+    margin-left: -100%;
+}
+.logout a:hover {
+    background-color: #ffffff;
+    text-shadow: 2px 3px 7px rgb(255, 255, 255);
+
 }
 
 .logout-link {
