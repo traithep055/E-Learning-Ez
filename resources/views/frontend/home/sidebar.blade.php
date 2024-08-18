@@ -44,12 +44,9 @@
     <div class="divider" style="width: 100%;"></div>
     {{-- ตัวกรอง-ตัวล้าง --}}
     <div class="row mt-3" style="width: 100%;">
-        <div class="filter col-md-4">
-            <span>ตัวกรอง</span>
-        </div>
-        <div class="clearn col-md-8 ">
+        <div class="clearn">
             <p class="btn "
-                style="width: 85%; font-size:15px; margin-left:15%; color: rgba(255, 0, 0, 0.513); margin-top: -10px">
+                style="font-size:15px; color: rgba(255, 16, 16, 0.513); margin-top: -10px;margin-left: 100px">
                 ล้างตัวกรอง
             </p>
         </div>
