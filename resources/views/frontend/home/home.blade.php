@@ -11,7 +11,7 @@
                         </video>
                     </div>
                     <div class="carousel-inner">
-                        <button>ดูรายละเอียด</button>
+                        <button><a href="{{ route('user.show_package') }}">ดูรายละเอียด</a></button>
                         <img src="{{ asset('images/Paket 1.jpg') }} " width="640" height="360">
                     </div>
                 </div>
@@ -20,7 +20,7 @@
         </div>
     </div>
     <div class="content d-flex col-md-12" style="padding: 5%;">
-        <div class="slide-nav col-md-3">
+        <div class="slide-nav">
             {{-- start ตัวกรอง --}}
             @include('frontend.home.sidebar')
             {{-- end ตัวกรอง --}}

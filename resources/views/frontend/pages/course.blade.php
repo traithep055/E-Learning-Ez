@@ -3,18 +3,17 @@
 @section('content')
 
 <div class="container mt-8" style="margin-left: 5%">
-    <div class="row">
-        <div class="col mt-3">
-            <div class="content d-flex flex-column " style="padding: 2%;">
-                <div class="row mt-3" style="margin-top: 30px; padding: 1%;">
+        <div class="col">
+            <div class="content d-flex flex-column ">
+                <div class="" style="margin-top: 30px;">
 
                     {{-- Start ตัวกรอง --}}
                     @if ($courses->isNotEmpty())
-                        <div class="menu" style="width: 25%; margin-left: 40px">
+                        <div class="menu" style="width: 30%; margin-left: 40px">
                             <div class="price mt-3 mb-3" style="display: flex; align-items: center;">
                                 <h4>{{ $courses->first()->category->name }}</h4>
                             </div>
-                            <div class="divider" style="width: 90%;"></div>
+                            <div class="divider" style="width: 100%;"></div>
                             @if(request()->has('subcategory') && $courses->first()->subcategory)
                                 <div class="price mt-3 mb-3" style="display: flex; align-items: center;">
                                     <h5>{{ $courses->first()->subcategory->name }}</h5>
@@ -23,7 +22,7 @@
                         </div>
                     @endif
                     {{-- End ตัวกรอง --}}
-                    <div class="col-md-8" style="margin-left: 55px">
+                    <div class="card-corse">
                         <div class="row">
                             @forelse ($courses as $course)
                                 <div class="col-md-4 mb-5 d-flex align-items-stretch">
@@ -45,7 +44,7 @@
                                                 @if($user->purchasedCourses->contains($course->id))
                                                     <a href="{{ route('user.learn_course.lesson', ['course' => $course->id, 'lesson' => $course->lessons->first()->slug]) }}" class="btn btn-primary">เริ่มเรียน</a>
                                                 @else
-                                                    <a href="{{route('user.course_purchase', ['course' => $course->id])}}" class="btn btn-primary">ชื้อคอร์ส</a>
+                                                    <a href="{{route('user.course_purchase', ['course' => $course->id])}}" class="btn btn-primary" style="margin-top: 15%">ชื้อคอร์ส</a>
                                                 @endif
                                             @else
                                                 <a href="{{route('user.course_purchase', ['course' => $course->id])}}" class="btn btn-primary">ชื้อคอร์ส</a>

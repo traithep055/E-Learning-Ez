@@ -8,7 +8,7 @@
     <div class="row">
         <div class="foot col-md-3" style=" margin:1%">
             <div class="foot-logo p-2">
-                <img src="{{ asset('images/Logo.png') }}" class="card-img-top"  alt="..."><br>
+                <img src="{{ asset('images/Logo.png') }}" class="card-img-top" alt="..."><br>
                 <span>แพลตฟอร์มเรียนออนไลน์สำหรับอนาคต</span>
             </div>
         </div>
@@ -39,7 +39,7 @@
     <div class="divider" style="width: 100%;"></div>
     <span> Copyright © 2024 </span>
     <div class="icon-f" style="margin-left:95%; margin-top:-2%">
-        <box-icon name='facebook' type='logo' animation='tada' color='#4EB6FF'></box-icon>
-        <box-icon name='instagram' type='logo' animation='tada' color='#4EB6FF'></box-icon>
+        <box-icon name='facebook-square' type='logo' color='#0c69f3'></box-icon>
+        <box-icon name='instagram' type='logo' color='#0c69f3'></box-icon>
     </div>
 </footer>
