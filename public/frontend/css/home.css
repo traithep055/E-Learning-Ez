@@ -18,7 +18,7 @@
     justify-content: center;  /* จัดแนวนอนให้อยู่ตรงกลาง */
     align-items: center;
 }
-.carousel-inner button {
+.carousel-inner button a{
     position: absolute;
     top: 90%; /* ปรับตามตำแหน่งที่ต้องการ */
     left: 50%;
@@ -30,7 +30,7 @@
     padding: 10px 20px;
     cursor: pointer;
 }
-.carousel-inner button:hover {
+.carousel-inner button a:hover {
     position: absolute;
     top: 90%; /* ปรับตามตำแหน่งที่ต้องการ */
     left: 50%;

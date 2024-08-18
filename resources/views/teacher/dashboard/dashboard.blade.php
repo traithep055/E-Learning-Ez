@@ -4,7 +4,7 @@
 <section id="wsus__dashboard">
     <div class="container-fluid">
      @include('teacher.layouts.sidebar')
-      <div class="row">
+      <div class="row" style="margin-left: 15%">
         <div class="col-xl-9 col-xxl-10 col-lg-9 ms-auto">
           <div class="dashboard_content">
             <div class="wsus__dashboard">
@@ -30,19 +30,13 @@
                 <div class="col-xl-2 col-6 col-md-4">
                   <a class="wsus__dashboard_item blue" href="{{route('teacher.course-certificate')}}">
                     <i class="fas fa-solid fa-passport"></i>
-                    <p>ใบประกาศณียบัตร</p>
+                    <p>เกียรติบัตร</p>
                   </a>
                 </div>
                 <div class="col-xl-2 col-6 col-md-4">
                   <a class="wsus__dashboard_item orange" href="{{route('teacher.profile')}}">
                     <i class="fas fa-user-shield"></i>
                     <p>profile</p>
-                  </a>
-                </div>
-                <div class="col-xl-2 col-6 col-md-4">
-                  <a class="wsus__dashboard_item purple" href="dsahboard_address.html">
-                    <i class="fal fa-map-marker-alt"></i>
-                    <p>address</p>
                   </a>
                 </div>
               </div>

@@ -51,13 +51,21 @@ body {
     padding: 7%;
 
 }
-.slide-nav{
+.slide-nav {
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* ปรับจาก center เป็น flex-start */
     justify-content: center;
-    margin-top: -30%;
-    width: 90vh;
     margin-left: 8%;
+    margin-top: 1%;
+    position: sticky; /* ทำให้เมนูติดอยู่ในตำแหน่ง */
+    top: 0; /* ตำแหน่งด้านบน */
+}
+
+@media (max-width: 768px) {
+    .slide-nav {
+        margin-left: 0;
+        margin-top: 2%;
+    }
 }
 
 /*menu*/
@@ -65,9 +73,13 @@ body {
     align-items: center;
     padding: 2%;
     width: 350px;
-    margin: 2%;
     justify-content: center;
+    margin-top: 1%;
+    height: 100%; /* ตั้งความสูงของเมนู */
 }
+
+
+
 .text-menu {
     font-size: 22px;
     /* border-top: 1px solid #000;  เส้นแบ่งบรรทัดด้านบน */
@@ -128,6 +140,12 @@ body {
 .card .card-body .btn{
     background-color: #ffffff;
     color: rgb(22, 21, 61);
+}
+.card .card-body .btn:hover{
+    background-color: #ffffff;
+    color: rgb(22, 21, 61);
+    box-shadow: 0 4px 6px 1px rgba(0, 0, 0, 0.445),
+        0 2px 4px 1px rgba(0, 0, 0, 0.249);
 }
 
 
