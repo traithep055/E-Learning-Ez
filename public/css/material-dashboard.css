@@ -8530,6 +8530,7 @@ fieldset:disabled .btn {
 
 .d-flex {
   display: flex !important;
+  justify-content: center;
 }
 
 .d-inline-flex {

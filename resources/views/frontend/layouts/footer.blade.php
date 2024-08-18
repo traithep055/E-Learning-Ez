@@ -8,7 +8,7 @@
     <div class="row">
         <div class="foot col-md-3" style=" margin:1%">
             <div class="foot-logo p-2">
-                <img src="{{ asset('images/Logo.png') }}" class="card-img-top w-50" alt="..."><br>
+                <img src="{{ asset('images/Logo.png') }}" class="card-img-top"  alt="..."><br>
                 <span>แพลตฟอร์มเรียนออนไลน์สำหรับอนาคต</span>
             </div>
         </div>
