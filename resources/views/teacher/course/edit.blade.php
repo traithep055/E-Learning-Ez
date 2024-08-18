@@ -71,7 +71,7 @@
 
                     <div class="form-group wsus__input">
                         <label>จำนวนชั่วโมง</label>
-                        <input type="number" class="form-control" name="hours" value="{{ old('hours') }}" step="0.01">
+                        <input type="number" class="form-control" name="hours" value="{{ $course->hours }}" step="0.01">
                     </div>
 
                     <div class="form-group wsus__input">

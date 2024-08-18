@@ -65,8 +65,8 @@
   ==============================-->
   <div class="wsus__dashboard_menu">
     <div class="wsusd__dashboard_user">
-      <img src="" alt="img" class="img-fluid">
-      <p></p>
+      <img src="{{ Auth::user()->teacher->image ?? asset('images/user-profile.jpg') }}" alt="User Image" class="img-fluid">
+          <p>{{ Auth::user()->teacher->firstname }} {{ Auth::user()->teacher->lastname }}</p>
     </div>
   </div>
   <!--=============================
