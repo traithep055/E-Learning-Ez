@@ -2,26 +2,25 @@
 
 @section('content')
 
-<div class="container mt-8" style="margin-left: 5%">
+<div class="container mb-9" style="display: flex; justify-content: center">
     <div class="row">
         <div class="col mt-3">
             <div class="content d-flex flex-column " style="padding: 2%;">
-                <div class="row mt-3" style="margin-top: 30px; padding: 1%;">
+                <div class="row mt-3" style=" padding: 1%;">
 
                     {{-- Start ตัวกรอง --}}
-                        <div class="menu" style="width: 25%; margin-left: 40px">
-                            <div class="price mt-3 mb-3" style="display: flex; align-items: center;">
-                                <h4>ผู้สอน</h4>
+                        <div class="teacher" style="width: 25%; margin-left: 40px;margin-top: 30px; ">
+                            <div class="price mt-3 " style="display: flex; display: flex; justify-content: center">
+                                <h4>ครูผู้สอนทั้งหมด</h4>
                             </div>
-                            <div class="divider" style="width: 90%;"></div>
                         </div>
                     {{-- End ตัวกรอง --}}
 
-                    <div class="col-md-8" style="margin-left: 55px">
+                    <div class="col-md-8" style=" margin-top: 30px;">
                         <div class="row">
                             @foreach ($teachers as $teacher)
-                                <div class="col-md-4 mb-5 d-flex align-items-stretch">
-                                    <div class="card card-hover" style="width: 100%;">
+                                <div class="col-md-3 mb-9 mt-9 d-flex align-items-stretch" >
+                                    <div class="card card-hover" style="width: 100%;height:80px;">
                                         @if ($teacher->image == null)
                                             <a href="{{route('teacher-detail', ['id' => $teacher->id])}}">
                                                 <img src="{{ $teacher->user->image }}" alt="" class="card-img-top">
@@ -46,7 +45,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            @endforeach 
+                            @endforeach
                         </div>
                     </div>
 

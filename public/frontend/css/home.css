@@ -7,12 +7,16 @@
     text-align: center;
     align-items: center;
 }
+.foot-logo img{
+    width: 200px;
+    height: 100px;
+}
+
 .foot-logo span {
     color: #000;
 }
 
 .carousel-fade {
-    background-color: #711f1f;
     margin-top: 10%;
     display: flex;
     justify-content: center;  /* จัดแนวนอนให้อยู่ตรงกลาง */
@@ -43,7 +47,6 @@
     cursor: pointer;
 }
 .carousel-inner {
-    background-color: rgb(255, 255, 255);
     width: 100%;
     height: 350px;
     display: flex;
@@ -53,7 +56,6 @@
 
 .carousel-item img {
     height: 400px;
-    background-color: #711f1f;
     justify-content: center;
     margin-bottom: 15%;
 }

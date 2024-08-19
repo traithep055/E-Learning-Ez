@@ -77,8 +77,11 @@
     <div class="row">
       <div class="col-xl-9 col-xxl-10 col-lg-9 ms-auto">
         <div class="dashboard_content mt-2 mt-md-0">
-          <h3 class="mb-4"><i class="fas fa-star"></i> รีวิวคอร์สเรียนของฉัน</h3>
-
+          <h3 class="mb-4">
+            <i class="fas fa-star">
+                </i>
+                ให้คะแนนสำหรับคอร์สเรียนของฉัน
+            </h3>
           @if (session('success'))
             <div class="alert alert-success">
               {{ session('success') }}
@@ -92,10 +95,11 @@
           @endif
 
           @foreach ($mycourses as $mycourse)
+            <span style="color: red">*1 ดาว เปรียบเสมือน 20 คะแนน</span>
             <div class="course-card card">
               <div class="card-body">
-                <h4 class="course-title">รีวิวคอร์ส: {{ $mycourse->name }}</h4>
-                
+                <h4 class="course-title">ให้คะแนนคอร์ส: {{ $mycourse->name }}</h4>
+
                 <!-- Display only the user's review -->
                 @php
                   $userReview = $mycourse->reviews->where('user_id', Auth::id())->first();
@@ -112,17 +116,17 @@
                           @endfor
                         </div>
                         <p class="card-text">{{ $userReview->comment }}</p>
-                        <small class="text-muted">รีวิวเมื่อ: {{ $userReview->created_at->format('d/m/Y') }}</small>
+                        <small class="text-muted">ให้คะแนนเมื่อ: {{ $userReview->created_at->format('d/m/Y') }}</small>
                       </div>
                     </div>
                   </div>
                 @else
                   <!-- Review form -->
                   <div class="review-form mt-5">
-                      <h4>เพิ่มรีวิวของคุณ</h4>
+                      <h4>เพิ่มการให้คะแนนของคุณ</h4>
                       <form action="{{ route('user.courses.storeReview', ['course' => $mycourse->id]) }}" method="POST">
                         @csrf
-                        
+
                         <!-- Rating -->
                         <div class="form-group">
                           <label for="rating-{{ $mycourse->id }}">คะแนนของคุณ:</label>
@@ -133,22 +137,22 @@
                             @endfor
                           </div>
                         </div>
-                      
+
                         <!-- Comment -->
                         <div class="form-group">
                           <label for="comment-{{ $mycourse->id }}">ความคิดเห็นของคุณ:</label>
                           <textarea name="comment" id="comment-{{ $mycourse->id }}" class="form-control" rows="5" required></textarea>
                         </div>
-                      
+
                         <!-- Submit Button -->
-                        <button type="submit" class="btn btn-primary mt-3">ส่งรีวิว</button>
+                        <button type="submit" class="btn btn-primary mt-3">ส่งคะแนนคอร์สเรียน</button>
                       </form>
                   </div>
                 @endif
               </div>
             </div>
           @endforeach
-          
+
         </div>
       </div>
     </div>

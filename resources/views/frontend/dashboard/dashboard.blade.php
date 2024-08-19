@@ -8,7 +8,7 @@
                 <div class="col-xl-9 col-xxl-10 col-lg-9 ms-auto">
                     <div class="dashboard_content">
                         <div class="wsus__dashboard">
-                            <div class="row">
+                            <div class="row" style="display: flex; justify-content: center">
                                 <div class="col-xl-2 col-6 col-md-4">
                                     <a class="wsus__dashboard_item red" href="{{ route('user.mycourse') }}">
                                         <i class="fas fa-solid fa-book"></i>
@@ -18,7 +18,7 @@
                                 <div class="col-xl-2 col-6 col-md-4">
                                     <a class="wsus__dashboard_item sky" href="{{ route('user.mycourse.review') }}">
                                         <i class="fas fa-star"></i>
-                                        <p>review</p>
+                                        <p>ให้คะแนนบทเรียน</p>
                                     </a>
                                 </div>
                                 <div class="col-xl-2 col-6 col-md-4">
@@ -30,7 +30,7 @@
                                 <div class="col-xl-2 col-6 col-md-4">
                                     <a class="wsus__dashboard_item purple" href="{{route('user.become_teacher')}}">
                                         <i class='bx bxs-bell-ring'></i>
-                                        <p>คำขอผู้สอน</p>
+                                        <p>ต้องการขอเป็นผู้สอน</p>
                                     </a>
                                 </div>
                             </div>

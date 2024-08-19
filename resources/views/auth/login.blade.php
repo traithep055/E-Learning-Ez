@@ -13,7 +13,7 @@
     <div class="container">
         <div class="forms">
             <div class="form login">
-                <span class="title">เข้าสู่ระบบบัญชี Ez ของคุณ</span>
+                <span class="title">เข้าสู่ระบบบัญชีผู้ใช้ของคุณ</span>
                 <div class="sub-title">
                     <span เพื่อพบกับคอร์สเรียนหลากหลายสาขา>เพื่อพบกับคอร์สเรียนหลากหลายสาขา</span>
                 </div>
@@ -21,7 +21,7 @@
                     @csrf
                     <div class="input-field">
 
-                        <input id="email" type="email" name="email" value="{{old('email')}}" placeholder="Enter your email" required>
+                        <input id="email" type="email" name="email" value="{{old('email')}}" placeholder="อีเมลของคุณ" required>
                         <i class="uil uil-envelope"></i>
                     </div>
                     @if($errors->has('email'))
@@ -29,7 +29,7 @@
                     @endif
 
                     <div class="input-field">
-                        <input type="password" id="password" name="password" class="password" placeholder="Enter your password"
+                        <input type="password" id="password" name="password" class="password" placeholder="รหัสผ่าน"
                             required>
                         <i class="uil uil-lock icon"></i>
                         <i class="uil uil-eye-slash showHidePw"></i>
@@ -43,15 +43,15 @@
                     <div class="checkbox-text">
                         <div class="checkbox-content">
                             <input type="checkbox" id="remember_me" name="remember">
-                            <label for="logCheck" class="text">Remember me</label>
+                            <label for="logCheck" class="text">จดจำการเข้าระบบ</label>
                         </div>
-                        <a href="{{ route('password.request') }}" class="text">Forgot password?</a>
+                        <a href="{{ route('password.request') }}" class="text">ลืมรหัสผ่าน?</a>
                     </div>
 
                     <div class="input-field">
                         <style>
                             input[type="submit"] {
-                                background-color: #40acf4;
+                                background-color: #0057b4;
                                 /* สีม่วง */
                                 color: #ffffff;
                                 /* สีข้อความ */
@@ -69,12 +69,12 @@
                                 /* สีม่วงอ่อน */
                             }
                         </style>
-                        <input type="submit" value="Login">
+                        <input type="submit" value="เข้าสู่ระบบ">
                     </div>
                 </form>
                 <div class="login-signup">
-                    <span class="text">Not a member?
-                        <a href="{{ route('register') }}" class="text signup-link">Signup Now</a>
+                    <span class="text">ยังไม่มีบัญชี?
+                        <a href="{{ route('register') }}" class="text signup-link">สร้างบัญชี</a>
                     </span>
                 </div>
             </div>

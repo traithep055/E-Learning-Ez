@@ -33,7 +33,7 @@
                 @guest
                     <div class="logout">
                         <a href="{{ route('login') }}">
-                            Sign In
+                            เข้าสู่ระบบ
                             <i class='bx bx-log-out'></i>
                         </a>
                     </div>
@@ -44,7 +44,7 @@
                         <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();"
                             class="dropdown-item has-icon text-dark logout-link" style="cursor: pointer; width: 100%">
                             <i class="fas fa-sign-out-alt"></i>
-                            Logout
+                            ออกจากระบบ
                         </a>
                     </form>
                 @endauth
