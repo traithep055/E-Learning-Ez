@@ -71,6 +71,27 @@
         /* ปรับค่านี้เพื่อทำให้รูปจาง */
         z-index: -1;
     }
+
+    .descript {
+        background-color: rgb(241, 252, 255);
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 16px;
+        /* ปรับขนาดตัวอักษร */
+        letter-spacing: 1px;
+        /* ปรับระยะห่างระหว่างตัวอักษร */
+    }
+    .document{
+        width: 100%;
+        margin-top: 2%;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 16px;
+        /* ปรับขนาดตัวอักษร */
+        letter-spacing: 1px;
+        /* ปรับระยะห่างระหว่างตัวอักษร */
+    }
 </style>
 
 <body>
