@@ -40,6 +40,7 @@
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
+            font-family: Arial, sans-serif;
         }
 </style>
 <body>

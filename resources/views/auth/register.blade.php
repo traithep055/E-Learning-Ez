@@ -13,7 +13,7 @@
     <div class="container">
         <div class="forms">
             <div class="form login">
-                <span class="title">สร้างบัญชี Ez ของคุณ</span>
+                <span class="title">สร้างบัญชีผู้ใช้ใหม่ของคุณ</span>
                 <div class="sub-title">
                     <span เพื่อพบกับคอร์สเรียนหลากหลายสาขา>เพื่อพบกับคอร์สเรียนหลากหลายสาขา</span>
                 </div>
@@ -21,7 +21,7 @@
                     @csrf
                     <div class="input-field">
 
-                        <input id="name" type="text" name="name" value="{{old('name')}}" placeholder="Enter your Name" required>
+                        <input id="name" type="text" name="name" value="{{old('name')}}" placeholder="โปรดใส่ชื่อ" required>
                         <i class="uil uil-user"></i>
                     </div>
                     @if($errors->has('name'))
@@ -30,7 +30,7 @@
 
                     <div class="input-field">
 
-                        <input id="email" type="email" name="email" value="{{old('email')}}" placeholder="Enter your email" required>
+                        <input id="email" type="email" name="email" value="{{old('email')}}" placeholder="โปรดใส่อีเมล" required>
                         <i class="uil uil-envelope"></i>
                     </div>
                     @if($errors->has('email'))
@@ -38,7 +38,7 @@
                     @endif
 
                     <div class="input-field">
-                        <input type="password" id="password" name="password" class="password" placeholder="Enter your password"
+                        <input type="password" id="password" name="password" class="password" placeholder="รหัสผ่านของคุณ"
                             required autocomplete="new-password">
                         <i class="uil uil-lock icon"></i>
                         <i class="uil uil-eye-slash showHidePw"></i>
@@ -50,7 +50,7 @@
                     @endif
 
                     <div class="input-field">
-                        <input type="password" id="password_confirmation" name="password_confirmation" class="password" placeholder="Confirm your password"
+                        <input type="password" id="password_confirmation" name="password_confirmation" class="password" placeholder="ยืนยันรหัสผ่าน"
                             required autocomplete="new-password">
                         <i class="uil uil-lock icon"></i>
                         <i class="uil uil-eye-slash showHidePw"></i>
@@ -64,7 +64,7 @@
                     <div class="input-field">
                         <style>
                             input[type="submit"] {
-                                background-color: #7dba7c;
+                                background-color: #0057b4;
                                 /* สีม่วง */
                                 color: #ffffff;
                                 /* สีข้อความ */
@@ -77,12 +77,12 @@
                             }
                             /* เม้าส์ไปชี้ปุ่ม Submit */
                             input[type="submit"]:hover {
-                                background-color: #E8DFCA;
+                                background-color: #a1d6ff;
                                 color: black;
                                 /* สีม่วงอ่อน */
                             }
                         </style>
-                        <input type="submit" value="Sign up">
+                        <input type="submit" value="สมัคร">
                     </div>
                 </form>
             </div>

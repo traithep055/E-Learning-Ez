@@ -4,7 +4,7 @@
 
 <section class="section">
     <div class="section-header">
-      <h1>Dashboard</h1>
+      <h1>หน้าหลักแอดมิน</h1>
     </div>
     <div class="row">
       <div class="col-lg-3 col-md-6 col-sm-6 col-12">
@@ -14,7 +14,7 @@
           </div>
           <div class="card-wrap">
             <div class="card-header">
-              <h4>Total Admin</h4>
+              <h4 style="font-size: 17px; font-weight: 100;">จำนวนแอดมิน</h4>
             </div>
             <div class="card-body">
               10
@@ -29,7 +29,7 @@
           </div>
           <div class="card-wrap">
             <div class="card-header">
-              <h4>News</h4>
+              <h4 style="font-size: 17px;font-weight: 100;">ข่าวสาร</h4>
             </div>
             <div class="card-body">
               42
@@ -44,7 +44,7 @@
           </div>
           <div class="card-wrap">
             <div class="card-header">
-              <h4>Reports</h4>
+              <h4 style="font-size: 17px;font-weight: 100;">รายงานผู้เข้าใช้ทั้งหมด</h4>
             </div>
             <div class="card-body">
               1,201
@@ -59,7 +59,7 @@
           </div>
           <div class="card-wrap">
             <div class="card-header">
-              <h4>Online Users</h4>
+              <h4 style="font-size: 17px;font-weight: 100;">การซื้อคอร์สโดยรวม</h4>
             </div>
             <div class="card-body">
               47

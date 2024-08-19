@@ -18,7 +18,7 @@
                                 <div class="form-group mb-3">
                                     <label for="course_id" class="form-label">เลือกคอร์ส</label>
                                     <select name="course_id" id="course_id" class="form-select" onchange="this.form.submit()">
-                                        <option value="">-- Select a Course --</option>
+                                        <option value="">-- เลือก --</option>
                                         @foreach($courses as $course)
                                             <option value="{{ $course->id }}" {{ request('course_id') == $course->id ? 'selected' : '' }}>
                                                 {{ $course->name }}

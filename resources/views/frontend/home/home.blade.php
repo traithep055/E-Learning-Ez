@@ -5,15 +5,15 @@
         <div class="row">
             <div class="col mt-3">
                 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <video width="640" height="360" controls autoplay loop muted>
+                    <div class="carousel-inner" >
+                        <video width="1060" height="360" controls autoplay loop muted>
                             <source src="{{ asset('images/EZ Academy.mp4') }}" type="video/mp4">
                         </video>
                     </div>
-                    <div class="carousel-inner">
+                    {{-- <div class="carousel-inner">
                         <button><a href="{{ route('user.show_package') }}">ดูรายละเอียด</a></button>
                         <img src="{{ asset('images/Paket 1.jpg') }} " width="640" height="360">
-                    </div>
+                    </div> --}}
                 </div>
                 {{-- End search --}}
             </div>

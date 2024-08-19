@@ -2,7 +2,7 @@
 <footer style=" padding:2%; margin-top:2%">
     <div id="carouselExampleFade" class="carousel slide mb-8" data-bs-ride="carousel">
         <div class="carousel-inner">
-            <img src="{{ asset('images/slide2.jpg') }} " width="1301" height="350">
+            <img src="{{ asset('images/slide2.jpg')}}">
         </div>
     </div>
     <div class="row">

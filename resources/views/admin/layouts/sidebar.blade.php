@@ -7,41 +7,39 @@
         <a href="{{route('admin.dashboard')}}">EZ</a>
       </div>
       <ul class="sidebar-menu">
-        <li class="menu-header">Dashboard</li>
-        <li class="dropdown active">
-          <a href="{{route('admin.dashboard')}}" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
+        <li class="dropdown active" style="margin-top: 8%">
+          <a href="{{route('admin.dashboard')}}" class="nav-link"><i class="fas fa-fire"></i><span>แอดมิน</span></a>
         </li>
-        <li class="menu-header">Starter</li>
         <li class="dropdown">
-          <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>จัดการประเภท</span></a>
+          <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span style="font-size: 17px">จัดการหมวดหมู่</span></a>
           <ul class="dropdown-menu">
-            <li><a class="nav-link" href="{{route('admin.category.index')}}">ประเภท</a></li>  
-            <li><a class="nav-link" href="{{route('admin.sub-category.index')}}">ประเภทย่อย</a></li>  
+            <li><a class="nav-link" href="{{route('admin.category.index')}}" style="font-size: 15px">หมวดหมู่หลัก</a></li>
+            <li><a class="nav-link" href="{{route('admin.sub-category.index')}}" style="font-size: 15px">หมวดหมู่ย่อย</a></li>
           </ul>
         </li>
         <li class="dropdown">
-          <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>จัดการเว็บไซต์</span></a>
+          <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span style="font-size: 17px">แพ็คเกจ-คูปอง</span></a>
           <ul class="dropdown-menu">
-            <li><a class="nav-link" href="{{route('admin.coupons.index')}}">คูปอง</a></li>
-            <li><a class="nav-link" href="{{route('admin.package.index')}}">แพ็คเกจ</a></li>
-            
+            <li><a class="nav-link" href="{{route('admin.coupons.index')}}" style="font-size: 15px">คูปอง</a></li>
+            <li><a class="nav-link" href="{{route('admin.package.index')}}" style="font-size: 15px">แพ็คเกจ</a></li>
+
           </ul>
         </li>
         <li class="dropdown">
-          <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-solid fa-book"></i> <span>รายงาน</span></a>
+          <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-solid fa-book"></i> <span style="font-size: 17px">รายงานทั้งหมด</span></a>
           <ul class="dropdown-menu">
-            <li><a class="nav-link" href="{{route('admin.all-course')}}">คอร์ส</a></li>
-            <li><a class="nav-link" href="{{route('admin.bill-report')}}">การซื้อคอร์ส</a></li>
-            <li><a class="nav-link" href="{{route('admin.cert-report')}}">ใบประกาศณียบัตร</a></li>
-            
+            <li><a class="nav-link" href="{{route('admin.all-course')}}"style="font-size: 15px">จำนวนคอร์สเรียน</a></li>
+            <li><a class="nav-link" href="{{route('admin.bill-report')}}"style="font-size: 15px">รายงานการซื้อคอร์ส</a></li>
+            <li><a class="nav-link" href="{{route('admin.cert-report')}}"style="font-size: 15px">ผู้ที่ได้รับประกาศณียบัตร</a></li>
+
           </ul>
         </li>
         <li class="dropdown">
-          <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-solid fa-user"></i> <span>Manage Users</span></a>
+          <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-solid fa-user"></i> <span style="font-size: 17px">ควบคุมผู้ใช้งาน</span></a>
           <ul class="dropdown-menu">
-            <li class=""><a class="nav-link" href="{{route('admin.managebecome_teacher')}}">คำขอเป็นผู้สอน</a></li>
-            <li class=""><a class="nav-link" href="{{route('admin.all_users')}}">ผู้ใช้ทั้งหมด</a></li>
-            
+            <li class=""><a class="nav-link" href="{{route('admin.managebecome_teacher')}}"style="font-size: 15px">คำขอต้องการเป็นผู้สอน</a></li>
+            <li class=""><a class="nav-link" href="{{route('admin.all_users')}}"style="font-size: 15px">ข้อมูลบัญชีผู้ใช้ทั้งหมด</a></li>
+
           </ul>
         </li>
 
@@ -58,6 +56,6 @@
 
       </ul>
 
-              
+
     </aside>
   </div>
