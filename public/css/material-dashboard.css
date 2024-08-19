@@ -3726,19 +3726,19 @@ fieldset:disabled .btn {
 
 .btn-secondary {
   --bs-btn-color: #000;
-  --bs-btn-bg: #5ad700;
-  --bs-btn-border-color: #6B8A7A;
+  --bs-btn-bg: #2298ff;
+  --bs-btn-border-color: #56fcff;
   --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: #6B8A7A;
-  --bs-btn-hover-border-color: #6B8A7A;
+  --bs-btn-hover-bg: #3ed0e0;
+  --bs-btn-hover-border-color: #56fcff;
   --bs-btn-focus-shadow-rgb: 105, 109, 131;
   --bs-btn-active-color: #000;
-  --bs-btn-active-bg: #6B8A7A;
-  --bs-btn-active-border-color: #6B8A7A;
+  --bs-btn-active-bg: #56fcff;
+  --bs-btn-active-border-color: #56fcff;
   --bs-btn-active-shadow: none;
   --bs-btn-disabled-color: #000;
-  --bs-btn-disabled-bg: #6B8A7A;
-  --bs-btn-disabled-border-color: #6B8A7A;
+  --bs-btn-disabled-bg: #56fcff;
+  --bs-btn-disabled-border-color: #56fcff;
 }
 
 .btn-success {
@@ -3760,10 +3760,10 @@ fieldset:disabled .btn {
 
 .btn-info {
   --bs-btn-color: #fff;
-  --bs-btn-bg: #7cbff7;
+  --bs-btn-bg: #ffffff;
   --bs-btn-border-color: #4c82af;
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #4c82af;
+  --bs-btn-hover-bg: #ffffff;
   --bs-btn-hover-border-color: #155cba;
   --bs-btn-focus-shadow-rgb: 60, 136, 235;
   --bs-btn-active-color: #fff;
@@ -20673,21 +20673,21 @@ fieldset:disabled .btn {
   color: #e91e63;
 }
 
-.btn-secondary,
+/* .btn-secondary,
 .btn.bg-gradient-secondary {
-  box-shadow: 0 3px 3px 0 #6B8A7A, 0 3px 1px -2px #6B8A7A, 0 1px 5px 0 #6B8A7A;
-}
+  box-shadow: 0 3px 3px 0 rgb(77, 181, 255), 0 3px 1px -2px rgb(77, 181, 255), 0 1px 5px 0 rgb(77, 181, 255);
+} */
 
 .btn-secondary:hover,
 .btn.bg-gradient-secondary:hover {
-  background-color: #6B8A7A;
-  border-color: #6B8A7A;
-  box-shadow: 0 14px 26px -12px #6B8A7A, 0 4px 23px 0 #6B8A7A, 0 8px 10px -5px #6B8A7A;
+  background-color: rgb(77, 181, 255);
+  border-color: rgb(77, 181, 255);
+  box-shadow: 0 4px 2px -12px rgb(7, 181, 255), 0 4px 12px 0 rgb(77, 181, 255), 0 8px 10px -5px rgb(77, 181, 255);
 }
 
 .btn-secondary .btn.bg-outline-secondary,
 .btn.bg-gradient-secondary .btn.bg-outline-secondary {
-  border: 1px solid #6B8A7A;
+  border: 1px solid rgb(77, 181, 255);
 }
 
 .btn-secondary:not(:disabled):not(.disabled).active,
@@ -20760,24 +20760,24 @@ fieldset:disabled .btn {
   background-color: transparent;
   opacity: .75;
   box-shadow: none;
-  color: #4CAF50;
+  color: #A8DBFF;
 }
 
-.btn-info,
+/* .btn-info,
 .btn.bg-gradient-info {
-  box-shadow: 0 3px 3px 0 #A8DBFF, 0 3px 1px -2px #A8DBFF, 0 1px 5px 0 #A8DBFF;
-}
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25), 0 3px 1px -2px rgba(0, 0, 0, 0.25), 0 1px 5px 0 rgba(0, 0, 0, 0.25);
+} */
 
-.btn-info:hover,
+/* .btn-info:hover,
 .btn.bg-gradient-info:hover {
   background-color: #A8DBFF;
   border-color: #A8DBFF;
   box-shadow: 0 14px 26px -12px rgba(26, 115, 232, 0.4), 0 4px 23px 0 rgba(26, 115, 232, 0.15), 0 8px 10px -5px rgba(26, 115, 232, 0.2);
-}
+} */
 
 .btn-info .btn.bg-outline-info,
 .btn.bg-gradient-info .btn.bg-outline-info {
-  border: 1px solid #4CAF50;
+  border: 1px solid #A8DBFF;
 }
 
 .btn-info:not(:disabled):not(.disabled).active,
@@ -20786,8 +20786,8 @@ fieldset:disabled .btn {
 .btn.bg-gradient-info:not(:disabled):not(.disabled).active,
 .btn.bg-gradient-info:not(:disabled):not(.disabled):active,
 .show>.btn.bg-gradient-info.dropdown-toggle {
-  color: color-yiq(#4CAF50);
-  background-color: #4CAF50;
+  color: color-yiq(#A8DBFF);
+  background-color: #A8DBFF;
 }
 
 .btn-info.focus,
