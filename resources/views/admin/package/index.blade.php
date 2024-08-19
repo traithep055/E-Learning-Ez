@@ -43,7 +43,7 @@
                                                 {{ $package->name }}
                                             </td>
                                             <td>
-                                                {{ number_format($package->discount, 0) }}
+                                                {{ number_format($package->discount, 0) }} %
                                             </td>
                                             <td>
                                                 @switch($package->duration)

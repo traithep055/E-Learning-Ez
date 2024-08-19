@@ -71,6 +71,20 @@ class TestDataTable extends DataTable
                     //->dom('Bfrtip')
                     ->orderBy(1)
                     ->selectStyleSingle()
+                    ->language([
+                        "lengthMenu" => "แสดง _MENU_ รายการต่อหน้า",
+                        "zeroRecords" => "ไม่พบข้อมูล",
+                        "info" => "แสดง _START_ ถึง _END_ จาก _TOTAL_ รายการ",
+                        "infoEmpty" => "ไม่มีข้อมูล",
+                        "infoFiltered" => "(กรองข้อมูลจากทั้งหมด _MAX_ รายการ)",
+                        "search" => "ค้นหา:",
+                        "paginate" => [
+                            "first" => "หน้าแรก",
+                            "last" => "หน้าสุดท้าย",
+                            "next" => "ถัดไป",
+                            "previous" => "ก่อนหน้า"
+                        ]
+                    ])
                     ->buttons([
                         Button::make('excel'),
                         Button::make('csv'),
