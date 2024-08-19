@@ -128,67 +128,82 @@
             </div>
         </div>
     </div> --}}
-     <div class="container">
-        <img src="{{ public_path('images/logo.png') }}" alt="Logo" width="200px" style="margin-top: 0">
-        <div class="card">
-            <div class="card-header">
-                ใบเสร็จการสั่งซื้อคอร์สเรียน
-            </div>
-            <h4>Ez Academy</h4>
-            <div class="card-body">
-                <table class="table">
-                    <tbody>
-                        <tr>
-                            <th>เลขที่ใบเสร็จ</th>
-                            <td>{{ $purchase->order_number }}</td>
-                        </tr>
-                        <tr>
-                            <th>วันที่</th>
-                            <td>{{ date('d-m-Y', strtotime($purchase->created_at)) }}</td>
-                        </tr>
-                        <tr>
-                            <th>รหัสผู้ใช้</th>
-                            <td>{{ $purchase->user_id }}</td>
-                        </tr>
-                        <tr>
-                            <th>ชื่อผู้ใช้</th>
-                            <td>{{ $purchase->user->firstname }} {{ $purchase->user->lastname }}</td>
-                        </tr>
-                        <tr>
-                            <th>รหัสคอร์ส</th>
-                            <td>{{ $purchase->course_id }}</td>
-                        </tr>
-                        <tr>
-                            <th>ชื่อคอร์ส</th>
-                            <td>{{ $purchase->course->name }}</td>
-                        </tr>
-                        <tr>
-                            <th>ราคาปกติ</th>
-                            <td>{{ $purchase->price }} บาท</td>
-                        </tr>
-                        @if ($purchase->coupon_id)
-                            <tr>
-                                <th>ส่วนลด</th>
-                                <td>{{ $purchase->price - $purchase->final_price }} บาท</td>
-                            </tr>
-                        @endif
-                        <tr>
-                            <th>ราคาหลังหักส่วนลด</th>
-                            <td>{{ $purchase->final_price }} บาท</td>
-                        </tr>
-                        @if($purchase->coupon_id)
-                        <tr>
-                            <th>รหัสคูปอง</th>
-                            <td>{{ $purchase->coupon_id }}</td>
-                        </tr>
-                        @endif
-                    </tbody>
-                </table>
-            </div>
-            <div class="card-footer">
-                อัปเดตเมื่อ: {{ date('d-m-Y', strtotime($purchase->updated_at)) }}
-            </div>
-        </div>
+    <div class="receipt">
+    <img src="{{ public_path('images/logo.png') }}" alt="Logo" width="200px" style="display: block; margin: 0 auto;">
+    <h2 class="text-center">ใบเสร็จการสั่งซื้อคอร์สเรียน</h2>
+    <h4 class="text-center">Ez Academy</h4>
+    <div class="receipt-body">
+        <p><strong>เลขที่ใบเสร็จ:</strong> {{ $purchase->order_number }}</p>
+        <p><strong>วันที่:</strong> {{ date('d-m-Y', strtotime($purchase->created_at)) }}</p>
+        <p><strong>รหัสผู้ใช้:</strong> {{ $purchase->user_id }}</p>
+        <p><strong>ชื่อผู้ใช้:</strong> {{ $purchase->user->firstname }} {{ $purchase->user->lastname }}</p>
+        <p><strong>รหัสคอร์ส:</strong> {{ $purchase->course_id }}</p>
+        <p><strong>ชื่อคอร์ส:</strong> {{ $purchase->course->name }}</p>
+        <p><strong>ราคาปกติ:</strong> {{ number_format($purchase->price, 2) }} บาท</p>
+        @if ($purchase->coupon_id)
+            <p><strong>ส่วนลด:</strong> {{ number_format($purchase->price - $purchase->final_price, 2) }} บาท</p>
+        @endif
+        <p><strong>ราคาหลังหักส่วนลด:</strong> {{ number_format($purchase->final_price, 2) }} บาท</p>
+        @if($purchase->coupon_id)
+            <p><strong>รหัสคูปอง:</strong> {{ $purchase->coupon_id }}</p>
+        @endif
     </div>
+    <hr>
+    <p class="text-center">อัปเดตเมื่อ: {{ date('d-m-Y', strtotime($purchase->updated_at)) }}</p>
+    <p class="text-center">ขอบคุณที่ใช้บริการ</p>
+</div>
+
+<style>
+    @font-face {
+        font-family: 'THSarabunNew';
+        src: url("{{ public_path('fonts/THSarabunNew.ttf') }}") format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    .receipt {
+        width: 300px;
+        padding: 20px;
+        border: 1px solid #000;
+        margin: 0 auto;
+        font-family: "THSarabunNew", sans-serif;
+        font-size: 16px;
+        background-color: #fff;
+    }
+
+    .receipt img {
+        margin-bottom: 10px;
+    }
+
+    .receipt h2 {
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+
+    .receipt h4 {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    .receipt-body {
+        margin-bottom: 10px;
+    }
+
+    .receipt-body p {
+        margin: 5px 0;
+    }
+
+    .receipt hr {
+        border: 0;
+        border-top: 1px dashed #000;
+        margin: 10px 0;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+</style>
+
+
 </body>
 </html>
