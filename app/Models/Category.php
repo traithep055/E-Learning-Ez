@@ -13,4 +13,10 @@ class Category extends Model
     {
         return $this->hasMany(SubCategory::class);    
     }
+
+    // การกำหนดความสัมพันธ์กับคอร์ส
+    public function courses()
+    {
+        return $this->hasMany(Course::class);
+    }
 }

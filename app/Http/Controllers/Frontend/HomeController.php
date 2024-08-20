@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Course;
+use App\Models\User;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -27,7 +29,17 @@ class HomeController extends Controller
             $courses = Course::where('status', true)->get();
         }
 
-        return view('frontend.home.home', compact('courses'));   
+        // Fetch user counts for each role
+        $rolesCount = User::select('role', \DB::raw('count(*) as count'))
+                          ->groupBy('role')
+                          ->pluck('count', 'role')
+                          ->toArray();
+        
+        // Fetch course counts by category
+        $categories = Category::withCount('courses')->get();
+
+        $totalCourses = Course::count();
+        return view('frontend.home.home', compact('courses', 'rolesCount', 'categories', 'totalCourses'));   
     }
 
     public function showcourseDetail(string $id) 

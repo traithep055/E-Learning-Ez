@@ -10,10 +10,17 @@
                             <source src="{{ asset('images/EZ Academy.mp4') }}" type="video/mp4">
                         </video>
                     </div>
+
                     {{-- <div class="carousel-inner">
                         <button><a href="{{ route('user.show_package') }}">ดูรายละเอียด</a></button>
                         <img src="{{ asset('images/Paket 1.jpg') }} " width="640" height="360">
                     </div> --}}
+                </div>
+                <div class="container mt-4">
+                    <!-- Pie Chart Container -->
+                    <div id="piechart" style="width: 100%; height: 500px;"></div>
+                    <!-- Bar Chart Container -->
+                    <div id="barchart" style="width: 100%; height: 500px;"></div>
                 </div>
                 {{-- End search --}}
             </div>
@@ -60,6 +67,7 @@
 @endsection
 
 @push('scripts')
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             var dropdownMenu = document.querySelector('.dropdown-menu');
@@ -75,5 +83,47 @@
                 }
             });
         });
+
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawCharts);
+
+        function drawCharts() {
+            var pieData = google.visualization.arrayToDataTable([
+                ['Role', 'จำนวนผู้ใช้ทั้งหมด'],
+                ['ผู้เรียน', {{ $rolesCount['user'] ?? 0 }}],
+                ['ผู้สอน', {{ $rolesCount['teacher'] ?? 0 }}],
+                ['แอดมิน', {{ $rolesCount['admin'] ?? 0 }}]
+            ]);
+
+            var pieOptions = {
+                title: 'จำนวนผู้ใช้ทั้งหมด',
+                pieHole: 0.4,
+            };
+
+            var pieChart = new google.visualization.PieChart(document.getElementById('piechart'));
+            pieChart.draw(pieData, pieOptions);
+
+            var barData = google.visualization.arrayToDataTable([
+                ['Category', 'จำนวนคอร์ส'],
+                @foreach ($categories as $category)
+                    ['{{ $category->name }}', {{ $category->courses_count }}],
+                @endforeach
+            ]);
+
+            var barOptions = {
+                title: 'จำนวนคอร์สแยกตามหมวกหมู่',
+                chartArea: {width: '50%'},
+                hAxis: {
+                    title: 'จำนวนคอร์ส',
+                    minValue: 0
+                },
+                vAxis: {
+                    title: 'หมวดหมู่'
+                }
+            };
+
+            var barChart = new google.visualization.BarChart(document.getElementById('barchart'));
+            barChart.draw(barData, barOptions);
+        }
     </script>
 @endpush
