@@ -23,11 +23,7 @@ class BillController extends Controller
     {
         $purchase = CoursePurchaes::where('order_number', $order_number)->firstOrFail();
         
-        // Render the Blade view to a string
-        $html = View::make('frontend.pdf.course_bill_report', compact('purchase'))->render();
-
-        $pdf = PDF::loadHTML($html);
-        // Stream the generated PDF back to the user
+        $pdf = PDF::loadView('frontend.pdf.course_bill_report', compact('purchase'));
         return $pdf->stream('course_bill_report.pdf');    
     }
 
