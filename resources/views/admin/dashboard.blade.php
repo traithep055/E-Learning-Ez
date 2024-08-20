@@ -17,7 +17,7 @@
               <h4 style="font-size: 17px; font-weight: 100;">จำนวนแอดมิน</h4>
             </div>
             <div class="card-body">
-              10
+              {{ $adminCount }}
             </div>
           </div>
         </div>
@@ -25,14 +25,14 @@
       <div class="col-lg-3 col-md-6 col-sm-6 col-12">
         <div class="card card-statistic-1">
           <div class="card-icon bg-danger">
-            <i class="far fa-newspaper"></i>
+            <i class='fas fa-chalkboard-teacher'></i>
           </div>
           <div class="card-wrap">
             <div class="card-header">
-              <h4 style="font-size: 17px;font-weight: 100;">ข่าวสาร</h4>
+              <h4 style="font-size: 17px;font-weight: 100;">จำนวนผู้สอน</h4>
             </div>
             <div class="card-body">
-              42
+              {{ $teacherCount }}
             </div>
           </div>
         </div>
@@ -40,14 +40,14 @@
       <div class="col-lg-3 col-md-6 col-sm-6 col-12">
         <div class="card card-statistic-1">
           <div class="card-icon bg-warning">
-            <i class="far fa-file"></i>
+            <i class="fas fa-solid fa-graduation-cap"></i>
           </div>
           <div class="card-wrap">
             <div class="card-header">
-              <h4 style="font-size: 17px;font-weight: 100;">รายงานผู้เข้าใช้ทั้งหมด</h4>
+              <h4 style="font-size: 17px;font-weight: 100;">จำนวนผู้เรียน</h4>
             </div>
             <div class="card-body">
-              1,201
+              {{ $studentCount }}
             </div>
           </div>
         </div>
@@ -55,14 +55,14 @@
       <div class="col-lg-3 col-md-6 col-sm-6 col-12">
         <div class="card card-statistic-1">
           <div class="card-icon bg-success">
-            <i class="fas fa-circle"></i>
+            <i class="fas fa-solid fa-book"></i>
           </div>
           <div class="card-wrap">
             <div class="card-header">
-              <h4 style="font-size: 17px;font-weight: 100;">การซื้อคอร์สโดยรวม</h4>
+              <h4 style="font-size: 17px;font-weight: 100;">จำนวนคอร์ส</h4>
             </div>
             <div class="card-body">
-              47
+              {{ $courseCount }}
             </div>
           </div>
         </div>
