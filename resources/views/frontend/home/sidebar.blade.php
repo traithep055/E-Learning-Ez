@@ -1,4 +1,4 @@
-@php
+{{-- @php
     $categories = \App\Models\Category::where('status', true)
         ->with([
             'subCategory' => function ($query) {
@@ -6,10 +6,10 @@
             },
         ])
         ->get();
-@endphp
+@endphp --}}
 <div class="menu">
     <div class="relative_contect d-flex">
-        <div class="wsus_menu_category_bar">
+        {{-- <div class="wsus_menu_category_bar">
             <i class="far fa-bars"></i>
         </div>
         <ul class="wsus_menu_cat_item show_home toggle_menu">
@@ -25,7 +25,7 @@
                     </ul>
                 </li>
             @endforeach
-        </ul>
+        </ul> --}}
         {{-- <div class="drop-search col-md-2 my-3 mt-0" style="margin-left: 50%">
             <div class="dropdown">
                 <button class="btn dropdown-toggle btn-outline-dark" type="button" id="dropdownMenuButton1"
