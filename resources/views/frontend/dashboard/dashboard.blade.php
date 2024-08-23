@@ -30,7 +30,7 @@
                                 <div class="col-xl-2 col-6 col-md-4">
                                     <a class="wsus__dashboard_item purple" href="{{route('user.become_teacher')}}">
                                         <i class='bx bxs-bell-ring'></i>
-                                        <p>ต้องการขอเป็นผู้สอน</p>
+                                        <p>ต้องการเป็นผู้สอน</p>
                                     </a>
                                 </div>
                             </div>
