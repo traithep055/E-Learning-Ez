@@ -140,9 +140,9 @@
                     <div id="qr-code-image" class="img-fluid mb-3">
                         <!-- QR Code จะถูกใส่ที่นี่โดย JavaScript -->
                     </div>
-                    {{-- <p>บัญชี: </p>
-                <p>ชื่อบัญชี: นาย</p>
-                <p>เลขบัญชี: </p> --}}
+                    <p>บัญชี: ธนาคาร</p>
+                    <p>ชื่อบัญชี: EZ Academy</p>
+                    <p>เลขบัญชี: 000-0-000000</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>

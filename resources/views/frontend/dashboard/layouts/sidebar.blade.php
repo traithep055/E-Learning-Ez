@@ -10,7 +10,7 @@
       <li><a class="active" href="{{route('user.dashboard')}}" style="margin-top: 5%"><i class="fas fa-tachometer"></i>หน้าหลักของฉัน</a></li>
       <li><a href="{{route('home')}}"><i class="far fa-house"></i>หน้าเมนู</a></li>
       <li><a href="{{route('user.mycourse')}}"><i class="fas fa-solid fa-book"></i> การเรียนรู้ของฉัน</a></li>
-      <li><a href="{{route('user.mycourse.review')}}"><i class="far fa-star"></i>ให้คะแนนบทเรียน</a></li>
+      <li><a href="{{route('user.mycourse.review')}}"><i class="far fa-star"></i>ให้คะแนนคอร์ส</a></li>
       <li><a href="{{route('user.profile')}}"><i class="far fa-user"></i> โปรไฟล์</a></li>
       <li><a href="{{route('user.become_teacher')}}"><i class='bx bxs-bell-ring'></i>ต้องการเป็นผู้สอน</a></li>
       {{-- <li><a href="dsahboard_address.html"><i class="fal fa-gift-card"></i> Addresses</a></li> --}}

@@ -41,6 +41,9 @@ class CourseDataTable extends DataTable
             //             break;
             //     }
             // })
+            ->addColumn('score', function ($query) {
+                return $query->reviewSummary ? '<p>'.$query->reviewSummary->average_rating.'</p>' : '<p>ยังไม่มีคะแนน</p>';
+            })
             ->addColumn('status', function ($query) {
                 if ($query->status == 1) {
                     $button = '<div class="form-check form-switch">
@@ -71,7 +74,7 @@ class CourseDataTable extends DataTable
                 return $editBtn.$deleteBtn.$moreBtn;
             })
             // ->rawColumns(['image', 'type', 'status', 'action'])
-            ->rawColumns(['image', 'status', 'action'])
+            ->rawColumns(['image', 'status','score', 'action'])
             ->setRowId('id');
     }
 
@@ -131,7 +134,7 @@ class CourseDataTable extends DataTable
             Column::make('image')->title('รูปภาพ')->width(100), // กำหนดชื่อ column ที่ใช้ในการแสดงผลเป็น 'รูปภาพ' แต่ใช้ชื่อ 'image' ในฐานข้อมูล
             Column::make('name')->title('ชื่อ')->width(100), // กำหนดชื่อ column ที่ใช้ในการแสดงผลเป็น 'ชื่อ' แต่ใช้ชื่อ 'name' ในฐานข้อมูล
             Column::make('price')->title('ราคา')->width(50), // กำหนดชื่อ column ที่ใช้ในการแสดงผลเป็น 'ราคา' แต่ใช้ชื่อ 'price' ในฐานข้อมูล
-            // Column::make('type')->title('ประเภท')->width(100), // กำหนดชื่อ column ที่ใช้ในการแสดงผลเป็น 'ประเภท' แต่ใช้ชื่อ 'type' ในฐานข้อมูล
+            Column::make('score')->title('คะแนน')->width(100), // กำหนดชื่อ column ที่ใช้ในการแสดงผลเป็น 'ประเภท' แต่ใช้ชื่อ 'type' ในฐานข้อมูล
             Column::make('status')->title('สถานะ')->width(50), // กำหนดชื่อ column ที่ใช้ในการแสดงผลเป็น 'สถานะ' แต่ใช้ชื่อ 'status' ในฐานข้อมูล
             Column::computed('action')
                 ->exportable(false)

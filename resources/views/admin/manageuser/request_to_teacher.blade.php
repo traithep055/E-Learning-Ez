@@ -26,7 +26,7 @@
                                         <th scope="col">#</th>
                                         <th scope="col">ชื่อ-นามสกุล</th>
                                         <th scope="col">รายละเอียด</th>
-                                        <th scope="col">Publish Date</th>
+                                        <th scope="col">วันที่ส่ง</th>
                                         <th scope="col">การอนุมัติ</th>
                                         <th scope="col">เอกสาร</th>
                                     </tr>

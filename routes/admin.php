@@ -11,6 +11,7 @@ use App\Http\Controllers\Backend\AllCourseController;
 use App\Http\Controllers\Backend\BillReportController;
 use App\Http\Controllers\Backend\CeReportController;
 use App\Http\Controllers\Backend\PackageController;
+use App\Http\Controllers\Frontend\CertificateController;
 use Illuminate\Support\Facades\Route;
 
 /*** Admin Route ***/
@@ -53,3 +54,6 @@ Route::get('cert-report', [CeReportController::class, 'CertReportAdmin'])->name(
 
 /** Package Route */
 Route::resource('package', PackageController::class);
+
+/**Add this route for admin access*/
+Route::get('certificate/download/{course_id}/{user_id}', [CertificateController::class, 'getAdminCertificate'])->name('certificate.download');

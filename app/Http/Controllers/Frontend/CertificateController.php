@@ -31,4 +31,24 @@ class CertificateController extends Controller
 
         return $pdf->stream('certificate.pdf');
     }
+
+    public function getAdminCertificate($course_id, $user_id)
+    {
+        $testResult = TestResult::where('user_id', $user_id)
+                                ->whereHas('test.course', function($query) use ($course_id) {
+                                    $query->where('id', $course_id);
+                                })
+                                ->where('score', '>=', 80)
+                                ->firstOrFail();
+
+        $course = Course::findOrFail($course_id);
+        $user = $testResult->user; // Retrieve the user associated with the test result
+
+        // Generate the certificate (assuming you use a PDF package)
+        $html = View::make('frontend.certificates.certificate', compact('user', 'course', 'testResult'));
+
+        $pdf = PDF::loadHTML($html);
+
+        return $pdf->stream('certificate.pdf');
+    }
 }

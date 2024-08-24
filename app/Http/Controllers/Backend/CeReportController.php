@@ -48,7 +48,7 @@ class CeReportController extends Controller
         return view('teacher.report.certificate.cert-report', compact('courses', 'students', 'selectedCourse'));
     }
 
-    public function CertReportAdmin(Request $request) 
+    public function CertReportAdmin(Request $request)
     {
         $courses = Course::all(); // Get all courses
         $students = collect();
@@ -57,13 +57,16 @@ class CeReportController extends Controller
             $testResults = TestResult::whereHas('test', function ($query) use ($course) {
                 $query->where('course_id', $course->id);
             })
-            ->with('user')
+            ->with(['user', 'test.course']) // Eager load the test and course relationships
             ->get();
 
-            $courseStudents = $testResults->groupBy('user_id')->map(function ($testResults) {
+            $courseStudents = $testResults->groupBy('user_id')->map(function ($testResults) use ($course) {
                 $user = $testResults->first()->user;
                 return [
                     'user' => $user,
+                    'user_id' => $user->id, // Include the user ID
+                    'course_id' => $course->id, // Include the course ID
+                    'course' => $course->name, // Include the course name
                     'count' => $testResults->count(),
                     'highest_score' => $testResults->max('score'),
                     'certificate_date' => $testResults->filter(function ($result) {

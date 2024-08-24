@@ -95,7 +95,7 @@
           @endif
 
           @foreach ($mycourses as $mycourse)
-            <span style="color: red">*1 ดาว เปรียบเสมือน 20 คะแนน</span>
+            <span style="color: red">*1 ดาว เปรียบเสมือน 1 คะแนน</span>
             <div class="course-card card">
               <div class="card-body">
                 <h4 class="course-title">ให้คะแนนคอร์ส: {{ $mycourse->name }}</h4>
