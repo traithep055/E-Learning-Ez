@@ -51,6 +51,8 @@ class CheckUserRequestController extends Controller
         // สร้าง entry ใหม่ในตาราง teachers
         $teacher = new Teacher();
         $teacher->user_id = $user->id;
+        $teacher->firstname = $user->firstname;
+        $teacher->lastname = $user->lastname;
         $teacher->save(); // บันทึกข้อมูลลงในฐานข้อมูล
         
         toastr()->success('อนุมัติคำขอเป็นครูเรียบร้อยแล้ว.');

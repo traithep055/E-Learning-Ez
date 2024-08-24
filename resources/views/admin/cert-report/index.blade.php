@@ -25,9 +25,11 @@
                                     <tr>
                                         <th scope="col">ชื่อ-นามสกุล</th>
                                         <th scope="col">อีเมลล์</th>
+                                        <th scope="col">คอร์ส</th>
                                         <th scope="col">จำนวนการทำข้อสอบ (ครั้ง)</th>
                                         <th scope="col">คะแนนสูงสุด</th>
                                         <th scope="col">วันที่ได้รับใบประกาศณียบัตร</th>
+                                        <th scope="col">ดูใบประกาศณียบัตร</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -35,9 +37,19 @@
                                         <tr>
                                             <td>{{ $student['user']->firstname }} {{ $student['user']->lastname }}</td>
                                             <td>{{ $student['user']->email }}</td>
-                                            <td>{{ $student['count'] }}</td>
+                                            <td>{{ $student['course'] }}</td> <!-- Display course name -->
+                                            <td>{{ $student['count'] }} ครั้ง</td>
                                             <td>{{ $student['highest_score'] }}</td>
                                             <td>{{ date('d-m-Y', strtotime($student['certificate_date'])) }}</td>
+                                            <td>
+                                                @if(isset($student['user_id']) && isset($student['course_id']))
+                                                    <a href="{{ route('admin.certificate.download', ['course_id' => $student['course_id'], 'user_id' => $student['user_id']]) }}" class="btn btn-primary" target="_blank">
+                                                        ดูใบประกาศณียบัตร
+                                                    </a>
+                                                @else
+                                                    <span>ไม่สามารถดูใบประกาศณียบัตรได้</span>
+                                                @endif
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -52,5 +64,4 @@
 @endsection
 
 @push('scripts')
-
 @endpush
