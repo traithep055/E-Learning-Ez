@@ -28,7 +28,7 @@
     <div class="content d-flex col-md-12" style="padding: 5%;">
         <div class="slide-nav">
             {{-- start ตัวกรอง --}}
-            @include('frontend.home.sidebar')
+            {{-- @include('frontend.home.sidebar') --}}
             {{-- end ตัวกรอง --}}
         </div>
         <div class="card-corse col-md-9">

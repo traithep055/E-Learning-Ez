@@ -11,35 +11,37 @@ use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
-    public function index() 
+    public function index(Request $request) 
     {
-        // ตรวจสอบว่าผู้ใช้ล็อกอินหรือไม่
+        // ตรวจสอบว่ามีการเลือกตัวกรอง "คอร์สใหม่" หรือไม่
+        $sortBy = $request->get('sort', 'latest');
+
         $user = Auth::user();
+        $purchasedCourseIds = $user ? $user->purchasedCourses->pluck('id')->toArray() : [];
 
-        if ($user) {
-            // รับ IDs ของคอร์สที่ผู้ใช้ได้ซื้อไปแล้ว
-            $purchasedCourseIds = $user->purchasedCourses->pluck('id')->toArray();
+        $query = Course::where('status', true)
+                        ->whereNotIn('id', $purchasedCourseIds);
 
-            // ดึงข้อมูลคอร์สที่มีสถานะเป็น "active" ยกเว้นคอร์สที่ผู้ใช้ได้ซื้อไปแล้ว
-            $courses = Course::where('status', true)
-                            ->whereNotIn('id', $purchasedCourseIds)
-                            ->get();
+        if ($sortBy === 'popular') {
+            $courses = $query->withCount('purchasedCourses')
+                             ->orderBy('purchased_courses_count', 'desc')
+                             ->get();
+        } elseif ($sortBy === 'latest') {
+            $courses = $query->orderBy('created_at', 'desc') // หรือใช้ 'updated_at' ขึ้นอยู่กับว่าคุณต้องการเรียงลำดับตามวันที่สร้างหรือวันที่อัปเดต
+                             ->get();
         } else {
-            // ดึงข้อมูลคอร์สที่มีสถานะเป็น "active" ทั้งหมด
-            $courses = Course::where('status', true)->get();
+            $courses = $query->get();
         }
 
-        // Fetch user counts for each role
         $rolesCount = User::select('role', \DB::raw('count(*) as count'))
                           ->groupBy('role')
                           ->pluck('count', 'role')
                           ->toArray();
         
-        // Fetch course counts by category
         $categories = Category::withCount('courses')->get();
-
         $totalCourses = Course::count();
-        return view('frontend.home.home', compact('courses', 'rolesCount', 'categories', 'totalCourses'));   
+
+        return view('frontend.home.home', compact('courses', 'rolesCount', 'categories', 'totalCourses'));
     }
 
     public function showcourseDetail(string $id) 

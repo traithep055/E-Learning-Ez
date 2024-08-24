@@ -148,8 +148,8 @@
     {{-- เมนูหลัก --}}
     <div class="choice">
         <ul>
-            <a href="#" class="active" style="cursor: pointer">ยอดนิยม</a>
-            <a href="#" class="active" style="cursor: pointer">คอร์สใหม่</a>
+            <a href="{{ route('home') }}?sort=popular" class="{{ request('sort') === 'popular' ? 'active' : '' }}" style="cursor: pointer">ยอดนิยม</a>
+            <a href="{{ route('home') }}?sort=latest" class="{{ request('sort') === 'latest' ? 'active' : '' }}" style="cursor: pointer">คอร์สใหม่</a>
             <li>
                 <a href="#" class="active" id="category-toggle" style="cursor: pointer">หมวดหมู่</a>
                 <!-- เมนูหมวดหมู่ -->
