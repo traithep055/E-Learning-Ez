@@ -36,15 +36,19 @@ header {
 }
 
 .choice a {
-    display: block;
+    display: flex; /* ใช้ flexbox */
+    justify-content: center; /* จัดกึ่งกลางแนวนอน */
+    align-items: center; /* จัดกึ่งกลางแนวตั้ง */
     width: 8%;
-    padding: 5px 2px;
+    margin-top: 20px;
+    padding: 5px;
     font-size: 17px;
     text-decoration: none;
-    color: #000;
-    text-align: center; /* Center the text in each li */
+    color: #000000;
+    text-align: center; /* ยังคงใช้ในการจัดข้อความในแนวนอน */
     transition: background-color 0.3s ease;
 }
+
 
 .choice a:hover {
     background-color: #e0e0e0;
@@ -68,6 +72,8 @@ input.form-control {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 15px;
+    margin-top: 20px;
+    right: -80%;
 }
 
 .btn-search {
@@ -160,7 +166,7 @@ input.form-control {
     }
 
     .card-search {
-        margin-top: 10px;
+        margin-top: 40px;
         width: 100%;
     }
 

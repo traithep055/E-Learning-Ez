@@ -6,15 +6,15 @@
             <div class="col mt-3">
                 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
                     <div class="carousel-inner">
-                        <video width="560" height="360" controls autoplay loop muted>
+                        <video width="1301" height="360" controls autoplay loop muted>
                             <source src="{{ asset('images/EZ Academy.mp4') }}" type="video/mp4">
                         </video>
-                        <div class="container mt-4">
+                        {{-- <div class="container mt-4">
                             <!-- Pie Chart Container -->
                             <div id="piechart" style="width: 80%; height: 100px;"></div>
                             <!-- Bar Chart Container -->
                             <div id="barchart" style="width: 80%; height: 100px;"></div>
-                        </div>
+                        </div> --}}
                     </div>
                     {{-- <div class="carousel-inner">
                         <button><a href="{{ route('user.show_package') }}">ดูรายละเอียด</a></button>
@@ -25,13 +25,13 @@
             </div>
         </div>
     </div>
-    <div class="content d-flex col-md-12" style="padding: 5%;">
-        <div class="slide-nav">
+    <div class="content d-flex mt-8" style="padding: 1%;">
+        {{-- <div class="slide-nav"> --}}
             {{-- start ตัวกรอง --}}
             {{-- @include('frontend.home.sidebar') --}}
             {{-- end ตัวกรอง --}}
-        </div>
-        <div class="card-corse col-md-9">
+        {{-- </div> --}}
+        <div class="card-corse col-md-12">
             <div class="course">
                 <div class="row ">
                     @foreach ($courses as $course)
