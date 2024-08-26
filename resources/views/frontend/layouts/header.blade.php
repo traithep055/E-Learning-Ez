@@ -12,9 +12,9 @@
     .choice ul {
         list-style: none;
         padding: 0;
-        margin: 0;
-        display: flex;
-        align-items: center;
+        margin-right: 20%;
+        /* display: flex;
+        align-items: center; */
     }
 
     .choice ul>li {
@@ -28,7 +28,7 @@
         color: #000;
         padding: 1px;
         display: block;
-        width: 50%;
+        width: 60%;
     }
 
     .choice ul>li>a:hover {
@@ -148,7 +148,7 @@
     <div class="choice">
         <ul>
             <li><a href="{{ route('home') }}?sort=popular"
-                    class="{{ request('sort') === 'popular' ? 'active' : '' }}">ยอดนิยม</a></li>
+                    class="{{ request('sort') === 'popular' ? 'active' : '' }} ">ยอดนิยม</a></li>
             <li><a href="{{ route('home') }}?sort=latest"
                     class="{{ request('sort') === 'latest' ? 'active' : '' }}">คอร์สใหม่</a></li>
             <li>
@@ -177,30 +177,31 @@
                 </ul>
             </li>
             <li><a href="{{ route('teachers.index') }}" class="active">ผู้สอน</a></li>
+
+            @auth
+                @if (auth()->user()->role == 'user')
+                    <li><a href="{{ route('user.dashboard') }}" style="margin-left: 10px; width: 50%;">โปรไฟล์</a>
+                    </li>
+                @endif
+                @if (auth()->user()->role == 'teacher')
+                    <li><a href="{{ route('teacher.dashboard') }}" style="margin-right: 10px; width: 50%;">โปรไฟล์</a>
+                    </li>
+                @endif
+            @endauth
             <li>
                 <div class="card-search">
                     <form action="{{ route('courses.index') }}" method="GET" id="search-form">
-                        <div class="input-group" style="width: 100%;margin-right: 100px">
+                        <div class="input-group" style="width: 200%; margin-left: 100%">
                             <input type="text" class="form-control" name="searchcard" id="search-body"
                                 placeholder="ค้นหา">
                         </div>
                     </form>
                 </div>
             </li>
-            @auth
-                @if (auth()->user()->role == 'user')
-                    <li><a href="{{ route('user.dashboard') }}" style="margin-left: 90px; width: auto;">โปรไฟล์</a>
-                    </li>
-                @endif
-                @if (auth()->user()->role == 'teacher')
-                    <li><a href="{{ route('teacher.dashboard') }}" style="margin-left: 90px; width: auto;">โปรไฟล์</a>
-                    </li>
-                @endif
-            @endauth
             @if (Route::has('login'))
                 @guest
                     <li class="logout">
-                        <a href="{{ route('login') }}" style="margin-left: 30%; width: 70%">
+                        <a href="{{ route('login') }}" style="margin-left: 170%; width: 70%">
                             เข้าสู่ระบบ
                             <i class='bx bx-log-out'></i>
                         </a>
