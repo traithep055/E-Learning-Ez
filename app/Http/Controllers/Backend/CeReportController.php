@@ -8,6 +8,8 @@ use App\Models\TestResult;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
+use PDF;
+use View;
 use Illuminate\Http\Request;
 
 class CeReportController extends Controller
@@ -90,5 +92,43 @@ class CeReportController extends Controller
         $total = $items->count();
         $results = $items->forPage($page, $perPage);
         return new LengthAwarePaginator($results, $total, $perPage, $page, $options);
+    }
+
+    public function CertReportAdminPDF(Request $request)
+    {
+        $courses = Course::all(); // Get all courses
+        $students = collect();
+
+        foreach ($courses as $course) {
+            $testResults = TestResult::whereHas('test', function ($query) use ($course) {
+                $query->where('course_id', $course->id);
+            })
+            ->with(['user', 'test.course']) // Eager load the test and course relationships
+            ->get();
+
+            $courseStudents = $testResults->groupBy('user_id')->map(function ($testResults) use ($course) {
+                $user = $testResults->first()->user;
+                return [
+                    'user' => $user,
+                    'user_id' => $user->id, // Include the user ID
+                    'course_id' => $course->id, // Include the course ID
+                    'course' => $course->name, // Include the course name
+                    'count' => $testResults->count(),
+                    'highest_score' => $testResults->max('score'),
+                    'certificate_date' => $testResults->filter(function ($result) {
+                        return $result->score >= 80;
+                    })->sortByDesc('created_at')->first()->created_at ?? null,
+                ];
+            });
+
+            $students = $students->merge($courseStudents);
+        }
+
+        // Paginate the students collection
+        $students = $this->paginate($students, $request->page, 5);
+
+        // Generate PDF
+        $pdf = PDF::loadView('admin.cert-report.cert-report-pdf', compact('courses', 'students'));
+        return $pdf->stream('cert-report.pdf');
     }
 }
