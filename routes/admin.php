@@ -45,15 +45,27 @@ Route::resource('coupons', CouponController::class);
 
 /** All Course Report */
 Route::get('all-course', [AllCourseController::class, 'index'])->name('all-course');
+Route::get('all-course-report', [AllCourseController::class, 'ReportCoursePDF'])->name('all-course.report');
 
 /** Bill Report */
 Route::get('bill-report', [BillReportController::class, 'AdminBillReport'])->name('bill-report');
+Route::get('bill-report-pdf', [BillReportController::class, 'ReportBillPDF'])->name('bill-report.pdf');
 
 /** Certificate Report */
 Route::get('cert-report', [CeReportController::class, 'CertReportAdmin'])->name('cert-report');
+Route::get('cert-report-pdf', [CeReportController::class, 'CertReportAdminPDF'])->name('cert-report.pdf');
 
 /** Package Route */
 Route::resource('package', PackageController::class);
 
 /**Add this route for admin access*/
 Route::get('certificate/download/{course_id}/{user_id}', [CertificateController::class, 'getAdminCertificate'])->name('certificate.download');
+
+/** Report number of admins */
+Route::get('all-admin-report', [AllUserController::class, 'adminReportPDF'])->name('admin-report.pdf');
+
+/** Report number of teachers */
+Route::get('all-teacher-report', [AllUserController::class, 'TeacherReportPDF'])->name('teacher-report.pdf');
+
+/** Report number of users */
+Route::get('all-user-report', [AllUserController::class, 'UserReportPDF'])->name('user-report.pdf');
