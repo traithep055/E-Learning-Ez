@@ -43,9 +43,10 @@
         border-radius: 4px;
         list-style: none;
         padding: 0;
+        text-align: center;
         margin: 0;
         z-index: 1000;
-        width: 300px;
+        width: 200px;
     }
 
     #category-menu.show {
@@ -81,11 +82,12 @@
         position: absolute;
         left: 100%;
         top: 0;
-        background-color: #fff;
+        background-color: #ffffff;
         border: 2px solid #fff;
         border-radius: 4px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        width: 200px;
+        width: 100px;
+        height: auto;
     }
 
     .wsus_menu_cat_droapdown li {
@@ -155,7 +157,7 @@
                 <a href="#" id="category-toggle" style="cursor: pointer;">หมวดหมู่</a>
                 <ul class="wsus_menu_cat_item" id="category-menu">
                     @foreach ($categories as $category)
-                        <li class="category-item">
+                        <li class="category-item" style="width: 150%">
                             <a href="{{ route('courses.index', ['category' => $category->slug]) }}"
                                 class="{{ count($category->subCategory) > 0 ? 'wsus__droap_arrow' : '' }}">
                                 {{ $category->name }}
