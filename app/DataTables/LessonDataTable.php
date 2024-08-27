@@ -129,6 +129,7 @@ class LessonDataTable extends DataTable
             Column::computed('action')
                   ->exportable(false)
                   ->printable(false)
+                  ->title('การทำงาน')
                   ->width(200)
                   ->addClass('text-center'),
         ];

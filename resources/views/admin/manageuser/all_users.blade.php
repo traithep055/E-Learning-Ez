@@ -13,6 +13,9 @@
                     <div class="card">
                         <div class="card-header">
                             <h4>ผู้ดูแลระบบทั้งหมด</h4>
+                            <div class="card-header-action">
+                                <a href="{{route('admin.admin-report.pdf')}}" class="btn btn-primary" target="_blank"><i class="fas fa-solid fa-print"></i> พิมพ์รายงาน</a>
+                            </div>
                         </div>
                         <div class="card-body">
                             <table class="table table-striped table-bordered border-dark">
@@ -53,6 +56,9 @@
                     <div class="card">
                         <div class="card-header">
                             <h4>ผู้สอนทั้งหมด</h4>
+                            <div class="card-header-action">
+                                <a href="{{route('admin.teacher-report.pdf')}}" class="btn btn-primary" target="_blank"><i class="fas fa-solid fa-print"></i> พิมพ์รายงาน</a>
+                            </div>
                         </div>
                         <div class="card-body">
                             <table class="table table-striped table-bordered border-dark">
@@ -98,6 +104,9 @@
                     <div class="card">
                         <div class="card-header">
                             <h4>ผู้เรียนทั้งหมด</h4>
+                            <div class="card-header-action">
+                                <a href="{{route('admin.user-report.pdf')}}" class="btn btn-primary" target="_blank"><i class="fas fa-solid fa-print"></i> พิมพ์รายงาน</a>
+                            </div>
                         </div>
                         <div class="card-body">
                             <table class="table table-striped table-bordered border-dark">
