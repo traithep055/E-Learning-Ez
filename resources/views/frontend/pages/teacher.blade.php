@@ -2,25 +2,26 @@
 
 @section('content')
 
-<div class="container mb-9" style="display: flex; justify-content: center">
+
+<div class="container mb-9" style="display: flex; justify-content: center; " >
     <div class="row">
         <div class="col mt-3">
             <div class="content d-flex flex-column " style="padding: 2%;">
                 <div class="row mt-3" style=" padding: 1%;">
 
                     {{-- Start ตัวกรอง --}}
-                        <div class="teacher" style="width: 25%; margin-left: 40px;margin-top: 30px; ">
+                        <div class="teacher">
                             <div class="price mt-3 " style="display: flex; display: flex; justify-content: center">
                                 <h4>ครูผู้สอนทั้งหมด</h4>
                             </div>
                         </div>
                     {{-- End ตัวกรอง --}}
 
-                    <div class="col-md-8" style=" margin-top: 30px;">
+                    <div class="col-md-8" style=" margin-top: 20px;">
                         <div class="row">
                             @foreach ($teachers as $teacher)
-                                <div class="col-md-3 mb-9 mt-9 d-flex align-items-stretch" >
-                                    <div class="card card-hover" style="width: 100%;height:80px;">
+                                <div class="col-md-4 mb-9 mt-4 d-flex align-items-stretch"  style="width: 100%;height:100%;">
+                                    <div class="card card-hover" >
                                         @if ($teacher->image == null)
                                             <a href="{{route('teacher-detail', ['id' => $teacher->id])}}">
                                                 <img src="{{ $teacher->user->image }}" alt="" class="card-img-top">
@@ -30,7 +31,7 @@
                                                 <img src="{{ $teacher->image }}" alt="" class="card-img-top">
                                             </a>
                                         @endif
-                                        <div class="card-body">
+                                        <div class="card-body" >
                                             <h5 class="card-title">
                                                 <a href="{{route('teacher-detail', ['id' => $teacher->id])}}">
                                                     {{$teacher->firstname}} {{$teacher->lastname}}
