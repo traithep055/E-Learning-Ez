@@ -1,15 +1,10 @@
 @extends('admin.layouts.master')
 
 @section('content')
-    <!-- Main Content --> 
+    <!-- Main Content -->
     <section class="section">
         <div class="section-header">
             <h1>จัดการแพ็คเกจ</h1>
-            <div class="section-header-breadcrumb">
-                <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
-                <div class="breadcrumb-item"><a href="#">Components</a></div>
-                <div class="breadcrumb-item">Table</div>
-            </div>
         </div>
 
         <div class="section-body">
@@ -32,7 +27,7 @@
                                         <th scope="col" style="width: 200px">ระยะเวลา</th>
                                         <th scope="col">ราคา</th>
                                         <th scope="col">สร้างเมื่อวันที่</th>
-                                        <th scope="col" style="width: 200px">Action</th>
+                                        <th scope="col" style="width: 200px">หมายเหตุ</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -57,7 +52,7 @@
                                                         3 ปี
                                                         @break
                                                     @default
-                                                        
+
                                                 @endswitch
                                             </td>
                                             <td>
@@ -68,7 +63,7 @@
                                                 <a href="{{route('admin.package.edit', $package->id)}}" class="btn btn-warning"><i class="far fa-edit"></i></a>
                                                 <a href="{{route('admin.package.destroy', $package->id)}}" class="btn btn-danger ml-2 delete-item"><i class="far fa-trash-alt"></i></a>
                                             </td>
-                                            
+
                                         </tr>
                                     @endforeach
 

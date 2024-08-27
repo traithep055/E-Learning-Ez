@@ -1,15 +1,10 @@
 @extends('admin.layouts.master')
 
 @section('content')
-    <!-- Main Content --> 
+    <!-- Main Content -->
     <section class="section">
         <div class="section-header">
-            <h1>จัดการประเภทคอร์ส</h1>
-            <div class="section-header-breadcrumb">
-                <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
-                <div class="breadcrumb-item"><a href="#">Components</a></div>
-                <div class="breadcrumb-item">Table</div>
-            </div>
+            <h1>จัดการหมวดหมู่คอร์ส</h1>
         </div>
 
         <div class="section-body">
@@ -17,9 +12,9 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>ประเภททั้งหมด</h4>
+                            <h4>หมวดหมู่หลักทั้งหมด</h4>
                             <div class="card-header-action">
-                                <a href="{{route('admin.category.create')}}" class="btn btn-primary">+ เพิ่มประเภท</a>
+                                <a href="{{route('admin.category.create')}}" class="btn btn-primary">+ เพิ่มหมวดหมู่หลัก</a>
                             </div>
                         </div>
                         <div class="card-body">
@@ -27,10 +22,10 @@
                                 <thead style="background: #f2f2f2">
                                     <tr>
                                         <th scope="col" style="width: 100px">#</th>
-                                        <th scope="col">ชื่อประเภท</th>
+                                        <th scope="col">ชื่อหมวดหมู่</th>
                                         <th scope="col" style="width: 200px">สถานะ</th>
                                         {{-- <th scope="col">Publish Date</th> --}}
-                                        <th scope="col" style="width: 200px">Action</th>
+                                        <th scope="col" style="width: 200px">ใช้งาน</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -67,9 +62,9 @@
                                                     @csrf
                                                     @method('DELETE')
                                                 </form>                                                 --}}
-                                                
+
                                             </td>
-                                            
+
                                         </tr>
                                     @endforeach
 

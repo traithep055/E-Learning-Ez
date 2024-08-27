@@ -35,7 +35,7 @@ class CourseDataTable extends DataTable
             //         case 'top_course':
             //             return '<i class="badge bg-info text-dark">Top Course</i>';
             //             break;
-                    
+
             //         default:
             //             return '<i class="badge bg-dark">None</i>';
             //             break;
@@ -59,7 +59,7 @@ class CourseDataTable extends DataTable
             ->addColumn('action', function($query){
                 $editBtn = "<a href='".route('teacher.courses.edit', $query->id)."' class='btn btn-primary'><i class='far fa-edit'></i></a>";
                 $deleteBtn = "<a href='".route('teacher.courses.destroy', $query->id)."' class='btn btn-danger delete-item' ><i class='far fa-trash-alt'></i></a>";
-    
+
                 $moreBtn = '<div class="btn-group dropstart" style="margin-left:3px">
                     <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="fas fa-cog"></i>
@@ -69,7 +69,7 @@ class CourseDataTable extends DataTable
                         <li><a class="dropdown-item has-icon" href="'.route('teacher.tests.index', ['course' => $query->id]).'"> แบบทดสอบ</a></li>
                     </ul>
                 </div>';
-    
+
                 // return $editBtn.$deleteBtn.$moreBtn;
                 return $editBtn.$deleteBtn.$moreBtn;
             })
@@ -129,14 +129,14 @@ class CourseDataTable extends DataTable
     public function getColumns(): array
     {
         return [
-            
-            Column::make('id')->width(30), // กำหนดชื่อ column ที่ใช้ในการแสดงผลเป็น 'รหัส' แต่ใช้ชื่อ 'id' ในฐานข้อมูล
-            Column::make('image')->title('รูปภาพ')->width(100), // กำหนดชื่อ column ที่ใช้ในการแสดงผลเป็น 'รูปภาพ' แต่ใช้ชื่อ 'image' ในฐานข้อมูล
-            Column::make('name')->title('ชื่อ')->width(100), // กำหนดชื่อ column ที่ใช้ในการแสดงผลเป็น 'ชื่อ' แต่ใช้ชื่อ 'name' ในฐานข้อมูล
-            Column::make('price')->title('ราคา')->width(50), // กำหนดชื่อ column ที่ใช้ในการแสดงผลเป็น 'ราคา' แต่ใช้ชื่อ 'price' ในฐานข้อมูล
-            Column::make('score')->title('คะแนน')->width(100), // กำหนดชื่อ column ที่ใช้ในการแสดงผลเป็น 'ประเภท' แต่ใช้ชื่อ 'type' ในฐานข้อมูล
-            Column::make('status')->title('สถานะ')->width(50), // กำหนดชื่อ column ที่ใช้ในการแสดงผลเป็น 'สถานะ' แต่ใช้ชื่อ 'status' ในฐานข้อมูล
-            Column::computed('action')
+
+            Column::make('รหัสคอร์ส')->width(30), // กำหนดชื่อ column ที่ใช้ในการแสดงผลเป็น 'รหัส' แต่ใช้ชื่อ 'id' ในฐานข้อมูล
+            Column::make('ภาพปก')->title('ภาพปก')->width(100), // กำหนดชื่อ column ที่ใช้ในการแสดงผลเป็น 'รูปภาพ' แต่ใช้ชื่อ 'image' ในฐานข้อมูล
+            Column::make('ชื่อ')->title('ชื่อคอร์ส')->width(100), // กำหนดชื่อ column ที่ใช้ในการแสดงผลเป็น 'ชื่อ' แต่ใช้ชื่อ 'name' ในฐานข้อมูล
+            Column::make('ราคา')->title('ราคาคอร์ส')->width(50), // กำหนดชื่อ column ที่ใช้ในการแสดงผลเป็น 'ราคา' แต่ใช้ชื่อ 'price' ในฐานข้อมูล
+            Column::make('คะแนน')->title('คะแนนรีวิว')->width(100), // กำหนดชื่อ column ที่ใช้ในการแสดงผลเป็น 'ประเภท' แต่ใช้ชื่อ 'type' ในฐานข้อมูล
+            Column::make('สถานะ')->title('การทำงาน')->width(50), // กำหนดชื่อ column ที่ใช้ในการแสดงผลเป็น 'สถานะ' แต่ใช้ชื่อ 'status' ในฐานข้อมูล
+            Column::computed('การทำงาน')
                 ->exportable(false)
                 ->printable(false)
                 ->width(200)

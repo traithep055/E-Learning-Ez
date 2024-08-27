@@ -24,19 +24,19 @@
                 <div class="col-xl-2 col-6 col-md-4">
                   <a class="wsus__dashboard_item sky" href="{{route('teacher.course-payment')}}">
                     <i class="fas fa-solid fa-receipt"></i>
-                    <p>การชำระเงิน</p>
+                    <p>ข้อมูลชำระเงิน</p>
                   </a>
                 </div>
                 <div class="col-xl-2 col-6 col-md-4">
                   <a class="wsus__dashboard_item blue" href="{{route('teacher.course-certificate')}}">
                     <i class="fas fa-solid fa-passport"></i>
-                    <p>เกียรติบัตร</p>
+                    <p>ประกาศนียบัตร</p>
                   </a>
                 </div>
                 <div class="col-xl-2 col-6 col-md-4">
                   <a class="wsus__dashboard_item orange" href="{{route('teacher.profile')}}">
                     <i class="fas fa-user-shield"></i>
-                    <p>profile</p>
+                    <p>โปรไฟล์</p>
                   </a>
                 </div>
               </div>
