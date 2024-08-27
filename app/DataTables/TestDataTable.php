@@ -108,6 +108,7 @@ class TestDataTable extends DataTable
             Column::computed('action')
                   ->exportable(false)
                   ->printable(false)
+                  ->title('การทำงาน')
                   ->width(60)
                   ->addClass('text-center'),
         ];

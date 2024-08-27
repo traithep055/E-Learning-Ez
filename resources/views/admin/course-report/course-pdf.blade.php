@@ -94,5 +94,8 @@
             @endforeach
         </tbody>
     </table>
+    <div class="total-count">
+        จำนวนคอร์สทั้งหมด: {{ $courses->count() }} คอร์ส
+    </div>
 </body>
 </html>

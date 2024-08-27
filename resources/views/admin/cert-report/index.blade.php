@@ -13,6 +13,9 @@
                     <div class="card">
                         <div class="card-header">
                             <h4>ผู้ที่ได้รับใบประกาศณียบัตร</h4>
+                            <div class="card-header-action">
+                                <a href="{{route('admin.cert-report.pdf')}}" class="btn btn-primary" target="_blank"><i class="fas fa-solid fa-print"></i> พิมพ์รายงาน</a>
+                            </div>
                         </div>
                         <div class="card-body">
                             <table class="table table-striped table-bordered border-dark">
