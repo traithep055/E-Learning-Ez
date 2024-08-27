@@ -4,12 +4,7 @@
     <!-- Main Content -->
     <section class="section">
         <div class="section-header">
-            <h1>การซื้อคอร์สทั้งหมด</h1>
-            <div class="section-header-breadcrumb">
-                <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
-                <div class="breadcrumb-item"><a href="#">Components</a></div>
-                <div class="breadcrumb-item">Table</div>
-            </div>
+            <h1>รายงานการซื้อคอร์สทั้งหมด</h1>
         </div>
 
         <div class="section-body">
@@ -17,18 +12,18 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>การซื้อคอร์ส</h4>
+                            <h4>รายการซื้อคอร์ส</h4>
                         </div>
                         <div class="card-body">
                             <table class="table table-striped table-bordered border-dark">
                                 <thead style="background: #f2f2f2">
                                     <tr>
                                         <th scope="col">หมายเลขใบเสร็จ</th>
-                                        <th scope="col">ชื้อคอร์ส</th>
-                                        <th scope="col">ราคาปกติ</th>
+                                        <th scope="col">ชื่อคอร์ส</th>
+                                        <th scope="col">ราคาคอร์ส</th>
                                         <th scope="col">ส่วนลด</th>
                                         <th scope="col">ราคาหลังหักส่วนลด</th>
-                                        <th scope="col">สลิป</th>
+                                        <th scope="col">ยืนยันการโอน</th>
                                         <th scope="col">วันที่</th>
                                     </tr>
                                 </thead>

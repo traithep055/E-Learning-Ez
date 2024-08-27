@@ -12,7 +12,7 @@
 <body style="background-image: url('{{ asset('images/back.jpg') }}');">
     <div class="container">
         <div class="forms">
-            <div class="form login">
+            <div class="form login" style="margin-top: -2%">
                 <span class="title">สร้างบัญชีผู้ใช้ใหม่ของคุณ</span>
                 <div class="sub-title">
                     <span เพื่อพบกับคอร์สเรียนหลากหลายสาขา>เพื่อพบกับคอร์สเรียนหลากหลายสาขา</span>
@@ -84,6 +84,11 @@
                         </style>
                         <input type="submit" value="สมัคร">
                     </div>
+                    <div class="login-signup">
+                    <span class="text">มีบัญชีแล้ว?
+                        <a href="{{ route('login') }}" class="text signup-link">ล็อกอินเลย</a>
+                    </span>
+                </div>
                 </form>
             </div>
 

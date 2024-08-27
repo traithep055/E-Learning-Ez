@@ -11,12 +11,12 @@
         <div class="row">
             <div class="col-xl-9 col-xxl-10 col-lg-9 ms-auto">
                 <div class="dashboard_content mt-2 mt-md-0">
-                    <h3><i class="far fa-solid fa-book"></i> ผู้เรียน</h3>
+                    <h3><i class="far fa-solid fa-book"></i>รายชื่อผู้เข้าเรียน</h3>
                     <div class="wsus__dashboard_profile p-3 bg-white rounded shadow-sm">
                         <div class="wsus__dash_pro_area">
                             <form method="GET" action="{{ route('teacher.course-students') }}">
                                 <div class="form-group mb-3">
-                                    <label for="course_id" class="form-label">เลือกคอร์ส</label>
+                                    <label for="course_id" class="form-label">เลือกชื่อคอร์ส</label>
                                     <select name="course_id" id="course_id" class="form-select" onchange="this.form.submit()">
                                         <option value="">-- เลือก --</option>
                                         @foreach($courses as $course)

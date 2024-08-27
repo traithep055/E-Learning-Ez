@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <title>
-    Ez || Teacher Dashboard
+    www.EzAcademyTeacher Dashboard
   </title>
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="stylesheet" href="{{asset('frontend/css/all.min.css')}}">

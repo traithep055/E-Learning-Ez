@@ -1,15 +1,10 @@
 @extends('admin.layouts.master')
 
 @section('content')
-    <!-- Main Content --> 
+    <!-- Main Content -->
     <section class="section">
         <div class="section-header">
             <h1>จัดการผู้ใช้</h1>
-            <div class="section-header-breadcrumb">
-                <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
-                <div class="breadcrumb-item"><a href="#">Components</a></div>
-                <div class="breadcrumb-item">Table</div>
-            </div>
         </div>
 
         <div class="section-body">
@@ -39,7 +34,7 @@
                                             @if ($becomeTeacher->user)
                                                 {{ $becomeTeacher->user->firstname }} {{ $becomeTeacher->user->lastname }}
                                             @else
-                                                No User Found
+                                                ไม่พบผู้ใช้งาน
                                             @endif
                                         </td>
                                         <td>{{ $becomeTeacher->reason }}</td>
@@ -51,17 +46,17 @@
                                                 document.getElementById('approve-form-{{ $becomeTeacher->id }}').submit();">
                                                 อนุมัติ
                                             </a>
-                                            
+
                                             <form id="approve-form-{{ $becomeTeacher->id }}" action="{{ route('admin.managebecome_teacher.approve', $becomeTeacher->id) }}" method="POST" style="display: none;">
                                                 @csrf
                                             </form>
-                                            
+
                                             <a href="{{ route('admin.managebecome_teacher.decline', $becomeTeacher->id) }}" class="btn btn-danger mx-1"
                                                 onclick="event.preventDefault();
                                                 document.getElementById('decline-form-{{ $becomeTeacher->id }}').submit();">
                                                 ปฎิเสธ
                                             </a>
-                                            
+
                                             <form id="decline-form-{{ $becomeTeacher->id }}" action="{{ route('admin.managebecome_teacher.decline', $becomeTeacher->id) }}" method="POST" style="display: none;">
                                                 @csrf
                                             </form>
