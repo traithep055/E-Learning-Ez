@@ -82,7 +82,8 @@ class LessonController extends Controller
 
         // สร้าง slug โดยใช้ Str::slug()
         $lessonSlug = $request->lesson_name;
-        $lessonSlug = preg_replace('/[^a-zA-Z0-9ก-ฮะ-์ ]/', '', $lessonSlug);
+        // $lessonSlug = preg_replace('/[^a-zA-Z0-9ก-ฮะ-์ ]/', '', $lessonSlug);
+        $lessonSlug = preg_replace('/[^\p{L}\p{N}\s]/u', '', $lessonSlug);
         $lessonSlug = str_replace(' ', '-', $lessonSlug);
         $lessonSlug = strtolower($lessonSlug);
 
@@ -168,7 +169,7 @@ class LessonController extends Controller
 
         // สร้าง slug โดยใช้ Str::slug()
         $lessonSlug = $request->lesson_name;
-        $lessonSlug = preg_replace('/[^a-zA-Z0-9ก-ฮะ-์ ]/', '', $lessonSlug);
+        $lessonSlug = preg_replace('/[^\p{L}\p{N}\s]/u', '', $lessonSlug);
         $lessonSlug = str_replace(' ', '-', $lessonSlug);
         $lessonSlug = strtolower($lessonSlug);
 
