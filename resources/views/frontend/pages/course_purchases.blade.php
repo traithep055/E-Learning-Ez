@@ -99,10 +99,10 @@
                             <label for="coupon_code">รหัสคูปอง</label>
                             <div class="d-flex">
                                 <input type="text" name="coupon_code" id="coupon_code" class="form-control col-1 border"
-                                    style="height: 40px; width: 84%">
-                                <button type="button" class="btn btn-primary ml-2 col-2" id="apply-coupon"
-                                    style="height: 40px;">ใช้</button>
+                                    style="height: 40px; margin-right: 160%">
                             </div>
+                            <button type="button" class="btn btn-primary mt-3" id="apply-coupon"
+                                    style="margin-right: 160%">ใช้</button>
                         </div>
                         <div class="form-group">
                             <label style="font-size: 20px; font-weight: 100">ยอดที่ต้องชำระ: </label>
@@ -110,8 +110,8 @@
                         </div>
                         <div class="form-group">
                             <label for="slip_image">อัปโหลดภาพยืนยันการชำระ</label>
-                            <div class="d-flex">
-                                <input type="file" name="slip_image" id="slip_image" class="form-control col-2 border">
+                            <div class="d-flex" >
+                                <input type="file" name="slip_image" id="slip_image" class="form-control col-2 mb-3 border" style="margin-right: 160%">
                             </div>
                         </div>
                         <!-- ตำแหน่งที่ใช้เพื่อแสดงข้อความเกี่ยวกับข้อมูลคูปอง -->
@@ -142,7 +142,7 @@
                     </div>
                     <p>บัญชี: ธนาคาร</p>
                     <p>ชื่อบัญชี: EZ Academy</p>
-                    <p>เลขบัญชี: 000-0-000000</p>
+                    <p>เลขบัญชี: 025-0-458000</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>

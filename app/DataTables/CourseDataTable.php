@@ -130,7 +130,7 @@ class CourseDataTable extends DataTable
     {
         return [
 
-            Column::make('id')->width(30), // กำหนดชื่อ column ที่ใช้ในการแสดงผลเป็น 'รหัส' แต่ใช้ชื่อ 'id' ในฐานข้อมูล
+            Column::make('id')->title('รหัสคอร์ส')->width(30), // กำหนดชื่อ column ที่ใช้ในการแสดงผลเป็น 'รหัส' แต่ใช้ชื่อ 'id' ในฐานข้อมูล
             Column::make('image')->title('ภาพปก')->width(100), // กำหนดชื่อ column ที่ใช้ในการแสดงผลเป็น 'รูปภาพ' แต่ใช้ชื่อ 'image' ในฐานข้อมูล
             Column::make('name')->title('ชื่อคอร์ส')->width(100), // กำหนดชื่อ column ที่ใช้ในการแสดงผลเป็น 'ชื่อ' แต่ใช้ชื่อ 'name' ในฐานข้อมูล
             Column::make('price')->title('ราคาคอร์ส')->width(50), // กำหนดชื่อ column ที่ใช้ในการแสดงผลเป็น 'ราคา' แต่ใช้ชื่อ 'price' ในฐานข้อมูล
@@ -139,7 +139,7 @@ class CourseDataTable extends DataTable
             Column::computed('action')
                 ->exportable(false)
                 ->printable(false)
-                ->title('การทำงาน')
+                ->title('ฟังก์ชัน')
                 ->width(200)
                 ->addClass('text-center'),
         ];

@@ -89,8 +89,8 @@ class CouponDataTable extends DataTable
     public function getColumns(): array
     {
         return [
-            
-            Column::make('id'),
+
+            Column::make('id')->title('รหัส'),
             Column::make('code')->title('คูปองโค้ด'),
             Column::make('discount')->title('จำนวนส่วนลด'),
             Column::make('discount_percentage')->title('ส่วนลดเปอร์เซ็นต์ %'),

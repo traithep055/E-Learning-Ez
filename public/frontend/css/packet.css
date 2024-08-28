@@ -41,11 +41,14 @@
 }
 
 .card-body-package .title-package p {
-    font-size: 45px;
+    font-size: 25px;
     color: rgb(255, 255, 255);
-    margin-top: 70px;
-    margin-left: 38%;
+    margin-top: 40px;
+    text-align: center;
+    width: 70%;
+    margin-left: 16%;
     font-weight: 100;
+    margin-bottom: 10%;
     text-shadow: 2px 3px 7px rgb(0, 0, 0);
 }
 .card-body-package span p {
@@ -64,6 +67,7 @@
     line-height: 1.5; /* เพิ่มช่องว่างระหว่างบรรทัด */
     margin: 0 auto; /* จัดให้อยู่ตรงกลาง */
     margin-bottom: 5%;
+    margin-top: 2%;
 }
 .card-body-package .percent p {
     margin-top: -10%;

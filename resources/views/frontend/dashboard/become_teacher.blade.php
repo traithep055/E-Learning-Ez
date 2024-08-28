@@ -25,20 +25,20 @@
                         <div class="col-md-12 mt-5">
                             <div class="wsus__dash_pro_single">
                               <i class="fas fa-solid fa-user"></i>
-                              <input type="text" placeholder="Firstname" name="firstname" value="{{Auth::user()->firstname}}">
+                              <input type="text" placeholder="ชื่อ" name="firstname" value="{{Auth::user()->firstname}}">
                             </div>
                         </div>
 
                         <div class="col-md-12 mt-5">
                             <div class="wsus__dash_pro_single">
                                 <i class="fas fa-solid fa-user"></i>
-                              <input type="text" placeholder="Lastname" name="lastname" value="{{Auth::user()->lastname}}">
+                              <input type="text" placeholder="นามสกุล" name="lastname" value="{{Auth::user()->lastname}}">
                             </div>
                         </div>
                         <div class="col-md-12 mt-5">
                             <i class="fas fa-info-circle"></i>
                             <label>รายละเอียด</label>
-                            <textarea class="form-control" placeholder="Reason"name="reason" rows="3"></textarea>
+                            <textarea class="form-control" placeholder="เหตุผล"name="reason" rows="3"></textarea>
                         </div>
 
                         <div class="col-md-12 mt-5">
@@ -48,7 +48,7 @@
                             </div>
                         </div>
                         <div class="col-xl-12">
-                            <button class="common_btn mb-4 mt-2" type="submit">upload</button>
+                            <button class="common_btn mb-4 mt-2" type="submit">ส่งคำขอ</button>
                           </div>
                     </div>
                     {{-- <div class="col-xl-12">
