@@ -27,16 +27,20 @@
             height: 100vh;
             text-align: center;
             position: relative;
-            border: 5px solid rgb(19, 38, 137);
         }
 
         .card {
             border-radius: 8px;
             padding: 10px;
             width: 100%;
+            height: 95%;
             max-width: 290mm;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
             position: relative;
+            /* margin-top: 2.5%; */
+            margin-left: -1.5%;
+            border: 5px solid rgb(19, 38, 137);
+
         }
 
         .card-header {
@@ -76,7 +80,7 @@
 
         img.logo {
             width: 250px;
-            margin-top: -55px;
+            margin-top: 90px;
         }
 
         .details {
@@ -94,12 +98,12 @@
             position: absolute;
             width: 150px;
             height: 30px;
-            background-color: rgb(19, 38, 137);
+            background-color: rgb(6, 28, 135);
             clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
         }
 
         .top-left {
-            background-color: rgb(159, 215, 255);
+            background-color: rgb(0, 149, 255);
             top: -5px;
             right: -2%;
             width: 350px;
@@ -115,6 +119,7 @@
             width: 350px;
             height: 150px;
             transform: rotate(40deg);
+
         }
 
         .bottom-left {
@@ -128,8 +133,13 @@
 
         .bottom-right {
             bottom: -15px;
-            right: -43px;
+            left: 83px;
             transform: rotate(180deg);
+            width: 170px;
+            height: 15px;
+            background-color: rgb(0, 149, 255);
+            transform: rotate(40deg);
+            border-radius: 0px 20px 0px 20px;
         }
 
         /* Corner rectangles 2 */
@@ -137,7 +147,6 @@
             position: absolute;
             width: 150px;
             height: 30px;
-            background-color: rgb(237, 249, 255);
             clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
         }
 
@@ -148,6 +157,8 @@
             height: 15px;
             border-radius: 0px 20px 0px 0px;
             transform: rotate(40deg);
+            background-color: rgba(47, 210, 255, 0.495);
+
         }
 
         .top-right-2 {
@@ -155,20 +166,31 @@
             right: -5%;
             width: 350px;
             height: 15px;
+            background-color: rgb(0, 110, 255);
+
             border-radius: 0px 20px 0px 0px;
             transform: rotate(40deg);
         }
 
         .bottom-left-2 {
             bottom: -25px;
-            left: -70px;
+            left: -60px;
             transform: rotate(270deg);
+            width: 300px;
+            height: 15px;
+            background-color: rgba(47, 210, 255, 0.495);
+            transform: rotate(40deg);
+            border-radius: 0px 20px 0px 20px;
         }
 
         .bottom-right-2 {
             bottom: -25px;
-            right: -70px;
-            transform: rotate(180deg);
+            left: -2px;
+            width: 270px;
+            height: 15px;
+            background-color: rgb(0, 110, 255);
+            transform: rotate(40deg);
+            border-radius: 0px 20px 0px 20px;
         }
     </style>
 </head>
