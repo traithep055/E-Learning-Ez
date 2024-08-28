@@ -80,9 +80,15 @@ class LessonController extends Controller
             $lesson->video_path = $path;
         }
 
+        // สร้าง slug โดยใช้ Str::slug()
+        $lessonSlug = $request->lesson_name;
+        $lessonSlug = preg_replace('/[^a-zA-Z0-9ก-ฮะ-์ ]/', '', $lessonSlug);
+        $lessonSlug = str_replace(' ', '-', $lessonSlug);
+        $lessonSlug = strtolower($lessonSlug);
+
         $lesson->course_id = $request->course;
         $lesson->lesson_name = $request->lesson_name;
-        $lesson->slug = $request->lesson_name;
+        $lesson->slug = $lessonSlug;
         $lesson->description = $request->description;
         $lesson->video_url = $request->video_url;
         $lesson->save();
@@ -160,8 +166,14 @@ class LessonController extends Controller
             $lesson->video_path = $path;
         }
 
+        // สร้าง slug โดยใช้ Str::slug()
+        $lessonSlug = $request->lesson_name;
+        $lessonSlug = preg_replace('/[^a-zA-Z0-9ก-ฮะ-์ ]/', '', $lessonSlug);
+        $lessonSlug = str_replace(' ', '-', $lessonSlug);
+        $lessonSlug = strtolower($lessonSlug);
+
         $lesson->lesson_name = $request->lesson_name;
-        $lesson->slug = $request->lesson_name;
+        $lesson->slug = $lessonSlug;
         $lesson->description = $request->description;
         $lesson->video_url = $request->video_url;
         $lesson->save();
