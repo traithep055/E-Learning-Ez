@@ -6,13 +6,13 @@
         <div class="container mt-8" style="margin-left: 5%, bachground-color: #55f5f5">
             {{-- Start ตัวกรอง --}}
             <div class="menu" style="width: 25%; margin-left: 40px">
-                <div class="price mt-3 mb-3" style="display: flex; align-items: center;">
+                <div class="price mb-3" style="display: flex; align-items: center;">
                     <h4>แพ็คเกจทั้งหมด</h4>
                 </div>
                 <di-v class="divider" style="width: 90%;"></di-v>
             </div>
             {{-- End ตัวกรอง --}}
-            <div class="col-md-8" style="margin-left: 55px">
+            <div class="col-md-8">
                 <div class="row">
                     @forelse ($packages as $package)
                         <div class="col-md-4 mb-5 d-flex align-items-stretch">

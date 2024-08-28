@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col mt-3">
             <div class="content d-flex flex-column " style="padding: 2%;">
-                <div class="row mt-3" style=" padding: 1%;">
+                <div class="row mt-3" style=" padding: 1%; width:250%;display: flex; display: flex; justify-content: center">
 
                     {{-- Start ตัวกรอง --}}
                         <div class="teacher">
@@ -18,9 +18,9 @@
                     {{-- End ตัวกรอง --}}
 
                     <div class="col-md-8" style=" margin-top: 20px;">
-                        <div class="row">
+                        <div class="row" style="display: flex; display: flex; justify-content: center">
                             @foreach ($teachers as $teacher)
-                                <div class="col-md-4 mb-9 mt-4 d-flex align-items-stretch"  style="width: 100%;height:100%;">
+                                <div class="col-md-3 mb-9 mt-4 d-flex align-items-stretch"  style="width: 100%;height:100%;">
                                     <div class="card card-hover" >
                                         @if ($teacher->image == null)
                                             <a href="{{route('teacher-detail', ['id' => $teacher->id])}}">
