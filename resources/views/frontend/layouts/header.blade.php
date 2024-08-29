@@ -203,7 +203,7 @@
             @if (Route::has('login'))
                 @guest
                     <li class="logout">
-                        <a href="{{ route('login') }}" style="margin-left: 180%; width: 60%">
+                        <a href="{{ route('login') }}" style="margin-left: 180%; width: 80%">
                             เข้าสู่ระบบ
                             <i class='bx bx-log-out'></i>
                         </a>

@@ -21,7 +21,7 @@
                                 </a>
                             @endif
                             <h5>{{$teacher->firstname}} {{$teacher->lastname}}</h5>
-                        </div>                        
+                        </div>
 
                         <div class="divider" style="width: 90%;"></div>
                         <a href=""><i class="fa fa-brands fa-instagram" style="font-size: 20px; margin-right:8px"></i></a>
@@ -44,9 +44,9 @@
                                 <h6>คอร์สของ {{$teacher->firstname}} {{$teacher->lastname}}</h6>
                                 @foreach ($teacher->course as $course)
                                     <div class="col-md-4 mb-5 d-flex align-items-stretch">
-                                        <div class="card card-hover" style="width: 100%;">
+                                        <div class="card card-hover" style="width: 80%;">
                                             <a href="{{ route('course-detail', ['id' => $course->id]) }}">
-                                                <img src="{{ $course->image }}" class="card-img-top" alt="...">
+                                                <img src="{{ $course->image }}" class="card-img-top w-100" alt="...">
                                             </a>
                                             <div class="card-body">
                                                 <h5 class="card-title">
@@ -60,15 +60,15 @@
                                                 @if ($user && $course->purchasedCourses->contains('id', $user->id))
                                                 <a href="{{ route('user.learn_course.lesson', ['course' => $course->id, 'lesson' => $course->lessons->first()->slug]) }}" class="btn btn-primary">เรียน</a>
                                                 @else
-                                                    <a href="{{ route('user.course_purchase', ['course' => $course->id]) }}" class="btn btn-primary">ชื้อคอร์ส</a>
+                                                    <a href="{{ route('user.course_purchase', ['course' => $course->id]) }}" class="btn btn-primary mt-5" style="font-size: 15px; font-weight: 100">ซื้อคอร์ส</a>
                                                 @endif
                                             </div>
                                         </div>
-                                    </div> 
+                                    </div>
                                 @endforeach
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
