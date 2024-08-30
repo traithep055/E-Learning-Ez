@@ -12,7 +12,7 @@
         <div class="col-xl-9 col-xxl-10 col-lg-9 ms-auto">
           <div class="dashboard_content mt-2 mt-md-0">
             <h3><i class="far fa-solid fa-book"></i> แก้ไขบทเรียน</h3>
-            <h4>For {{$lesson->lesson_name}}</h4>
+            <h4>  {{$lesson->lesson_name}}</h4>
             <div class="create_button">
                 <a href="{{ route('teacher.lesson.index', ['course' => $course->id]) }}" class="btn btn-primary"><i class="fas fa-solid fa-arrow-left"></i></a>
             </div>
