@@ -14,6 +14,9 @@
                         <div class="card-header">
                             <h4>ผู้ดูแลระบบทั้งหมด</h4>
                             <div class="card-header-action">
+                                <a href="{{route('admin.add-admin.index')}}" class="btn btn-primary">+ เพิ่มผู้ดูแลระบบ</a>
+                            </div>
+                            <div class="card-header-action">
                                 <a href="{{route('admin.admin-report.pdf')}}" class="btn btn-primary" target="_blank"><i class="fas fa-solid fa-print"></i> พิมพ์รายงาน</a>
                             </div>
                         </div>

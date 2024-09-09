@@ -11,6 +11,7 @@ use App\Http\Controllers\Backend\AllCourseController;
 use App\Http\Controllers\Backend\BillReportController;
 use App\Http\Controllers\Backend\CeReportController;
 use App\Http\Controllers\Backend\PackageController;
+use App\Http\Controllers\Backend\AddAdminController;
 use App\Http\Controllers\Frontend\CertificateController;
 use Illuminate\Support\Facades\Route;
 
@@ -69,3 +70,7 @@ Route::get('all-teacher-report', [AllUserController::class, 'TeacherReportPDF'])
 
 /** Report number of users */
 Route::get('all-user-report', [AllUserController::class, 'UserReportPDF'])->name('user-report.pdf');
+
+/** Add Admin User */
+Route::get('add-admin', [AddAdminController::class, 'index'])->name('add-admin.index');
+Route::post('add-admin', [AddAdminController::class, 'addAdmin'])->name('add-admin');
