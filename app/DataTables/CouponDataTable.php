@@ -29,8 +29,8 @@ class CouponDataTable extends DataTable
                 return $query->discount_percentage ? '<h6>' . $query->discount_percentage . ' %' . '</h6>' : '-';
             })
             ->addColumn('action', function($query){
-                $editBtn = "<a href='".route('admin.coupons.edit', $query->id)."' class='btn btn-primary'><i class='far fa-edit'></i></a>";
-                $deleteBtn = "<a href='".route('admin.coupons.destroy', $query->id)."' class='btn btn-danger ml-2 delete-item' ><i class='far fa-trash-alt'></i></a>";
+                $editBtn = "<a href='".route('admin.coupons.edit', $query->id)."' class='btn btn-primary' style='background-color: #ffc107;'><i class='far fa-edit'></i></a>";
+                $deleteBtn = "<a href='".route('admin.coupons.destroy', $query->id)."' class='btn btn-danger ml-2 delete-item' style='background-color: #e74c3c;'><i class='far fa-trash-alt'></i></a>";
 
                 return $editBtn.$deleteBtn;
             })

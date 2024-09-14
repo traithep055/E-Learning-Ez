@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Course;
 use App\Models\Test;
 use App\Models\TestResult;
+use App\Models\ScoreCriteria;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -25,6 +26,9 @@ class ExamController extends Controller
 
     public function submit(Request $request, Test $test)
     {
+        // $scorecriteria = ScoreCriteria::findOrFail(1);
+        // $criteria = $scorecriteria->criteria;
+
         $userAnswers = $request->input('answers');
         $correctAnswers = $test->questions->pluck('correct_option', 'id')->toArray();
         $score = 0;

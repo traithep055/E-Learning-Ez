@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\TestResult;
 use App\Models\Course;
+use App\Models\ScoreCriteria;
 use Illuminate\Support\Facades\Auth;
 use PDF;
 use View;
@@ -15,11 +16,13 @@ class CertificateController extends Controller
     public function getCertificate($course_id)
     {
         $user = Auth::user();
+        // $scorecriteria = ScoreCriteria::findOrFail(1);
+        // $criteria = $scorecriteria->criteria;
         $testResult = TestResult::where('user_id', $user->id)
                                 ->whereHas('test.course', function($query) use ($course_id) {
                                     $query->where('id', $course_id);
                                 })
-                                ->where('score', '>=', 80)
+                                ->where('score', '>=', 80) // ใส่ $criteria แทน 80 ได้
                                 ->firstOrFail();
 
         $course = Course::findOrFail($course_id);
@@ -34,11 +37,13 @@ class CertificateController extends Controller
 
     public function getAdminCertificate($course_id, $user_id)
     {
+        // $scorecriteria = ScoreCriteria::findOrFail(1);
+        // $criteria = $scorecriteria->criteria;
         $testResult = TestResult::where('user_id', $user_id)
                                 ->whereHas('test.course', function($query) use ($course_id) {
                                     $query->where('id', $course_id);
                                 })
-                                ->where('score', '>=', 80)
+                                ->where('score', '>=', 80) // ใส่ $criteria แทน 80 ได้
                                 ->firstOrFail();
 
         $course = Course::findOrFail($course_id);

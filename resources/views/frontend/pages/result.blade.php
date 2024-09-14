@@ -5,7 +5,7 @@
     <h2>ผลการทำแบบทดสอบ</h2>
     <p>คะแนนของคุณ: {{ $scorePercentage }}%</p>
     
-    @if ($scorePercentage < 80)
+    @if ($scorePercentage < 80) {{-- ใส่ $criteria แทน 80 ได้ --}}
         <h3>คำตอบที่ผิด</h3>
         @foreach ($incorrectQuestions as $question)
             <div class="mb-4">
@@ -20,7 +20,7 @@
     @endif
 
     <div class="mt-4">
-        @if ($scorePercentage >= 80)
+        @if ($scorePercentage >= 80) {{-- ใส่ $criteria แทน 80 ได้ --}}
             <a href="{{ route('user.certificate.download', ['course_id' => $test->course->id]) }}" target="_blank" class="btn btn-success">รับใบประกาศณียบัตร</a>
         @endif
     </div>

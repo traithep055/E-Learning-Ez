@@ -57,8 +57,8 @@ class CourseDataTable extends DataTable
                 return $button;
             })
             ->addColumn('action', function($query){
-                $editBtn = "<a href='".route('teacher.courses.edit', $query->id)."' class='btn btn-primary'><i class='far fa-edit'></i></a>";
-                $deleteBtn = "<a href='".route('teacher.courses.destroy', $query->id)."' class='btn btn-danger delete-item' ><i class='far fa-trash-alt'></i></a>";
+                $editBtn = "<a href='".route('teacher.courses.edit', $query->id)."' class='btn btn-warning' style='background-color: #ffc107;'><i class='far fa-edit'></i></a>";
+                $deleteBtn = "<a href='".route('teacher.courses.destroy', $query->id)."' class='btn btn-danger delete-item' style='background-color: #e74c3c;'><i class='far fa-trash-alt'></i></a>";
 
                 $moreBtn = '<div class="btn-group dropstart" style="margin-left:3px">
                     <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
