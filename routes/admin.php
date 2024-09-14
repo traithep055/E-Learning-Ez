@@ -13,6 +13,7 @@ use App\Http\Controllers\Backend\CeReportController;
 use App\Http\Controllers\Backend\PackageController;
 use App\Http\Controllers\Backend\AddAdminController;
 use App\Http\Controllers\Frontend\CertificateController;
+use App\Http\Controllers\Backend\ScoreCriteriaController;
 use Illuminate\Support\Facades\Route;
 
 /*** Admin Route ***/
@@ -74,3 +75,6 @@ Route::get('all-user-report', [AllUserController::class, 'UserReportPDF'])->name
 /** Add Admin User */
 Route::get('add-admin', [AddAdminController::class, 'index'])->name('add-admin.index');
 Route::post('add-admin', [AddAdminController::class, 'addAdmin'])->name('add-admin');
+
+/** Score Criteria Route */
+Route::resource('scorecriteria', ScoreCriteriaController::class);

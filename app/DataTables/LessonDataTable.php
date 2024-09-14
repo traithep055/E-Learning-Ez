@@ -26,31 +26,31 @@ class LessonDataTable extends DataTable
             ->addColumn('action', 'lesson.action')
             ->addColumn('file_doc', function ($query) {
                 if ($query->file_doc === null) {
-                    return '<i class="badge bg-warning">Null</i>';
+                    return '<i class="badge bg-warning">ว่าง</i>';
                 } else {
-                    return '<i class="badge bg-success">Have Document</i> 
-                        <button class="btn btn-danger delete-filedoc" data-id="'.$query->id.'"><i class="far fa-trash-alt"></i></button>';
+                    return '<i class="badge bg-success">มีเอกสาร</i> 
+                        <button class="btn btn-danger delete-filedoc" data-id="'.$query->id.' "style="background-color: #e74c3c;"><i class="far fa-trash-alt"></i></button>';
                 }
             })
 
             ->addColumn('video_url', function ($query) {
                 if ($query->video_url === null) {
-                    return '<i class="badge bg-warning">Null</i>';
+                    return '<i class="badge bg-warning">ว่าง</i>';
                 } else {
-                    return '<i class="badge bg-success">Have Video_Url</i> ';
+                    return '<i class="badge bg-success">มีลิงค์วิดีโอ</i> ';
                 }
             })
             ->addColumn('video_path', function ($query) {
                 if ($query->video_path === null) {
-                    return '<i class="badge bg-warning">Null</i>';
+                    return '<i class="badge bg-warning">ว่าง</i>';
                 } else {
-                    return '<i class="badge bg-success">Have Video</i> 
-                    <button class="btn btn-danger delete-filevideo" data-id="'.$query->id.'"><i class="far fa-trash-alt"></i></button>';
+                    return '<i class="badge bg-success">มีวิดีโอ</i> 
+                    <button class="btn btn-danger delete-filevideo" data-id="'.$query->id.' "style="background-color: #e74c3c;"><i class="far fa-trash-alt"></i></button>';
                 }
             })
             ->addColumn('action', function($query){
-                $editBtn = "<a href='".route('teacher.lesson.edit', ['lesson' => $query->id, 'course' => request()->query('course')])."' class='btn btn-primary'><i class='far fa-edit'></i></a>";
-                $deleteBtn = "<a href='".route('teacher.lesson.destroy', $query->id)."' class='btn btn-danger delete-item' ><i class='far fa-trash-alt'></i></a>";
+                $editBtn = "<a href='".route('teacher.lesson.edit', ['lesson' => $query->id, 'course' => request()->query('course')])."' class='btn btn-warning' style='background-color: #ffc107;'><i class='far fa-edit'></i></a>";
+                $deleteBtn = "<a href='".route('teacher.lesson.destroy', $query->id)."' class='btn btn-danger delete-item' style='background-color: #e74c3c;'><i class='far fa-trash-alt'></i></a>";
     
                 // $moreBtn = '<div class="btn-group dropstart" style="margin-left:3px">
                 //     <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">

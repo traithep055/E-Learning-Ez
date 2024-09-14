@@ -50,8 +50,8 @@
                                             </td>
                                             {{-- <td>{{ $category->created_at->format('d-m-Y') }}</td> --}}
                                             <td>
-                                                <a href="{{route('admin.category.edit', $category->id)}}" class="btn btn-warning"><i class="far fa-edit"></i></a>
-                                                <a href="{{ route('admin.category.destroy', $category->id) }}" class="btn btn-danger ml-2 delete-item"><i class="far fa-trash-alt"></i></a>
+                                                <a href="{{route('admin.category.edit', $category->id)}}" class="btn btn-warning" style='background-color: #ffc107;'><i class="far fa-edit"></i></a>
+                                                <a href="{{ route('admin.category.destroy', $category->id) }}" class="btn btn-danger ml-2 delete-item" style='background-color: #e74c3c;'><i class="far fa-trash-alt"></i></a>
                                                 {{-- <a href="{{ route('admin.category.destroy', $category->id) }}" class="btn btn-danger ml-2 delete-item"
                                                     onclick="event.preventDefault();
                                                     document.getElementById('delete-form-{{ $category->id }}').submit();">
