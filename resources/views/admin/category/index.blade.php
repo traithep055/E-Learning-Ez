@@ -38,13 +38,13 @@
                                             <td>
                                                 @if ($category->status == 1)
                                                     <label class="custom-switch mt2">
-                                                        <input type="checkbox" checked name="custom-switch-checkbox" data-id="{{$category->id}}" class="custom-switch-input change-status">
-                                                        <span class="custom-switch-indicator"></span>
+                                                        <input type="checkbox" checked name="custom-switch-checkbox" data-id="{{$category->id}}" class="custom-switch-input change-status" >
+                                                        <span class="custom-switch-indicator" style="background-color: #00a6ff;"></span>
                                                     </label>
                                                 @else
                                                     <label class="custom-switch mt2">
                                                         <input type="checkbox" name="custom-switch-checkbox" data-id="{{$category->id}}" class="custom-switch-input change-status">
-                                                        <span class="custom-switch-indicator"></span>
+                                                        <span class="custom-switch-indicator" style="background-color: #6c757d;"></span>
                                                     </label>
                                                 @endif
                                             </td>
