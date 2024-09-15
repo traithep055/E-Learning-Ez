@@ -25,9 +25,9 @@
                                         <th scope="col">ชื่อหมวดหมู่ย่อย</th>
                                         {{-- <th scope="col">Slug</th> --}}
                                         <th scope="col">หมวดหมู่หลัก</th>
-                                        <th scope="col" style="width: 200px">การทำงาน</th>
+                                        <th scope="col" style="width: 200px">สถานะ</th>
                                         {{-- <th scope="col">Publish Date</th> --}}
-                                        <th scope="col" style="width: 200px">หมายเหตุ</th>
+                                        <th scope="col" style="width: 200px">ฟังก์ชัน</th>
                                     </tr>
                                 </thead>
                                 <tbody>

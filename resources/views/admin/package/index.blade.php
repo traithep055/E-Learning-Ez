@@ -27,7 +27,7 @@
                                         <th scope="col" style="width: 200px">ระยะเวลา</th>
                                         <th scope="col">ราคา</th>
                                         <th scope="col">สร้างเมื่อวันที่</th>
-                                        <th scope="col" style="width: 200px">หมายเหตุ</th>
+                                        <th scope="col" style="width: 200px">ฟังก์ชัน</th>
                                     </tr>
                                 </thead>
                                 <tbody>
