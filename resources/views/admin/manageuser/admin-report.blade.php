@@ -70,7 +70,7 @@
 </head>
 <body>
     <div class="table-header">
-        <h1>รายงานจำนวนแอดมิน</h1>
+        <h1>รายงานจำนวนผู้ดูแลระบบ</h1>
     </div>
     <table>
         <thead>
@@ -93,7 +93,7 @@
         </tbody>
     </table>
     <div class="total-count">
-        จำนวนแอดมินทั้งหมด: {{ $admins->count() }} คน
+        จำนวนผู้ดูแลระบบทั้งหมด: {{ $admins->count() }} คน
     </div>
 </body>
 </html>

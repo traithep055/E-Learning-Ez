@@ -98,6 +98,7 @@ class CouponDataTable extends DataTable
             Column::computed('action')
                   ->exportable(false)
                   ->printable(false)
+                  ->title('ฟังก์ชัน')
                   ->width(200)
                   ->addClass('text-center'),
         ];

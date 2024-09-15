@@ -8,7 +8,7 @@
       </div>
       <ul class="sidebar-menu">
         <li class="dropdown active" style="margin-top: 8%">
-          <a href="{{route('admin.dashboard')}}" class="nav-link"><i class="fas fa-fire"></i><span>แอดมิน</span></a>
+          <a href="{{route('admin.dashboard')}}" class="nav-link"><i class="fas fa-fire"></i><span>ผู้ดูแลระบบ</span></a>
         </li>
         <li class="dropdown">
           <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span style="font-size: 17px">จัดการหมวดหมู่</span></a>

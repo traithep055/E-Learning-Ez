@@ -25,7 +25,7 @@
                                         <th scope="col">ชื่อหมวดหมู่</th>
                                         <th scope="col" style="width: 200px">สถานะ</th>
                                         {{-- <th scope="col">Publish Date</th> --}}
-                                        <th scope="col" style="width: 200px">ใช้งาน</th>
+                                        <th scope="col" style="width: 200px">ฟังก์ชัน</th>
                                     </tr>
                                 </thead>
                                 <tbody>
