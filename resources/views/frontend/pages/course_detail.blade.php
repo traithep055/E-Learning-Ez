@@ -31,7 +31,7 @@
                                     <img src="{{$course->image}}" alt="" width="100px">
                                     <h5 class="mt-2">{{$course->name}}</h5>
                                     <h6>จำนวน {{$course->lessons->count()}} บทเรียน ระดับ {{$course->level}} เวลา {{$course->hours}} ชม.
-                                        เรทติ้ง {{ $course->reviewSummary ? $course->reviewSummary->average_rating : '-' }}
+                                        คะแนน {{ $course->reviewSummary ? $course->reviewSummary->average_rating : '-' }}
                                     </h6>
                                 </div>
                                 <div class="col-md-3 my-4">
