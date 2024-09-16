@@ -40,7 +40,7 @@
                                             <span><a href="#">{{ $course->teacher->firstname }}</a></span><br>
                                             <span>เรียน {{$course->purchasedCourses->count()}} คน</span><br>
                                             <span>เวลา {{$course->hours}} ชม.</span><br>
-                                            <span>เรทติ้ง {{ $course->reviewSummary ? $course->reviewSummary->average_rating : '-' }}</span><br>
+                                            <span>คะแนน {{ $course->reviewSummary ? $course->reviewSummary->average_rating : '-' }}</span><br>
                                             <span>ระดับ {{ $course->level }}</span><br>
                                             <span><b>ราคา {{ number_format($course->price, 2) }} บาท</b></span>
                                         </p>
