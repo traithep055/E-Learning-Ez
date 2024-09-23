@@ -27,6 +27,7 @@
                                         <th scope="col">ราคา</th>
                                         {{-- <th scope="col">Course Type</th> --}}
                                         <th scope="col">ผู้สอน</th>
+                                        <th scope="col">รายงานผู้เรียน</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -58,6 +59,11 @@
 
                                             <td>
                                                 {{ $course->teacher->firstname }} {{ $course->teacher->lastname }}
+                                            </td>
+                                            <td>
+                                                <a href="{{ route('admin.course.students-report', $course->id) }}" class="btn btn-primary" target="_blank">
+                                                    ดูข้อมูลผู้เรียน
+                                                </a>
                                             </td>
                                         </tr>
                                     @endforeach
