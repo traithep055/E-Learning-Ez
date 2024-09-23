@@ -34,6 +34,11 @@ class Course extends Model
         return $this->belongsToMany(User::class, 'course_purchaes', 'course_id', 'user_id');
     }
 
+    public function purchasedCoursesDetails()
+    {
+        return $this->hasMany(CoursePurchaes::class);
+    }
+
     // ความสัมพันธ์กับแบบทดสอบ
     public function test()
     {
