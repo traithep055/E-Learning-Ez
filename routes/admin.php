@@ -47,6 +47,7 @@ Route::resource('coupons', CouponController::class);
 
 /** All Course Report */
 Route::get('all-course', [AllCourseController::class, 'index'])->name('all-course');
+Route::get('course/get-subcategories', [AllCourseController::class, 'getSubCategories'])->name('course.get-subcategories');
 Route::get('all-course-report', [AllCourseController::class, 'ReportCoursePDF'])->name('all-course.report');
 Route::get('course/{id}/students-report', [AllCourseController::class, 'ReportStdCoursePDF'])->name('course.students-report');
 

@@ -14,14 +14,11 @@ class BillReportController extends Controller
     {
         $query = CoursePurchaes::query();
 
-        // ตรวจสอบว่ามีการกรองตามวัน เดือน หรือปี
-        if ($request->filled('day') || $request->filled('month') || $request->filled('year')) {
-            if ($request->filled('day')) {
-                $query->whereDay('created_at', $request->day);
-            }
-            
-            if ($request->filled('month')) {
-                $query->whereMonth('created_at', $request->month);
+        // Check for filtering by month range and year
+        if ($request->filled('start_month') || $request->filled('end_month') || $request->filled('year')) {
+            if ($request->filled('start_month') && $request->filled('end_month')) {
+                $query->whereMonth('created_at', '>=', $request->start_month)
+                    ->whereMonth('created_at', '<=', $request->end_month);
             }
             
             if ($request->filled('year')) {
@@ -30,22 +27,35 @@ class BillReportController extends Controller
         }
 
         $bills = $query->paginate(5);
-        
-        return view('admin.bill-report.index', compact('bills'));
+
+        // Define Thai month names
+        $thaiMonths = [
+            1 => 'มกราคม',
+            2 => 'กุมภาพันธ์',
+            3 => 'มีนาคม',
+            4 => 'เมษายน',
+            5 => 'พฤษภาคม',
+            6 => 'มิถุนายน',
+            7 => 'กรกฎาคม',
+            8 => 'สิงหาคม',
+            9 => 'กันยายน',
+            10 => 'ตุลาคม',
+            11 => 'พฤศจิกายน',
+            12 => 'ธันวาคม',
+        ];
+
+        return view('admin.bill-report.index', compact('bills', 'thaiMonths'));
     }
 
     public function ReportBillPDF(Request $request) 
     {
         $query = CoursePurchaes::query();
 
-        // ตรวจสอบว่ามีการกรองตามวัน เดือน หรือปี
-        if ($request->filled('day') || $request->filled('month') || $request->filled('year')) {
-            if ($request->filled('day')) {
-                $query->whereDay('created_at', $request->day);
-            }
-            
-            if ($request->filled('month')) {
-                $query->whereMonth('created_at', $request->month);
+        // Check for filtering by month range and year
+        if ($request->filled('start_month') || $request->filled('end_month') || $request->filled('year')) {
+            if ($request->filled('start_month') && $request->filled('end_month')) {
+                $query->whereMonth('created_at', '>=', $request->start_month)
+                    ->whereMonth('created_at', '<=', $request->end_month);
             }
             
             if ($request->filled('year')) {
