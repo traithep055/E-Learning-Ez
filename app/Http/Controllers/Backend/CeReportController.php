@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\Course;
 use App\Models\TestResult;
+use App\Models\Category;
+use App\Models\SubCategory;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
@@ -52,23 +54,35 @@ class CeReportController extends Controller
 
     public function CertReportAdmin(Request $request)
     {
-        $courses = Course::all(); // Get all courses
+        // ดึงหมวดหมู่คอร์สและตัวกรอง
+        $categories = Category::all(); // สมมติว่าคุณมีโมเดล Category
+        $selectedCategory = $request->input('category_id');
+        $startDate = $request->input('start_date');
+        $endDate = $request->input('end_date');
+
+        $courses = Course::when($selectedCategory, function ($query, $selectedCategory) {
+            return $query->where('category_id', $selectedCategory);
+        })->get();
+
         $students = collect();
 
         foreach ($courses as $course) {
             $testResults = TestResult::whereHas('test', function ($query) use ($course) {
                 $query->where('course_id', $course->id);
             })
-            ->with(['user', 'test.course']) // Eager load the test and course relationships
+            ->when($startDate && $endDate, function ($query) use ($startDate, $endDate) {
+                $query->whereBetween('created_at', [$startDate, $endDate]);
+            })
+            ->with(['user', 'test.course'])
             ->get();
 
             $courseStudents = $testResults->groupBy('user_id')->map(function ($testResults) use ($course) {
                 $user = $testResults->first()->user;
                 return [
                     'user' => $user,
-                    'user_id' => $user->id, // Include the user ID
-                    'course_id' => $course->id, // Include the course ID
-                    'course' => $course->name, // Include the course name
+                    'user_id' => $user->id,
+                    'course_id' => $course->id,
+                    'course' => $course->name,
                     'count' => $testResults->count(),
                     'highest_score' => $testResults->max('score'),
                     'certificate_date' => $testResults->filter(function ($result) {
@@ -80,10 +94,10 @@ class CeReportController extends Controller
             $students = $students->merge($courseStudents);
         }
 
-        // Paginate the students collection
+        // แบ่งหน้าของนักเรียน
         $students = $this->paginate($students, $request->page, 5);
 
-        return view('admin.cert-report.index', compact('courses', 'students'));
+        return view('admin.cert-report.index', compact('courses', 'students', 'categories', 'selectedCategory', 'startDate', 'endDate'));
     }
 
     protected function paginate($items, $page = 1, $perPage = 5, $options = [])

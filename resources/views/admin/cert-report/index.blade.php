@@ -16,6 +16,21 @@
                             <div class="card-header-action">
                                 <a href="{{route('admin.cert-report.pdf')}}" class="btn btn-primary" target="_blank"><i class="fas fa-solid fa-print"></i> พิมพ์รายงาน</a>
                             </div>
+                            <form method="GET" action="{{ route('admin.cert-report') }}" class="form-inline">
+                                <select name="category_id" class="form-control mr-2">
+                                    <option value="">เลือกหมวดหมู่คอร์ส</option>
+                                    @foreach($categories as $category)
+                                        <option value="{{ $category->id }}" {{ request('category_id') == $category->id ? 'selected' : '' }}>
+                                            {{ $category->name }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                    
+                                <input type="date" name="start_date" value="{{ request('start_date') }}" class="form-control mr-2" placeholder="วันที่เริ่มต้น">
+                                <input type="date" name="end_date" value="{{ request('end_date') }}" class="form-control mr-2" placeholder="วันที่สิ้นสุด">
+                    
+                                <button type="submit" class="btn btn-primary">กรอง</button>
+                            </form>
                         </div>
                         <div class="card-body">
                             <table class="table table-striped table-bordered border-dark">
