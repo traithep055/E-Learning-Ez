@@ -27,31 +27,31 @@
                 <div class="card-corse">
                     <div class="row">
                         @forelse ($courses as $course)
-                            <div class="col-lg-3 col-md-6 mb-4 d-flex align-items-stretch">
-                                <div class="card card-hover h-100">
+                            <div class="col-lg-4 col-md-4 mb-4 d-flex align-items-stretch"> <!-- เพิ่มขนาดการ์ดเป็น col-lg-4 -->
+                                <div class="card card-hover h-100 shadow-lg" style="border-radius: 15px; overflow: hidden; width: 100%; height: 500px;"> <!-- ปรับความสูงให้สูงขึ้น -->
                                     <a href="{{ route('course-detail', ['id' => $course->id]) }}">
-                                        <img src="{{ $course->image }}" class="card-img-top" alt="Course Image" style="object-fit: cover; height: 200px;">
+                                        <img src="{{ $course->image }}" class="card-img-top" alt="Course Image" style="object-fit: cover; height: 250px;"> <!-- ปรับความสูงของรูปภาพ -->
                                     </a>
-                                    <div class="card-body d-flex flex-column">
-                                        <h5 class="card-title">
-                                            <a href="{{ route('course-detail', ['id' => $course->id]) }}">{{ $course->name }}</a>
+                                    <div class="card-body d-flex flex-column" style="padding: 1.5rem;">
+                                        <h5 class="card-title" style="font-weight: bold; font-size: 1.3rem;"> <!-- เพิ่มขนาดตัวอักษร -->
+                                            <a href="{{ route('course-detail', ['id' => $course->id]) }}" style="text-decoration: none; color: #333;">{{ $course->name }}</a>
                                         </h5>
-                                        <p class="card-text flex-grow-1">
-                                            <span><a href="#">{{ $course->teacher->firstname }}</a></span><br>
+                                        <p class="card-text flex-grow-1" style="margin-bottom: 1.5rem;"> <!-- ปรับช่องว่างด้านล่าง -->
+                                            <span><a href="#" style="color: #007bff; text-decoration: none;">{{ $course->teacher->firstname }}</a></span>
                                             <span>เรียน {{$course->purchasedCourses->count()}} คน</span><br>
-                                            <span>เวลา {{$course->hours}} ชม.</span><br>
+                                            <span>เวลา {{$course->hours}} ชม.</span>
                                             <span>คะแนน {{ $course->reviewSummary ? $course->reviewSummary->average_rating : '-' }}</span><br>
                                             <span>ระดับ {{ $course->level }}</span><br>
                                             <span><b>ราคา {{ number_format($course->price, 2) }} บาท</b></span>
                                         </p>
                                         @auth
                                             @if($user->purchasedCourses->contains($course->id))
-                                                <a href="{{ route('user.learn_course.lesson', ['course' => $course->id, 'lesson' => $course->lessons->first()->slug]) }}" class="btn btn-primary mt-auto">เริ่มเรียน</a>
+                                                <a href="{{ route('user.learn_course.lesson', ['course' => $course->id, 'lesson' => $course->lessons->first()->slug]) }}" class="btn btn-success mt-auto" style="border-radius: 30px; padding: 10px 20px;">เริ่มเรียน</a> <!-- ขยายปุ่ม -->
                                             @else
-                                                <a href="{{route('user.course_purchase', ['course' => $course->id])}}" class="btn btn-primary mt-auto">ซื้อคอร์ส</a>
+                                                <a href="{{route('user.course_purchase', ['course' => $course->id])}}" class="btn btn-primary mt-auto" style="border-radius: 30px; padding: 10px 20px;">ซื้อคอร์ส</a> <!-- ขยายปุ่ม -->
                                             @endif
                                         @else
-                                            <a href="{{route('user.course_purchase', ['course' => $course->id])}}" class="btn btn-primary mt-auto">ซื้อคอร์ส</a>
+                                            <a href="{{route('user.course_purchase', ['course' => $course->id])}}" class="btn btn-primary mt-auto" style="border-radius: 30px; padding: 10px 20px;">ซื้อคอร์ส</a> <!-- ขยายปุ่ม -->
                                         @endauth
                                     </div>
                                 </div>
