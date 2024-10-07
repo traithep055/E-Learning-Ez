@@ -77,11 +77,11 @@
     <div class="row">
       <div class="col-xl-9 col-xxl-10 col-lg-9 ms-auto">
         <div class="dashboard_content mt-2 mt-md-0">
-          <h3 class="mb-4">
+          <h4 style="font-weight: bold" class="mb-4">
             <i class="fas fa-star">
                 </i>
                 ให้คะแนนสำหรับคอร์สเรียนของฉัน
-            </h3>
+            </h4>
           @if (session('success'))
             <div class="alert alert-success">
               {{ session('success') }}
@@ -95,7 +95,7 @@
           @endif
 
           @foreach ($mycourses as $mycourse)
-            <span style="color: red">*1 ดาว เปรียบเสมือน 1 คะแนน</span>
+            {{-- <span style="color: red">*1 ดาว เปรียบเสมือน 1 คะแนน</span> --}}
             <div class="course-card card">
               <div class="card-body">
                 <h4 class="course-title">ให้คะแนนคอร์ส: {{ $mycourse->name }}</h4>
